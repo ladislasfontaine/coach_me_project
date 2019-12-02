@@ -7,5 +7,7 @@ class User < ApplicationRecord
   belongs_to :city, optional: true
   belongs_to :objective, optional: true
   has_many :data
-  has_many :coaches, through: :seance
+  has_many :seances
+  has_many :coaches, through: :seances
+  
 end
