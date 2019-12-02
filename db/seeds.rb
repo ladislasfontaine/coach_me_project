@@ -24,10 +24,12 @@ coaches = []
 specialties = []
 seances = []
 
+
 cities_initialize = ["Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
 objectives_initialize = ["Perdre du poids", "Gagner en masse musculaire", "Préparer une compétition", "Juste pour le fun", "Réduire mon stress"]
 specialties_initialize = ["Boxe", "Yoga", "Course"]
 cities_initialize = ["Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
+durations_initialize = [60, 80, 120]
 
 cities_initialize.each do |city|
   cities << City.create(name: city)
@@ -64,15 +66,15 @@ end
 
 10.times do |index|
   users << User.create(
-    first_name: Faker::Name.first_name, 
-    last_name: Faker::Name.last_name, 
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: "secret",
-    birth_date: DateTime.new(rand(1950..2000),rand(1..12),rand(1..28)), 
-    phone_number: "(+33)" + Faker::PhoneNumber.subscriber_number(length: 9), 
-    address: Faker::Address.street_address, 
-    city: cities.sample, 
-    zip_code: Faker::Address.zip_code, 
+    birth_date: DateTime.new(rand(1950..2000),rand(1..12),rand(1..28)),
+    phone_number: "(+33)" + Faker::PhoneNumber.subscriber_number(length: 9),
+    address: Faker::Address.street_address,
+    city: cities.sample,
+    zip_code: Faker::Address.zip_code,
     description: Faker::Quote.famous_last_words,
     objective: objectives.sample
   )
@@ -84,9 +86,10 @@ end
 
 10.times do |index|
   seances << Seance.create(
-    coach: coaches.sample, 
-    user: users.sample, 
-    duration: rand(1..5), 
+    coach: coaches.sample,
+    user: users.sample,
+    place: "Stade de France",
+    duration: durations_initialize.sample,
     start_date: Faker::Time.between(from: DateTime.now, to: DateTime.now + 60)
   )
 end

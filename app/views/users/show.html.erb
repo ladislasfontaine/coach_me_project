@@ -1,3 +1,6 @@
+<h2>  Profil Utilisateur  </h2>
+
+
 <div class="name">
     <%= @user.first_name %>
     <%= @user.last_name %>
@@ -17,23 +20,11 @@
   <%= @user.zip_code %>
 </div>
 
-
-
-
-
-  <%= @user.seance %>
-
-
-
-
-create_table "seances", force: :cascade do |t|
-  t.bigint "coach_id"
-  t.bigint "user_id"
-  t.datetime "start_date"
-  t.integer "duration"
-  t.string "place"
-  t.datetime "created_at", null: false
-  t.datetime "updated_at", null: false
-  t.index ["coach_id"], name: "index_seances_on_coach_id"
-  t.index ["user_id"], name: "index_seances_on_user_id"
-end
+<p>================</p>
+<% @user.seances.each do |seance| %>
+  <tr>
+    <td><%= seance.start_date %><td>
+    <td><%= seance.duration %><td>
+    <td><%= seance.place %><td>
+  </tr>
+<% end %>
