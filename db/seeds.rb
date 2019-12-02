@@ -7,9 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 City.destroy_all
+Objective.destroy_all
 
 cities = ["Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
 
 cities.each do |city|
   City.create(name: city)
+end
+
+objectives = ["Perdre du poids", "Gagner en masse musculaire", "Préparer une compétition", "Juste pour le fun", "Réduire mon stress"]
+
+objectives.each do |objective|
+  Objective.create(description: objective)
 end
