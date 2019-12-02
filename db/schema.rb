@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 2019_12_02_115645) do
     t.index ["city_id"], name: "index_coaches_on_city_id"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "specialties", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> b5479aeb8e04d3bd912432be06532f3038a4a4bf
   create_table "data", force: :cascade do |t|
     t.integer "height"
     t.float "weight"
