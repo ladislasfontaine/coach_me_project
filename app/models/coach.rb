@@ -5,8 +5,8 @@ class Coach < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 	belongs_to :city, optional: true
-	has_many :coach_specialies
-	has_many :specialties, through: :coach_specialies
+	has_many :coach_specialties
+	has_many :specialties, through: :coach_specialties
 	has_many :seances
   has_many :users, through: :seances
 
