@@ -11,6 +11,7 @@ require 'date'
 City.destroy_all
 Objective.destroy_all
 User.destroy_all
+Datum.destroy_all
 
 cities = []
 objectives = []
@@ -40,4 +41,8 @@ end
     description: Faker::Quote.famous_last_words,
     objective: objectives.sample
   )
+end
+
+20.times do
+  Datum.create(height: rand(155..198), weight: rand(40.4..109.9), user: users.sample)
 end
