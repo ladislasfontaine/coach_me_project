@@ -1,0 +1,15 @@
+<h2>Page Index Coach</h2>
+
+<% @coaches.each do |coach| %>
+  <p>
+    <div><%= coach.first_name %> <%= coach.last_name %></div>
+    <div><%= coach.city.name %></div>
+    <div><%= coach.price %>€ / heure</div>
+    <div>
+      <% coach.specialties.each do |specialty| %>
+        <div><%= specialty.name %></div>
+      <% end %>
+    </div>
+    <%= link_to 'Voir', coach_path(coach.id) %>
+  </p>
+<% end %>
