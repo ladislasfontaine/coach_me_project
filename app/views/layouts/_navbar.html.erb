@@ -7,11 +7,24 @@
     </li>
 
     <li>
-      Voici ton email : <%= current_user.email %>
+      Voici ton email de user : <%= current_user.email %>
     </li>
 
     <li>
       <%= link_to "User Edit email / password", edit_user_registration_path %>
+    </li>
+
+  <% elsif coach_signed_in? %>
+    <li>
+      <%= link_to "Coach Sign out", destroy_coach_session_path, method: :delete %>
+    </li>
+
+    <li>
+      Voici ton email de coach : <%= current_coach.email %>
+    </li>
+
+    <li>
+      <%= link_to "Coach Edit email / password", edit_coach_registration_path %>
     </li>
 
   <% else %>
@@ -23,5 +36,12 @@
       <%= link_to "User Sign up", new_user_registration_path %>
     </li>
 
+    <li>    
+      <%= link_to "Coach Sign in", new_coach_session_path %>
+    </li>
+
+    <li>
+      <%= link_to "Coach Sign up", new_coach_registration_path %>
+    </li>
   <% end %>
 </ul>
