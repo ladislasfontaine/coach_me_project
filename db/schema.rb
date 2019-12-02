@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_115645) do
+
+ActiveRecord::Schema.define(version: 2019_12_02_113237) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_115645) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
   create_table "coach_specialties", force: :cascade do |t|
     t.bigint "coach_id"
@@ -51,6 +54,38 @@ ActiveRecord::Schema.define(version: 2019_12_02_115645) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
+  create_table "data", force: :cascade do |t|
+    t.integer "height"
+    t.float "weight"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_data_on_user_id"
+  end
+
+  create_table "objectives", force: :cascade do |t|
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "birth_date"
+    t.string "phone_number"
+    t.string "address"
+    t.string "zip_code"
+    t.text "description"
+    t.boolean "is_admin", default: false
+    t.bigint "city_id"
+    t.bigint "objective_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_users_on_city_id"
+    t.index ["objective_id"], name: "index_users_on_objective_id"
+
   end
 
 end
