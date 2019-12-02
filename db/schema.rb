@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_113237) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
 
   create_table "data", force: :cascade do |t|
     t.integer "height"
