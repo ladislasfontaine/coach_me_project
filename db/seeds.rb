@@ -17,6 +17,7 @@ cities = []
 objectives = []
 users = []
 
+
 cities_initialize = ["Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
 
 cities_initialize.each do |city|
@@ -46,12 +47,12 @@ puts 'ok'
 
 10.times do |index|
   coaches << Coach.create(
-    first_name: Faker::Name.first_name, 
-    last_name: Faker::Name.last_name, 
-    phone_number: "(+33)" + Faker::PhoneNumber.subscriber_number(length: 9), 
-    address: Faker::Address.street_address, 
-    city: cities.sample, 
-    zip_code: Faker::Address.zip_code, 
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone_number: "(+33)" + Faker::PhoneNumber.subscriber_number(length: 9),
+    address: Faker::Address.street_address,
+    city: cities.sample,
+    zip_code: Faker::Address.zip_code,
     siret: Faker::Number.number(digits: 9).to_i,
     price: 50,
     account_number: "DE71540515507992382247",
@@ -66,7 +67,7 @@ specialties_initialize.each do |s|
 	specialties << Specialty.create(
 		name: s
 		)
-end	
+end
  puts "Ok"
 
 
@@ -78,19 +79,18 @@ end
 end
 
 puts "ok"
- 
 
-    
+
 
 10.times do |index|
   users << User.create(
-    first_name: Faker::Name.first_name, 
-    last_name: Faker::Name.last_name, 
-    birth_date: DateTime.new(rand(1950..2000),rand(1..12),rand(1..28)), 
-    phone_number: "(+33)" + Faker::PhoneNumber.subscriber_number(length: 9), 
-    address: Faker::Address.street_address, 
-    city: cities.sample, 
-    zip_code: Faker::Address.zip_code, 
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    birth_date: DateTime.new(rand(1950..2000),rand(1..12),rand(1..28)),
+    phone_number: "(+33)" + Faker::PhoneNumber.subscriber_number(length: 9),
+    address: Faker::Address.street_address,
+    city: cities.sample,
+    zip_code: Faker::Address.zip_code,
     description: Faker::Quote.famous_last_words,
     objective: objectives.sample
   )
@@ -100,3 +100,9 @@ end
   Datum.create(height: rand(155..198), weight: rand(40.4..109.9), user: users.sample)
 end
 
+seances = []
+10.times do |index|
+seances << Seance.create(coach: coaches.sample, user: users.sample, duration: rand(1..5), start_date: Faker::Time.between(from: DateTime.now, to: DateTime.now + 60))
+end
+
+puts "ok"
