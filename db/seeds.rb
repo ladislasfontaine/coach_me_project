@@ -12,6 +12,10 @@ City.destroy_all
 Objective.destroy_all
 User.destroy_all
 Datum.destroy_all
+Coach.destroy_all
+CoachSpecialty.destroy_all
+Specialty.destroy_all
+Seance.destroy_all
 
 cities = []
 objectives = []
