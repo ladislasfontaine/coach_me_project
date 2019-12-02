@@ -3,8 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
-  belongs_to :city
-  belongs_to :objective
+
+  belongs_to :city, optional: true
+  belongs_to :objective, optional: true
   has_many :data
 end

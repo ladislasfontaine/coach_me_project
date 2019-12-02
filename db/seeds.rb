@@ -86,6 +86,8 @@ puts "ok"
   users << User.create(
     first_name: Faker::Name.first_name, 
     last_name: Faker::Name.last_name, 
+    email: Faker::Internet.email,
+    password: "secret",
     birth_date: DateTime.new(rand(1950..2000),rand(1..12),rand(1..28)), 
     phone_number: "(+33)" + Faker::PhoneNumber.subscriber_number(length: 9), 
     address: Faker::Address.street_address, 
