@@ -1,4 +1,4 @@
 class Specialty < ApplicationRecord
-	has_many :coach_specialies
-	has_many :coaches, through: :coach_specialies
+	has_many :coach_specialties
+	has_many :coaches, through: :coach_specialties
 end
