@@ -29,7 +29,7 @@ cities_initialize = ["Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille"
 objectives_initialize = ["Perdre du poids", "Gagner en masse musculaire", "Préparer une compétition", "Juste pour le fun", "Réduire mon stress"]
 specialties_initialize = ["Boxe", "Yoga", "Course"]
 cities_initialize = ["Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
-durations_initialize = [60, 80, 120]
+durations_initialize = [60, 90, 120]
 
 cities_initialize.each do |city|
   cities << City.create(name: city)
@@ -90,6 +90,6 @@ end
     user: users.sample,
     place: "Stade de France",
     duration: durations_initialize.sample,
-    start_date: Faker::Time.between(from: DateTime.now, to: DateTime.now + 60)
+    start_date: DateTime.new(rand(2019..2020),rand(1..12),rand(1..28))
   )
 end
