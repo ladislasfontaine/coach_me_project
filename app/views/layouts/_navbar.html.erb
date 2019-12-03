@@ -19,23 +19,19 @@
                 Bonjour, <%= current_user.first_name %>
               <% end %> 
             </div>
+            <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            <%= link_to "Editer mon compte", edit_user_registration_path, class: "dropdown-item" %>
-
           <% elsif coach_signed_in? %>
-            <li>
-              <%= link_to "Se déconnecter", destroy_coach_session_path, method: :delete %>
-            </li>
-
-            <li>
-              <%= link_to "Coach Edit email / password", edit_coach_registration_path %>
-            </li>
-
+            <%= link_to "Mon compte", edit_coach_registration_path, class: "dropdown-item" %>
+            <%= link_to "Se déconnecter", destroy_coach_session_path, method: :delete, class: "dropdown-item" %>
           <% else %>
-            <%= link_to "Connexion adhérent", new_user_session_path, class: "dropdown-item" %>
-            <%= link_to "Inscription adhérent", new_user_registration_path, class: "dropdown-item"  %> 
-            <%= link_to "Connexion coach", new_coach_session_path, class: "dropdown-item"  %>
-            <%= link_to "Inscription coach", new_coach_registration_path, class: "dropdown-item"  %>
+            <h6 class="d-flex justify-content-center orange">Adhérent</h6>
+            <%= link_to "Connexion", new_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Inscription", new_user_registration_path, class: "dropdown-item"  %> 
+            <div class="dropdown-divider"></div>
+            <h6 class="d-flex justify-content-center orange">Coach</h6>
+            <%= link_to "Connexion", new_coach_session_path, class: "dropdown-item"  %>
+            <%= link_to "Inscription", new_coach_registration_path, class: "dropdown-item"  %>
           <% end %>
         </ul>
       </div>
