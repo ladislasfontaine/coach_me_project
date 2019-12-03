@@ -1,62 +1,63 @@
 
 <p>edit profil</p>
 
-
-
 <div>
   <%= form_tag user_path(@user), method: "put", multipart: true, class: "form-group" do %>
-  <div>========== Image ============</div>
+  <p>========== Image ============</p>
   <h3>Changer d'avatar ?</h3>
     <div class="form-group form-check">
       <%= label_tag 'Photo de profil' %>
       <%= file_field_tag :avatar %>
     </div>
-
+  <p>========== INFOS ============</p>
     <div class="form-group form-check">
       <p>Mes informations utilisateur</p>
       <%= label_tag 'Prénom'%>
       <%= text_field_tag 'first_name', @user.first_name %>
     </div>
-
     <div class="form-group form-check">
       <%= label_tag 'Nom'%>
       <%= text_field_tag 'last_name', @user.last_name %>
     </div>
-
     <div class="form-group form-check">
       <%= label_tag 'Date de naissance' %>
       <%= datetime_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%dT%H:%M") %>
     </div>
-
     <div class="phone_number">
       <%= label_tag 'Téléphone'%>
       <%= text_field_tag 'phone_number', @user.phone_number %>
     </div>
-
-    <div class="address">
-      <%= label_tag 'adresse'%>
-      <%= text_field_tag 'address', @user.address %>
-    </div>
-
-    <div class="zip_code">
-      <%= label_tag 'zip code'%>
-      <%= text_field_tag 'zip_code', @user.zip_code %>
-    </div>
-
-    <div class="description">
-      <%= label_tag 'description'%>
-      <%= text_area_tag 'description', @user.description %>
-    </div>
-
     <div class="email">
       <%= label_tag 'email'%>
       <%= text_field_tag 'email', @user.email %>
     </div>
 
-    <%= submit_tag "Modifier", class: "btn btn-primary" %>
+  <p>========== address ============</p>
+    <div class="address">
+      <%= label_tag 'adresse'%>
+      <%= text_field_tag 'address', @user.address %>
+    </div>
+    <div class="zip_code">
+      <%= label_tag 'zip code'%>
+      <%= text_field_tag 'zip_code', @user.zip_code %>
+    </div>
+
+  <p>========== Ville Dropdown ============</p>
+
+  <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name") %>
+
+  <p>========== Description ============</p>
+    <div class="description">
+      <%= label_tag 'description'%>
+      <%= text_area_tag 'description', @user.description %>
+    </div>
+
+  <p>========== Objectif Dropdown ============</p>
+
+  <%= select_tag "objectif", options_from_collection_for_select(@objectives, "id", "description") %>
+
+
+  <%= submit_tag "Modifier", class: "btn btn-primary" %>
     <button type="button" name="button"> <%= link_to 'retour', user_path(@user) %></button>
-    <% end %>
+  <% end %>
 </div>
-
-
-<p>=====================================</p>

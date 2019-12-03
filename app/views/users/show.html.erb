@@ -29,14 +29,14 @@ Adresse :
 
 Ville :
 <div class="city">
-  <% @user.city %>
+  <%= @user.city.name %>
 </div>
 
 <p>===============</p>
 
 Objectif :
 <div class="objective">
-  <% @user.objective %>
+  <%= @user.objective.description %>
 </div>
 
 <p>===============</p>
@@ -52,28 +52,13 @@ Mes séances:
     <div class=""><%= seance.duration %> minutes</div>
     <div class=""><%= seance.place %></div>
   <% end %>
-<% end %>
-
   <h5>Séances passées</h5>
   <% @user.seances.select {|seance| seance.start_date < Time.now}.each do |seance| %>
     <div class=""><%= seance.start_date.strftime("%Y-%m-%dT%H:%M") %></div>
     <div class=""><%= seance.duration %> minutes</div>
     <div class=""><%= seance.place %></div>
   <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<% end %>
 
 <p>===============</p>
 Ma photo de profil :
