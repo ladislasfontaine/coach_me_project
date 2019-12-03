@@ -21,5 +21,5 @@ class UsersController < ApplicationController
   def updated
 
 
-  end 
+  end
 end
