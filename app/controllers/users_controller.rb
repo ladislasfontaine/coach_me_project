@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 1364cd57282b97d0dc457502ff21f78798631337
   def welcome
 
   end
@@ -13,6 +17,13 @@ class UsersController < ApplicationController
 
 
   def edit
+    @user = User.find(params[:id])
+
+  end
+
+
+  def updated
+
 
   end
 

@@ -1,0 +1,76 @@
+<div class="headline">Mes informations de coach</div>
+
+<div>
+  <%= form_tag coach_path(params[:id]), method: "put", multipart: true do %>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Prénom' %>
+      <%= text_field_tag 'first_name', @coach.first_name, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Nom' %>
+      <%= text_field_tag 'last_name', @coach.last_name, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Téléphone' %>
+      <%= text_field_tag 'phone_number', @coach.phone_number, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Adresse' %>
+      <%= text_field_tag 'address', @coach.address, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Code postal' %>
+      <%= text_field_tag 'zip_code', @coach.zip_code, class: "form-control" %>
+    </div>
+
+<%# Add a field city with a dropdown to show each city.name from cities table %>
+
+    <div class="form-group form-check">
+      <%= label_tag "Tarif à l'heure (en €)" %>
+      <%= text_field_tag 'price', @coach.price, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Numéro de SIRET' %>
+      <%= text_field_tag 'siret', @coach.siret, class: "form-control" %>
+    </div>
+
+    <div>======== Images ========</div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Photo de profil' %>
+      <%= file_field_tag :avatar %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Photo de couverture' %>
+      <%= file_field_tag :cover %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Diplôme de coach sportif' %>
+      <%= file_field_tag :diploma %>
+    </div>
+
+    <div>======== Informations bancaires ========</div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Nom du bénéficiaire du compte' %>
+      <%= text_field_tag 'account_name', @coach.account_name, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'IBAN du compte' %>
+      <%= text_field_tag 'account_number', @coach.account_number, class: "form-control" %>
+    </div>
+
+    <%= submit_tag "Modifier", class: "btn btn-primary" %>
+    <button type="button" class="btn btn-secondary"><%= link_to 'Retour', :back %></button>
+    
+  <% end %>
+</div>
