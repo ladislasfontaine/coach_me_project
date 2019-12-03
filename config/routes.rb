@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :coaches
   root to: "users#welcome"
-  resources :users
+  resources :users do
+    resources :avatars, only: [:create]
+  end
 
 end
