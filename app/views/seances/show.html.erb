@@ -5,6 +5,7 @@
   <div>Quand ? Le <%= @seance.start_date %></div>
   <div>Combient de temps ? <%= @seance.duration %>min</div>
   <div>Où ? Rdv <%= @seance.place %></div>
+  <div>Prix ? <%= @price %>€</div>
 </div>
 
 <div>
@@ -12,9 +13,13 @@
   <div><%= @seance.user.first_name %> <%= @seance.user.last_name %></div>
   <div><%= @seance.user.address %></div>
   <div><%= @seance.user.zip_code %> <%= @seance.user.city.name %></div>
+  <div><%= @seance.user.phone_number %></div>
+
 </div>
 
 <div>
   <div>====== COACH ======</div>
   <div><%= @seance.coach.first_name %> <%= @seance.coach.last_name %></div>
+  <div><%= @seance.coach.phone_number %></div>
+
 </div>
