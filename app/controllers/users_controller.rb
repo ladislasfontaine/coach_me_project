@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	has_one_attached :avatar
+
   def welcome
 
   end
@@ -13,6 +13,13 @@ class UsersController < ApplicationController
 
 
   def edit
+    @user = User.find(params[:id])
 
   end
+
+
+  def updated
+
+
+  end 
 end
