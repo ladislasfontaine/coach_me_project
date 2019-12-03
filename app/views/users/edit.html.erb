@@ -49,6 +49,11 @@
       <%= text_area_tag 'description', @user.description %>
     </div>
 
+    <div class="email">
+      <%= label_tag 'email'%>
+      <%= text_field_tag 'email', @user.email %>
+    </div>
+
     <%= submit_tag "Modifier", class: "btn btn-primary" %>
 
     <button type="button" name="button"> <%= link_to 'retour', user_path(@user) %></button>
@@ -57,4 +62,3 @@
 
 
 <p>=====================================</p>
-
