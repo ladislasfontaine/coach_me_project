@@ -1,52 +1,3 @@
-<h3>Navbar</h3>
-<!--
-<ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to "User Sign out", destroy_user_session_path, method: :delete %>
-    </li>
-
-    <li>
-      Voici ton email de user : <%= current_user.email %>
-    </li>
-
-    <li>
-      <%= link_to "User Edit email / password", edit_user_registration_path %>
-    </li>
-
-  <% elsif coach_signed_in? %>
-    <li>
-      <%= link_to "Coach Sign out", destroy_coach_session_path, method: :delete %>
-    </li>
-
-    <li>
-      Voici ton email de coach : <%= current_coach.email %>
-    </li>
-
-    <li>
-      <%= link_to "Coach Edit email / password", edit_coach_registration_path %>
-    </li>
-
-  <% else %>
-    <li>    
-      <%= link_to "User Sign in", new_user_session_path %>
-    </li>
-
-    <li>
-      <%= link_to "User Sign up", new_user_registration_path %>
-    </li>
-
-    <li>    
-      <%= link_to "Coach Sign in", new_coach_session_path %>
-    </li>
-
-    <li>
-      <%= link_to "Coach Sign up", new_coach_registration_path %>
-    </li>
-  <% end %>
-</ul>
--->
-
 <nav class="navbar fixed-top shadow-sm navbar-expand-lg navbar-light bg-light">
   <%= link_to 'CoachMe', root_path, class: "navbar-brand mr-5" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,13 +5,49 @@
   </button>
 
   <div class="collapse navbar-collapse bg-white justify-content-end" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to 'Acceuil', root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Trouver un coach', coaches_path, class: "nav-link" %>
+      </li>
+    </ul>
     <ul class="nav-item dropdown mt-3">
       <a class="mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-user-circle fa-lg"></i>
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to 'Coach', new_coach_registration_path, class: "dropdown-item" %>
-          <%= link_to "Sportif", new_user_registration_path, class: "dropdown-item" %>
+        <ul>
+          <% if user_signed_in? %>
+            <div class="d-flex justify-content-center my-2">
+              <% if current_user.first_name == nil %>
+                Bonjour !
+              <% else %>
+                Bonjour, <%= current_user.first_name %>
+              <% end %> 
+            </div>
+            <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Mon profil", user_path(current_user.id), class: "dropdown-item" %>
+            <%= link_to "Mes informations", edit_user_path(current_user.id), class: "dropdown-item" %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
+          <% elsif coach_signed_in? %>
+            <%= link_to "Mon compte", edit_coach_registration_path, class: "dropdown-item" %>
+            <%= link_to "Mon profil", coach_path(current_coach.id), class: "dropdown-item" %>
+            <%= link_to "Mes informations", edit_coach_path(current_coach.id), class: "dropdown-item" %>
+            <%= link_to "Se déconnecter", destroy_coach_session_path, method: :delete, class: "dropdown-item" %>
+
+          <% else %>
+            <h6 class="d-flex justify-content-center orange">Adhérent</h6>
+            <%= link_to "Connexion", new_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Inscription", new_user_registration_path, class: "dropdown-item"  %> 
+            <div class="dropdown-divider"></div>
+            <h6 class="d-flex justify-content-center orange">Coach</h6>
+            <%= link_to "Connexion", new_coach_session_path, class: "dropdown-item"  %>
+            <%= link_to "Inscription", new_coach_registration_path, class: "dropdown-item"  %>
+          <% end %>
+        </ul>
       </div>
     </ul>
   </div>

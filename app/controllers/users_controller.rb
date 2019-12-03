@@ -12,7 +12,8 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-
+    @cities = City.all
+    @objectives = Objective.all
   end
 
 
@@ -29,10 +30,10 @@ class UsersController < ApplicationController
         birth_date: params[:birth_date],
         phone_number: params[:phone_number],
         address: params[:address],
-        #: params[:city],
+        city: params[:city],
         zip_code: params[:zip_code],
         description: params[:description],
-        #objective: params[:objective]
+        objective: params[:objective]
       )
       flash[:notice] = "Ton profil utilisateur a bien été modifié."
       redirect_to(user_path(@user))

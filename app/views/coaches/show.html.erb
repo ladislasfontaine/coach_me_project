@@ -60,9 +60,34 @@
     Adresse :
     <div><%= @coach.address %></div>
     <div><%= @coach.zip_code %></div>
-    <div><%= @coach.city.name %></div>
+    <% if !@coach.city == nil %>
+      <div><%= @coach.city.name %></div>
+    <% end %>
 
     <p>==================</p>
+
+    <% if user_signed_in? %>
+      <h5>Réserver une séance</h5>
+
+      <%= form_tag seances_path, method: "post" do %>
+        <div class="form-group form-check">
+          <%= label_tag 'Date et Heure' %>
+          <%= datetime_field_tag 'start_date' %>
+        </div>
+        <div class="form-group form-check">
+          <%= label_tag 'Durée (min)' %>
+          <%= text_field_tag 'duration', "60" %>
+        </div>
+        <div class="form-group form-check">
+          <%= label_tag 'Lieu' %>
+          <%= text_field_tag 'place', "à domicile" %>
+        </div>
+        <%= hidden_field_tag :coach_id , @coach.id %>
+        <%= submit_tag "Réserver", class: "btn btn-primary" %>
+      <% end %>
+
+      <p>==================</p>
+    <% end %>
 
     Mes séances :
     <div>
@@ -74,12 +99,16 @@
           <div>Début : <%= seance.start_date %></div>
           <div>Durée : <%= seance.duration %>min</div>
           <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+          <%= link_to 'Voir', seance_path(seance.id) %>
+          <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
         <% end %>
         <h5>Séances passées</h5>
         <% @coach.seances.select{|seance| seance.start_date < Time.now }.each do |seance| %>
           <div>Début : <%= seance.start_date %></div>
           <div>Durée : <%= seance.duration %>min</div>
           <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+          <%= link_to 'Voir', seance_path(seance.id) %>
+          <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
         <% end %>
       <% end %>
     </div>

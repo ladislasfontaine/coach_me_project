@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :coaches
   devise_for :users
   resources :coaches
-  root to: "users#welcome"
   resources :users 
+  resources :seances
+   
+  root to: "users#welcome"
 end
