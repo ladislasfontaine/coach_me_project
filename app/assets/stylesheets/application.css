@@ -15,5 +15,6 @@
  *= require main
  *= require navbar
  *= require footer
+ *= require coaches
  *= require form
  */

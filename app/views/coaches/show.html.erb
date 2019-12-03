@@ -29,6 +29,29 @@
     <div><%= @coach.address %></div>
     <div><%= @coach.zip_code %></div>
     <div><%= @coach.city.name %></div>
+
+    <p>==================</p>
+
+    Mes séances :
+    <div>
+      <% if @coach.seances == [] %>
+        Pas encore de séances réservées
+      <% else %>
+        <h5>Séances à venir</h5>
+        <% @coach.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
+          <div>Début : <%= seance.start_date %></div>
+          <div>Durée : <%= seance.duration %>min</div>
+          <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+        <% end %>
+        <h5>Séances passées</h5>
+        <% @coach.seances.select{|seance| seance.start_date < Time.now }.each do |seance| %>
+          <div>Début : <%= seance.start_date %></div>
+          <div>Durée : <%= seance.duration %>min</div>
+          <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 
 </div>
