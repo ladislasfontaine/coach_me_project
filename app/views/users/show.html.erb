@@ -33,6 +33,7 @@
 
 <%if @user.avatar.attached?%>
   <%= image_tag @user.avatar, alt: 'avatar' %>
+  <%= link_to 'Changer la photo profil', edit_user_path(params[:id]) %>
 <%else%>
   <p>=== Il n'y a pas encore photo de profil ===</p>
   <%= link_to 'ajouter photo de profil', edit_user_path(params[:id]) %>
