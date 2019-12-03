@@ -21,6 +21,7 @@
 </div>
 
 <p>================</p>
+
 <% @user.seances.each do |seance| %>
   <tr>
     <td><%= seance.start_date %><td>
@@ -28,3 +29,21 @@
     <td><%= seance.place %><td>
   </tr>
 <% end %>
+
+
+
+<%if @user.avatar.attached?%>
+  <%= image_tag @user.avatar, alt: 'avatar' %>
+  <%= link_to 'Changer la photo profil', edit_user_path(params[:id]) %>
+<%else%>
+  <p>=== Il n'y a pas encore photo de profil ===</p>
+  <%= link_to 'ajouter photo de profil', edit_user_path(params[:id]) %>
+
+<%end%>
+
+
+<p>================</p>
+<div class="edit_setting">
+<button type="button" name="button"><%= link_to 'Editer mes informations', edit_user_path(@user) %></button>
+</div>
+

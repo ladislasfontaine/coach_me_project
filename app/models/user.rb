@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_many :data
   has_many :seances
   has_many :coaches, through: :seances
+  has_one_attached :avatar
   
 end
