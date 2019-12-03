@@ -11,6 +11,10 @@ class SeancesController < ApplicationController
     redirect_to coach_path(@coach.id)
   end
 
+  def show
+    @seance = Seance.find(params[:id])
+  end
+
   def destroy
     @seance = Seance.find(params[:id])
     if @seance.destroy

@@ -65,6 +65,7 @@
           <div>Début : <%= seance.start_date %></div>
           <div>Durée : <%= seance.duration %>min</div>
           <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+          <%= link_to 'Voir', seance_path(seance.id) %>
           <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
         <% end %>
         <h5>Séances passées</h5>
@@ -72,6 +73,7 @@
           <div>Début : <%= seance.start_date %></div>
           <div>Durée : <%= seance.duration %>min</div>
           <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+          <%= link_to 'Voir', seance_path(seance.id) %>
           <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
         <% end %>
       <% end %>
