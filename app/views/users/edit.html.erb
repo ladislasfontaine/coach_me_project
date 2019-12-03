@@ -25,7 +25,11 @@
 
     <div class="form-group form-check">
       <%= label_tag 'Date de naissance' %>
-      <%= datetime_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%dT%H:%M") %>
+      <% if @user.birth_date == nil %>
+        <%= datetime_field_tag 'birth_date'%>
+      <% else %>
+        <%= datetime_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%dT%H:%M") %>
+      <% end %>
     </div>
 
     <div class="phone_number">
