@@ -60,6 +60,7 @@
       <% if @coach.seances == [] %>
         Pas encore de séances réservées
       <% else %>
+      <%= line_chart current_coach.seances.group_by_day { |u| u.start_date} %>
         <h5>Séances à venir</h5>
         <% @coach.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
           <div>Début : <%= seance.start_date %></div>

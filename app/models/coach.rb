@@ -13,5 +13,6 @@ class Coach < ApplicationRecord
   has_one_attached :avatar
   has_one_attached :cover
   has_one_attached :diploma
+  
 
 end
