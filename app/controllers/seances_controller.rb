@@ -13,6 +13,9 @@ class SeancesController < ApplicationController
 
   def show
     @seance = Seance.find(params[:id])
+    @coach = @seance.coach
+    @user = @seance.user
+    @price = ((@seance.duration / 60).to_f * @coach.price)
   end
 
   def destroy

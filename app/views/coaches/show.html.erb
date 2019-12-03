@@ -28,7 +28,9 @@
     Adresse :
     <div><%= @coach.address %></div>
     <div><%= @coach.zip_code %></div>
-    <div><%= @coach.city.name %></div>
+    <% if !@coach.city == nil %>
+      <div><%= @coach.city.name %></div>
+    <% end %>
 
     <p>==================</p>
 
