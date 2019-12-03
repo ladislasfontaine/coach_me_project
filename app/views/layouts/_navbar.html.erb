@@ -45,3 +45,22 @@
     </li>
   <% end %>
 </ul>
+
+<nav class="navbar fixed-top shadow-sm navbar-expand-lg navbar-light bg-light">
+  <%= link_to 'CoachMe', root_path, class: "navbar-brand mr-5" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse bg-white justify-content-end" id="navbarColor03">
+    <ul class="nav-item dropdown mt-3">
+      <a class="mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user-circle fa-lg"></i>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to 'Coach', new_coach_registration_path, class: "dropdown-item" %>
+          <%= link_to "Sportif", new_user_registration_path, class: "dropdown-item" %>
+      </div>
+    </ul>
+  </div>
+</nav>
