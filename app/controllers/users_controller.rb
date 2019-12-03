@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 1364cd57282b97d0dc457502ff21f78798631337
   def welcome
 
   end
@@ -28,9 +24,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user_id])
-    @user.avatar.attach(params[:avatar])
-    redirect_to(user_path(@user))
+    @user = User.find(params[:id])
+    if ![:avatar].nil?
+      @user.avatar.purge
+      @user.avatar.attach(params[:avatar])
+      redirect_to(user_path(@user))
+    end # end if
   end
 
 end
