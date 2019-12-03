@@ -21,6 +21,7 @@
 </div>
 
 <p>================</p>
+
 <% @user.seances.each do |seance| %>
   <tr>
     <td><%= seance.start_date %><td>
@@ -29,13 +30,12 @@
   </tr>
 <% end %>
 
-<h3>Avatar actuel</h3>
+
 <%if @user.avatar.attached?%>
   <%= image_tag @user.avatar, alt: 'avatar' %>
 <%else%>
-  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+  <p>=== Il n'y a pas encore photo de profil ===</p>
+  <%= link_to 'ajouter photo de profil', edit_user_path(params[:id]) %>
+
 <%end%>
-<%= form_tag do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "uploader l'avatar" %>
-<% end %>
+
