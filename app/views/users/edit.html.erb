@@ -1,6 +1,7 @@
 <p>edit profil</p>
 <h3>Changer d'avatar ?</h3>
-<%= form_tag user_avatars_path(params[:id]), multipart: true do %>
-  <%= file_field_tag :avatar %>
+
+<%= form_tag user_path(params[:id]), multipart: true, method: :put do %>
+  <%= file_field_tag :users %>
   <%= submit_tag "mettre à jour" %>
 <% end %>

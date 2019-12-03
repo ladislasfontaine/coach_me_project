@@ -15,4 +15,11 @@ class UsersController < ApplicationController
   def edit
 
   end
+
+  def update
+    @user = User.find(params[:user_id])
+    @user.avatar.attach(params[:avatar])
+    redirect_to(user_path(@user))
+  end
+
 end
