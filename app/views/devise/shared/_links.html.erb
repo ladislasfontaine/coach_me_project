@@ -9,7 +9,9 @@
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+	<div class="btn btn-secondary mt-3 text-white mx-2">
+  	<%= link_to "Mot de passe oublié ?", new_password_path(resource_name) %><br />
+	</div>
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
