@@ -1,25 +1,21 @@
 class UsersController < ApplicationController
-
+  before_action :set_user, only: %i[show edit update]
   def welcome
 
   end
 
   def show
-    @user = User.find(params[:id])
     @seances = Seance.all
   end
 
 
   def edit
-    @user = User.find(params[:id])
     @cities = City.all
     @objectives = Objective.all
   end
 
 
   def update
-
-    @user = User.find(params[:id])
     @city = City.find(params[:city])
     @objective = Objective.find(params[:objective])
 
@@ -48,4 +44,9 @@ class UsersController < ApplicationController
 
   end
 
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
