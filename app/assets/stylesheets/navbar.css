@@ -14,3 +14,20 @@ a.nav-link {
 	font-size: 14px;
 	color: #868e96 !important;
 }
+
+.profil-picture img {
+	max-width: 50px;
+	max-height: 50px;
+}
+
+.img-rounded {
+	display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar-height {
+	height: 71px;
+}

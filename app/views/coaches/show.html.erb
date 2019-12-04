@@ -62,6 +62,9 @@
       <% if @coach.seances == [] %>
         Pas encore de séances réservées
       <% else %>
+
+     
+
         <h5>Séances à venir</h5>
         <% @coach.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
           <div>Début : <%= seance.start_date %></div>
