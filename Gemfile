@@ -62,11 +62,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # chartkick for graph
 gem 'chartkick'
-<<<<<<< HEAD
-=======
 gem 'groupdate'
- 
->>>>>>> development
 gem 'table_print'
 gem 'faker'
 gem 'devise'

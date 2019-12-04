@@ -6,6 +6,7 @@ class CoachesController < ApplicationController
   end
 
   def show
+    @seances = @coach.seances
   end
 
   def edit

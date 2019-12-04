@@ -92,3 +92,21 @@
 
 <%= link_to 'Modifier mes informations', edit_coach_path(params[:id]) %>
 <%= link_to 'Retour', coaches_path %>
+
+<p>==================</p>
+
+<div class="calendar-section">
+  <h2>Calendrier</h2>
+  <%= week_calendar events: @seances do |date, seances| %>
+    <%= date.day %>
+
+    <% seances.each do |seance| %>
+      <div>
+        <%= link_to seance_path(seance.id) do %>
+          Séance à 
+          <%= seance.start_date.strftime('%Hh%M') %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
