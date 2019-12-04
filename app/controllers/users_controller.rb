@@ -6,12 +6,15 @@ class UsersController < ApplicationController
 
   def show
     @seances = Seance.all
+    @objectives = Objective.all
   end
 
 
   def edit
     @cities = City.all
     @objectives = Objective.all
+    @data = Datum.all
+
   end
 
 
@@ -19,7 +22,7 @@ class UsersController < ApplicationController
     @city = City.find(params[:city])
     @objective = Objective.find(params[:objective])
 
-    if ![:avatar].nil?
+    if !params[:avatar].nil?
       @user.avatar.purge
       @user.avatar.attach(params[:avatar])
     end
