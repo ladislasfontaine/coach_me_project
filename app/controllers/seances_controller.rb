@@ -1,4 +1,5 @@
 class SeancesController < ApplicationController
+  before_action :set_seance, only: %i[show destroy]
 
   def create
     @coach = Coach.find(params[:coach_id])
@@ -12,14 +13,12 @@ class SeancesController < ApplicationController
   end
 
   def show
-    @seance = Seance.find(params[:id])
     @coach = @seance.coach
     @user = @seance.user
     @price = ((@seance.duration / 60).to_f * @coach.price)
   end
 
   def destroy
-    @seance = Seance.find(params[:id])
     if @seance.destroy
       flash[:notice] = "La séance est supprimée."
     else
@@ -27,5 +26,11 @@ class SeancesController < ApplicationController
     end
     # then redirect to coach_path(current_coach.id)
     redirect_to coaches_path
+  end
+
+  private
+
+  def set_seance
+    @seance = Seance.find(params[:id])
   end
 end

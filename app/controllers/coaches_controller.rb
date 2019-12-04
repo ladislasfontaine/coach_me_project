@@ -1,19 +1,17 @@
 class CoachesController < ApplicationController
+  before_action :set_coach, only: %i[show edit update]
 
   def index
     @coaches = Coach.all
   end
 
   def show
-    @coach = Coach.find(params[:id])
   end
 
   def edit
-    @coach = Coach.find(params[:id])
   end
 
   def update
-    @coach = Coach.find(params[:id])
     # check for images and attach them
     if !params[:avatar].nil?
       @coach.avatar.purge
@@ -45,6 +43,12 @@ class CoachesController < ApplicationController
       flash[:alert] = "Ton profil coach n'a pas pu être modifié."
       redirect_to edit_coach_path(params[:id])
     end
+  end
+
+  private
+
+  def set_coach
+    @coach = Coach.find(params[:id])
   end
 
 end
