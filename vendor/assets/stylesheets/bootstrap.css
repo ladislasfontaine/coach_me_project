@@ -163,13 +163,13 @@ sup {
 }
 
 a {
-  color: #4582EC;
+  color: #868e96;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #1559cf;
+  color: #868e96;
   text-decoration: underline;
 }
 
@@ -3285,11 +3285,31 @@ input[type="button"].btn-block {
 
 .dropdown-menu {
   position: absolute;
-  top: 170%;
+  top: 220%;
   left: -200% !important;
   z-index: 1000;
   display: none;
-  float: right;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1.063rem;
+  color: #343a40;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+.dropdown-menu-2 {
+  position: absolute;
+  top: 95%;
+  left: -20% !important;
+  z-index: 1000;
+  display: none;
+  float: left;
   min-width: 10rem;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
