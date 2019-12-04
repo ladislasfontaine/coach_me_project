@@ -41,6 +41,8 @@
 
     <% if user_signed_in? %>
       <div class="dropdown-menu dropdown-menu-2" aria-labelledby="navbarDropdown">
+      <% else %>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
     <% end %>
       <ul>
         <% if user_signed_in? %>
