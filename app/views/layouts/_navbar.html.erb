@@ -18,9 +18,9 @@
     <a class="mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <% if user_signed_in? %>
 
-      <% if current_user.avatar == nil && current_user.first_name == nil %>
+      <% if !current_user.avatar.attached? && current_user.first_name == nil %>
         <i class="fas fa-user-circle fa-lg"></i>
-      <% elsif current_user.avatar == nil %>
+      <% elsif !current_user.avatar.attached? %>
         <p class="small"><%= current_user.first_name %> <span> </span> <%= current_user.last_name %></p>
         <i class="fas fa-user-circle fa-lg"></i>
       <% else %>
@@ -41,6 +41,8 @@
 
     <% if user_signed_in? %>
       <div class="dropdown-menu dropdown-menu-2" aria-labelledby="navbarDropdown">
+      <% else %>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
     <% end %>
       <ul>
         <% if user_signed_in? %>

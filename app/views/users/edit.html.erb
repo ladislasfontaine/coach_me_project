@@ -22,9 +22,9 @@
     <div class="form-group form-check">
       <%= label_tag 'Date de naissance' %>
       <% if @user.birth_date == nil %>
-        <%= datetime_field_tag 'birth_date'%>
+        <%= date_field_tag 'birth_date'%>
       <% else %>
-        <%= datetime_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%dT%H:%M") %>
+        <%= date_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%d") %>
       <% end %>
     </div>
     <div class="phone_number">
