@@ -1,37 +1,69 @@
 <h2>  Profil Utilisateur  </h2>
 
+<p>===============</p>
 
+Mes Informations :
 <div class="name">
     <%= @user.first_name %>
     <%= @user.last_name %>
     <%= @user.description %>
+    <% if !@user.birth_date == nil %>
+      <%= @user.birth_date.strftime("%Y-%m-%dT%H:%M") %>
+    <% end %>
 </div>
 
-<div class="birth_date">
-    <%= @user.birth_date %>
-</div>
+<p>===============</p>
 
+Contact :
 <div class="phone">
     <%= @user.phone_number %>
 </div>
 
+<p>===============</p>
+
+Adresse :
 <div class="address">
   <%= @user.address %>
   <%= @user.zip_code %>
 </div>
 
-<p>================</p>
+<p>===============</p>
 
-<% @user.seances.each do |seance| %>
-  <tr>
-    <td><%= seance.start_date %><td>
-    <td><%= seance.duration %><td>
-    <td><%= seance.place %><td>
-  </tr>
+Ville :
+<div class="city">
+  <%= @user.city.name %>
+</div>
+
+<p>===============</p>
+
+Objectif :
+<div class="objective">
+  <%= @user.objective.description %>
+</div>
+
+<p>===============</p>
+
+Mes séances:
+
+<% if @user.seances == [] %>
+  Pas encore de séances réservées
+<% else %>
+  <h5>Séances à venir</h5>
+  <% @user.seances.select {|seance| seance.start_date > Time.now}.each do |seance| %>
+    <div class=""><%= seance.start_date.strftime("%Y-%m-%dT%H:%M") %></div>
+    <div class=""><%= seance.duration %> minutes</div>
+    <div class=""><%= seance.place %></div>
+  <% end %>
+  <h5>Séances passées</h5>
+  <% @user.seances.select {|seance| seance.start_date < Time.now}.each do |seance| %>
+    <div class=""><%= seance.start_date.strftime("%Y-%m-%dT%H:%M") %></div>
+    <div class=""><%= seance.duration %> minutes</div>
+    <div class=""><%= seance.place %></div>
+  <% end %>
 <% end %>
 
-
-
+<p>===============</p>
+Ma photo de profil :
 <%if @user.avatar.attached?%>
   <%= image_tag @user.avatar, alt: 'avatar' %>
   <%= link_to 'Changer la photo profil', edit_user_path(params[:id]) %>
@@ -46,4 +78,3 @@
 <div class="edit_setting">
 <button type="button" name="button"><%= link_to 'Editer mes informations', edit_user_path(@user) %></button>
 </div>
-

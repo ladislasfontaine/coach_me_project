@@ -6,7 +6,6 @@
 
 html, body {
 	margin: 0;
-	height: 100%;
 }
 
 p {
@@ -25,6 +24,10 @@ a:hover {
 	background-size: cover;
 	height: 50vh; 
 	width: 100%;
+}
+
+.small {
+	font-size: 14px;
 }
 
 /***************/
