@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    @url = 'https://coachmestaging.herokuapp.com//users/sign_in'
+    @url = 'http://localhost:3000/users/sign_in'
 
     mail(to: @user.email, subject: 'Bienvenue chez CoachMe !')
   end
