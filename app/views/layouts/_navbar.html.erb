@@ -39,11 +39,8 @@
     <% end %>
     </a>
 
-    <% if user_signed_in? %>
-      <div class="dropdown-menu dropdown-menu-2" aria-labelledby="navbarDropdown">
-      <% else %>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <% end %>
+
+    <div class="dropdown-menu dropdown-menu-perso" aria-labelledby="navbarDropdown">
       <ul>
         <% if user_signed_in? %>
           <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>

@@ -36,3 +36,10 @@ a.nav-link {
 .navbar-height {
 	height: 71px;
 }
+
+.dropdown-menu-perso {
+	position: absolute;
+	top: 90px;
+	right: 9px;
+	width: 200px;
+}
