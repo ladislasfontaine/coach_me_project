@@ -93,3 +93,8 @@ a:hover {
 .fa-chevron-left:hover, .fa-chevron-right:hover {
 	text-shadow:2px 3px #868E96;
 }
+.buttom_sinscrire{
+	display:flex;
+	justify-content: space-around;
+	text-align: center;
+}

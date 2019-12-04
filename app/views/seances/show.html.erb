@@ -1,25 +1,53 @@
-<h2>Séance Show</h2>
 
-<div>
-  <div>====== SEANCE ======</div>
-  <div>Quand ? Le <%= @seance.start_date %></div>
-  <div>Combient de temps ? <%= @seance.duration %>min</div>
-  <div>Où ? Rdv <%= @seance.place %></div>
-  <div>Prix ? <%= @price %>€</div>
+<div class="seance_show_html">
+<!-- coach card -->
+  <div class="coach_card">
+    <div class="card" style="width: 18rem;">
+      <img src="app/assets/images/coach_test.jpg" class="card-img-top" alt="coach_test">
+        <div class="card-body">
+          <p><div><%= @seance.coach.phone_number %></div></p>
+        <p class="card-text">
+          <%= @seance.coach.first_name %> <%= @seance.coach.last_name %></p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- user card -->
+  <div class="user_card">
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <p><%= @seance.user.first_name %> <%= @seance.user.last_name %></p>
+
+        <p class="card-text">
+        <%= @seance.user.address %></p>
+        <%= @seance.user.zip_code %> <%= @seance.user.city.name %>
+        <br>
+        <%= @seance.user.phone_number %>
+      </div>
+    </div>
+  </div>
+
+<!-- Seance show -->
+  <div class="seance_show">
+     <div class="card" style="width: 18rem;">       
+          <div class="card-body">          
+            <p class="card-text">
+              Quand ? Le <%= @seance.start_date %>
+              <br>
+              Combient de temps ? <%= @seance.duration %>min
+              <br>
+              Où ? Rdv <%= @seance.place %>
+              <br>
+              Prix ? <%= @price %>€
+            </p>
+        </div>
+    </div>
+  </div>
+
+
 </div>
 
-<div>
-  <div>====== USER ======</div>
-  <div><%= @seance.user.first_name %> <%= @seance.user.last_name %></div>
-  <div><%= @seance.user.address %></div>
-  <div><%= @seance.user.zip_code %> <%= @seance.user.city.name %></div>
-  <div><%= @seance.user.phone_number %></div>
 
-</div>
 
-<div>
-  <div>====== COACH ======</div>
-  <div><%= @seance.coach.first_name %> <%= @seance.coach.last_name %></div>
-  <div><%= @seance.coach.phone_number %></div>
-
-</div>
