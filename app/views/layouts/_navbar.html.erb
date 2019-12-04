@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse bg-white justify-content-end" id="navbarColor03">
+  <div class="collapse navbar-height navbar-collapse bg-white justify-content-end" id="navbarColor03">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <%= link_to 'Accueil', root_path, class: "nav-link" %>
@@ -13,42 +13,61 @@
         <%= link_to 'Trouver un coach', coaches_path, class: "nav-link" %>
       </li>
     </ul>
+
     <ul class="nav-item dropdown mt-3">
-      <a class="mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <% if user_signed_in? %>
+
+      <% if current_user.avatar == nil && current_user.first_name == nil %>
         <i class="fas fa-user-circle fa-lg"></i>
-      </a>
+      <% elsif current_user.avatar == nil %>
+        <p class="small"><%= current_user.first_name %> <span> </span> <%= current_user.last_name %></p>
+        <i class="fas fa-user-circle fa-lg"></i>
+      <% else %>
+        <div class="row mr-3">
+          <div class="mr-3 mt-3">
+            <p class="small"><%= current_user.first_name %> <span> </span> <%= current_user.last_name %></p>
+          </div>
+          <div class="profil-picture">
+            <%= image_tag current_user.avatar, class:'img-rounded', alt: 'avatar' %>
+          </div>
+        </div>
+      <% end %>
+
+    <% else %>
+      <i class="fas fa-user-circle fa-lg"></i>
+    <% end %>
+    </a>
+
+    <% if user_signed_in? %>
+      <div class="dropdown-menu dropdown-menu-2" aria-labelledby="navbarDropdown">
+      <% else %>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <ul>
-          <% if user_signed_in? %>
-            <div class="d-flex justify-content-center my-2">
-              <% if current_user.first_name == nil %>
-                Bonjour !
-              <% else %>
-                Bonjour, <%= current_user.first_name %>
-              <% end %> 
-            </div>
-            <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "Mon profil", user_path(current_user.id), class: "dropdown-item" %>
-            <%= link_to "Mes informations", edit_user_path(current_user.id), class: "dropdown-item" %>
-            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    <% end %>
+      <ul>
+        <% if user_signed_in? %>
+          <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "Mon profil", user_path(current_user.id), class: "dropdown-item" %>
+          <%= link_to "Mes informations", edit_user_path(current_user.id), class: "dropdown-item" %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
-          <% elsif coach_signed_in? %>
-            <%= link_to "Mon compte", edit_coach_registration_path, class: "dropdown-item" %>
-            <%= link_to "Mon profil", coach_path(current_coach.id), class: "dropdown-item" %>
-            <%= link_to "Mes informations", edit_coach_path(current_coach.id), class: "dropdown-item" %>
-            <%= link_to "Se déconnecter", destroy_coach_session_path, method: :delete, class: "dropdown-item" %>
+        <% elsif coach_signed_in? %>
+          <%= link_to "Mon compte", edit_coach_registration_path, class: "dropdown-item" %>
+          <%= link_to "Mon profil", coach_path(current_coach.id), class: "dropdown-item" %>
+          <%= link_to "Mes informations", edit_coach_path(current_coach.id), class: "dropdown-item" %>
+          <%= link_to "Se déconnecter", destroy_coach_session_path, method: :delete, class: "dropdown-item" %>
 
-          <% else %>
-            <h6 class="d-flex justify-content-center orange">Adhérent</h6>
-            <%= link_to "Connexion", new_user_session_path, class: "dropdown-item" %>
-            <%= link_to "Inscription", new_user_registration_path, class: "dropdown-item"  %> 
-            <div class="dropdown-divider"></div>
-            <h6 class="d-flex justify-content-center orange">Coach</h6>
-            <%= link_to "Connexion", new_coach_session_path, class: "dropdown-item"  %>
-            <%= link_to "Inscription", new_coach_registration_path, class: "dropdown-item"  %>
-          <% end %>
-        </ul>
-      </div>
+        <% else %>
+          <h6 class="d-flex justify-content-center orange">Adhérent</h6>
+          <%= link_to "Connexion", new_user_session_path, class: "dropdown-item" %>
+          <%= link_to "Inscription", new_user_registration_path, class: "dropdown-item"  %> 
+          <div class="dropdown-divider"></div>
+          <h6 class="d-flex justify-content-center orange">Coach</h6>
+          <%= link_to "Connexion", new_coach_session_path, class: "dropdown-item"  %>
+          <%= link_to "Inscription", new_coach_registration_path, class: "dropdown-item"  %>
+        <% end %>
+      </ul>
+    </div>
     </ul>
   </div>
 </nav>
