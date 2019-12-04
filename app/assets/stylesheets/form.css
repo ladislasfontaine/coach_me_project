@@ -6,16 +6,27 @@
 	border: 1px #ff5630 solid !important;
 }
 
-.background_form {
-	top: 5%;
+.overflow-y-hidden {
 	position: absolute;
+	top: -2%;
+	left: 0;
 	width: 100%;
 	height: 100vh;
+	overflow-y: hidden;
+}
+
+.background_form {
+	top: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2000;
 }
 
 .background_form_img {
+	position: fixed;
 	width: 100%;
-	height: 110vh;
+	height: 100%;
 	background: no-repeat center; 
 	background-size: cover;
 	object-fit: cover;
@@ -24,13 +35,14 @@
 .box-form {
 	background: #fff;
 	position: relative;
-	margin-top: 100px;
+	margin-top: 50px;
 	height: 680px;
 	width: 600px;
 	padding: 48px 88px;
 	border: 2px #E9ECEF solid;
 	border-radius: 20px;
 	box-shadow: 0px 10px 20px #868E96;
+	z-index: 2100;
 }
 
 .box-form-sm {
@@ -43,6 +55,7 @@
 	border: 2px #E9ECEF solid;
 	border-radius: 20px;
 	box-shadow: 0px 10px 20px #868E96;
+	z-index: 2100;
 }
 
 .box-form-lg {
@@ -55,6 +68,7 @@
 	border: 2px #E9ECEF solid;
 	border-radius: 20px;
 	box-shadow: 0px 10px 20px #868E96;
+	z-index: 2100;
 }
 
 .box-form p {

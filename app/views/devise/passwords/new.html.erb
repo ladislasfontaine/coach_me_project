@@ -1,34 +1,38 @@
-<div class="background_form">
-	 <%= image_tag("background-form.jpg", class:'background_form_img', alt:"fond d'image") %>
-</div>
+<div class="overflow-y-hidden">
 
-<div class="d-flex justify-content-center align-items-center mb-5 pb-5">
-  <div class="box-form-sm text-center">
+	<div class="background_form">
+		 <%= image_tag("background-form.jpg", class:'background_form_img', alt:"fond d'image") %>
+	</div>
 
-    <h1 class="orange">CoachMe</h1>
-    <hr>
-    <h4 class="mt-3">Mot de passe oublié ?</h4>
+	<div class="d-flex justify-content-center align-items-center mb-5 pb-5">
+	  <div class="box-form-sm text-center">
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  		<%= render "devise/shared/error_messages", resource: resource %>
+	    <h1 class="orange">CoachMe</h1>
+	    <hr>
+	    <h4 class="mt-3">Mot de passe oublié ?</h4>
 
-      <div class="field form my-2">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
-        <label for="email" class="label-name">
-          <span class="content-name"><%= f.label :email %><br /></span>
-        </label>
-      </div>
+	    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+	  		<%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="actions mb-5">
-        <%= f.submit "Envoyer moi les instructions", class:"btn btn-primary mt-3" %>
-      </div>
+	      <div class="field form my-2">
+	        <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
+	        <label for="email" class="label-name">
+	          <span class="content-name"><%= f.label :email %><br /></span>
+	        </label>
+	      </div>
 
-    <% end %>
+	      <div class="actions mb-5">
+	        <%= f.submit "Envoyer moi les instructions", class:"btn btn-primary mt-3" %>
+	      </div>
 
-    <hr>
-    <div class="decoration-none mt-3">
-      <%= render "devise/shared/links"%>
-    </div>
-  
-  </div>
+	    <% end %>
+
+	    <hr>
+	    <div class="decoration-none mt-3">
+	      <%= render "devise/shared/links"%>
+	    </div>
+	  
+	  </div>
+	</div>
+
 </div>
