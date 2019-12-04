@@ -1,4 +1,6 @@
 class Coach < ApplicationRecord
+  after_create :default_city
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -14,4 +16,8 @@ class Coach < ApplicationRecord
   has_one_attached :cover
   has_one_attached :diploma
 
+  def default_city
+    @city = City.first
+    self.update(city: @city)
+  end
 end

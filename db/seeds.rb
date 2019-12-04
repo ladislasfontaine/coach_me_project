@@ -25,10 +25,9 @@ specialties = []
 seances = []
 
 
-cities_initialize = ["Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
-objectives_initialize = ["Perdre du poids", "Gagner en masse musculaire", "Préparer une compétition", "Juste pour le fun", "Réduire mon stress"]
+objectives_initialize = ["A définir", "Perdre du poids", "Gagner en masse musculaire", "Préparer une compétition", "Juste pour le fun", "Réduire mon stress"]
 specialties_initialize = ["Boxe", "Yoga", "Course"]
-cities_initialize = ["Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
+cities_initialize = ["A définir", "Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
 durations_initialize = [60, 90, 120]
 
 cities_initialize.each do |city|

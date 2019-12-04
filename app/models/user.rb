@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  after_create :default_city
+  after_create :default_objective
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,4 +14,13 @@ class User < ApplicationRecord
   has_many :coaches, through: :seances
   has_one_attached :avatar
   
+  def default_city
+    @city = City.first
+    self.update(city: @city)
+  end
+
+  def default_objective
+    @objective = Objective.first
+    self.update(objective: @objective)
+  end
 end
