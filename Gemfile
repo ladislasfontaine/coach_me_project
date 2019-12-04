@@ -66,3 +66,4 @@ gem 'table_print'
 gem 'faker'
 gem 'devise'
 gem 'jquery-rails'
+gem "simple_calendar", "~> 2.0"

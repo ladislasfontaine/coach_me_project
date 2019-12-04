@@ -1,0 +1,41 @@
+.calendar-section {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 60%;
+  height: 40%;
+}
+
+.simple-calendar .table {
+  height: 100%;
+  max-height: 400px;
+}
+
+.simple-calendar {
+  height: 100%;
+  .day {
+    width: 5%;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background-color: rgba(255, 208, 119, 0.637);
+  }
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+}
