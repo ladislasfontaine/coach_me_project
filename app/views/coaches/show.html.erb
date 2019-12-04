@@ -1,3 +1,35 @@
+
+
+<div class="container-fluid">
+
+  <div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="images/macbook.png" class="card-img" alt="coach picture">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <div><%= @coach.first_name %> <%= @coach.last_name %>
+        <h5 class="card-title"></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
 <h2>Page Show Coach - <%= @coach.first_name %></h2>
 
 <div>
@@ -92,21 +124,3 @@
 
 <%= link_to 'Modifier mes informations', edit_coach_path(params[:id]) %>
 <%= link_to 'Retour', coaches_path %>
-
-<p>==================</p>
-
-<div class="calendar-section">
-  <h2>Calendrier</h2>
-  <%= week_calendar events: @seances do |date, seances| %>
-    <%= date.day %>
-
-    <% seances.each do |seance| %>
-      <div>
-        <%= link_to seance_path(seance.id) do %>
-          Séance à 
-          <%= seance.start_date.strftime('%Hh%M') %>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
