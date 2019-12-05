@@ -1,67 +1,134 @@
+<div class="container py-2">
+    <div class="row my-2">
+       
+ <!-- edit form column -->
+        <div class="col-lg-4"> 
+         <%= form_tag user_path(@user), method: "put", multipart: true do %>
+            <h2 class="text-center font-weight-light"> Modifier Mon Profil </h2>
+        </div>
+<!-- alert -->
+        <div class="col-lg-8 ">
+            <div class="alert alert-info alert-dismissable"> <a class="panel-close close" data-dismiss="alert">×</a> This is an <strong>.alert</strong>. Use this to show important messages to the user. </div>
+        </div>
+        <!-- User Info -->
+        <div class="col-lg-8">
+            <form role="form">
+                <div class="form-group row">
 
-<p>edit profil</p>
+                    <div class="col-lg-3 col-form-label form-control-label">
+                    <%= label_tag 'Prenom' %>
+                    </div>
+                    <div class="col-lg-9 form-group">
+                      <%= text_field_tag 'first_name', @user.first_name, class: 'form-control'%>
+                    </div>
 
-<div>
-  <%= form_tag user_path(@user), method: "put", multipart: true, class: "form-group" do %>
-  <p>========== Image ============</p>
-  <h3>Changer d'avatar ?</h3>
-    <div class="form-group form-check">
-      <%= label_tag 'Photo de profil' %>
-      <%= file_field_tag :avatar %>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-3 col-form-label form-control-label">
+                      <%= label_tag 'Nom'%>
+                    </div>
+
+                    <div class="col-lg-9">
+                        <%= text_field_tag 'last_name', @user.last_name, class: 'form-control'%>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-3 col-form-label form-control-label">
+                      <%= label_tag 'Email'%>
+                    </div>
+
+                    <div class="col-lg-9">
+                        <%= text_field_tag 'email', @user.email, class: 'form-control'%>
+                    </div>
+                </div>
+                <!-- address -->
+                <div class="form-group row">
+                    <div class="col-lg-3 col-form-label form-control-label">
+                      <%= label_tag 'Adresse'%>
+                    </div>
+                    <div class="col-lg-9">
+                        <%= text_field_tag 'address', @user.address, class: 'form-control' %>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-3 col-form-label form-control-label">
+                       <%= label_tag 'zip code' %>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <%= text_field_tag 'zip_code', @user.zip_code, class: 'form-control' %>
+                    </div>
+                    <div class="col-lg-3">
+                         <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+                    </div>
+                </div>
+                <!-- Birth_date -->
+                <div class="form-group row">
+                  <div class="col-lg-3 col-form-label form-control-label">
+                    <%= label_tag 'Date de naissance' %>
+                     </div>
+                     <div class="col-lg-4">
+                    <% if @user.birth_date == nil %>
+                      <%= date_field_tag 'birth_date', class: 'form-control'%>
+                    <% else %>
+                      <%= date_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%d"), class: 'form-control' %>
+                    <% end %>
+                  </div>
+                </div>
+  
+                <div class="form-group row">
+                    <div class="col-lg-3 col-form-label form-control-label">
+                      <%= label_tag 'Téléphone'%>
+                    </div>
+                    <div class="col-lg-4">
+                        <%= text_field_tag 'phone_number', @user.phone_number, class: 'form-control' %>
+                    </div>
+                </div>
+
+<!-- Descriptions -->
+                <div class="form-group row">
+                    <div class="col-lg-3 col-form-label form-control-label">
+                      <%= label_tag 'Description'%>
+                    </div>
+                    <div class="col-lg">
+                        <%= text_area_tag 'description', @user.description, class: 'form-control'%>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="password" value="11111122333" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="password" value="11111122333" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-9 ml-auto text-right">
+                        <input type="reset" class="btn btn-outline-secondary" value="Cancel" />
+                        <input type="button" class="btn btn-primary" value="Save Changes" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 order-lg-0 text-center">
+            <img src="//api.adorable.io/avatars/120/trickst3r.png" class="mx-auto img-fluid rounded-circle" alt="avatar" />
+            <h6 class="my-4">Upload a new photo</h6>
+            <div class="input-group px-lg-4">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile02">
+                    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                    <button class="btn btn-secondary"><i class="fa fa-upload"></i></button>
+                </div>
+            </div>
+            <% end %>
+        </div>
+
     </div>
-  <p>========== INFOS ============</p>
-    <div class="form-group form-check">
-      <p>Mes informations utilisateur</p>
-      <%= label_tag 'Prénom'%>
-      <%= text_field_tag 'first_name', @user.first_name %>
-    </div>
-    <div class="form-group form-check">
-      <%= label_tag 'Nom'%>
-      <%= text_field_tag 'last_name', @user.last_name %>
-    </div>
-    <div class="form-group form-check">
-      <%= label_tag 'Date de naissance' %>
-      <% if @user.birth_date == nil %>
-        <%= date_field_tag 'birth_date'%>
-      <% else %>
-        <%= date_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%d") %>
-      <% end %>
-    </div>
-    <div class="phone_number">
-      <%= label_tag 'Téléphone'%>
-      <%= text_field_tag 'phone_number', @user.phone_number %>
-    </div>
-    <div class="email">
-      <%= label_tag 'email'%>
-      <%= text_field_tag 'email', @user.email %>
-    </div>
-
-  <p>========== address ============</p>
-    <div class="address">
-      <%= label_tag 'adresse'%>
-      <%= text_field_tag 'address', @user.address %>
-    </div>
-    <div class="zip_code">
-      <%= label_tag 'zip code'%>
-      <%= text_field_tag 'zip_code', @user.zip_code %>
-    </div>
-
-  <p>========== Ville Dropdown ============</p>
-
-  <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name") %>
-
-  <p>========== Description ============</p>
-    <div class="description">
-      <%= label_tag 'description'%>
-      <%= text_area_tag 'description', @user.description %>
-    </div>
-
-  <p>========== Objectif Dropdown ============</p>
-
-  <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description") %>
-
-
-  <%= submit_tag "Modifier", class: "btn btn-primary" %>
-    <button type="button" name="button"> <%= link_to 'retour', user_path(@user) %></button>
-  <% end %>
 </div>
+ 
