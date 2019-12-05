@@ -33,6 +33,7 @@
   transform: translateY(-100px);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .avatar-image {
@@ -101,8 +102,20 @@
 .calendar-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.calendar-form h2 {
+  margin: 20px 0;
+}
+
+.calendar-form form {
+  margin-bottom: 50px;
+}
+
+.calendar-form .form-check {
+  padding-left: 0;
 }
 
 .calendar-form form {
@@ -113,12 +126,8 @@
   align-items: center;
 }
 
-.calendar-form label {
-  
-}
-
-.calendar-form input {
-  
+.coach-form-group {
+  width: 95%;
 }
 
 .calendar-form .btn {
