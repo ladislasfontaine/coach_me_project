@@ -1,6 +1,7 @@
 .navbar.fixed-top {
 	position: fixed;
 	border: 1px transparent solid;
+	position: fixed;
 }
 
 .navbar-brand {

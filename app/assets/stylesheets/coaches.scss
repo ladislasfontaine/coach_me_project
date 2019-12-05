@@ -170,7 +170,8 @@ object-fit: cover;
 .card-group
 {
 display: flex;
-width: 100%
+width: 100%;
+
 }
 
 .cards
@@ -178,6 +179,7 @@ width: 100%
 width: 60%;
 display: flex;
 flex-wrap: wrap;
+
 }
 
 .card-informations
@@ -200,7 +202,6 @@ padding-left: 10px;
 .map {
 width: 40%;
 height: 100vh;
-background-color: red;
 }
 
 .photo-profil img
@@ -216,4 +217,23 @@ left: 90px;
 {
 object-fit: cover;
 height: 140px;
+}
+
+.map
+{
+width: 40%;
+height: 100vh;
+
+
+
+}
+
+.find_map
+{
+width: 100%;
+height: 100%;
+position: fixed;
+object-fit: cover;
+
+
 }
