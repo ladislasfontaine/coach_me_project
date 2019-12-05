@@ -1,15 +1,24 @@
-<h2>Page Index Coach</h2>
-
-<% @coaches.each do |coach| %>
-  <p>
-    <div><%= coach.first_name %> <%= coach.last_name %></div>
-    <div><%= coach.city.name %></div>
-    <div><%= coach.price %>€ / heure</div>
-    <div>
-      <% coach.specialties.each do |specialty| %>
-        <div><%= specialty.name %></div>
+<div class="card-group">
+    <div class="cards">
+	   <% @coaches.each do |coach| %>
+      <div class="card mx-5 mb-5 text-center mt-7" style="width: 275px; max-width: 275px;">
+        <%= image_tag "coach_test.jpg", height: "250", class: "coach_image" %>
+          <div class="photo-profil">
+             <img height="100" width="100" class="profil-picture" src="https://ruedesvignerons-548724.c.cdn77.org/upload/domains/900/url_photo_profil/photo-1564585881.jpg" alt="">
+          </div>
+            <div class="card-informations">
+              <h5 class="card-title"><a href="<%= coach_path(coach.id) %>"> <%= coach.first_name %> <%= coach.last_name %> </a></h5>
+              <div> <%= coach.price %>€ / heure </div>
+              <div> <%= coach.city.name %> </div>
+              <div> <%= coach.reviewed %> </div>
+              <div> <%= coach.specialties.name %> </div>
+            </div>
+            <div class="button_booked">
+              <%= link_to 'Book', coach_path(coach.id),  class: "btn btn-primary" %>
+            </div>
+      </div>
       <% end %>
-    </div>
-    <%= link_to 'Voir', coach_path(coach.id) %>
-  </p>
-<% end %>
+    </div> <!-- End of cards class -->
+        <div class="map">
+        </div>
+</div>
