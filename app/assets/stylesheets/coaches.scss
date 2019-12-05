@@ -2,15 +2,78 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.cover-image {
+
+.coach-jumbotron {
   width: 100%;
-  height: 400px;
+  height: 300px;
+  background: rgb(204, 204, 204);
+}
+
+.coach-jumbotron .cover-image {
   object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.coach-jumbotron h2 {
+  color: white;
+  font-size: 4em;
+  position: absolute;
+  top: 280px;
+  left: 300px;
+}
+
+.profile-pic {
+  width: 25%;
+  min-width: 280px;
+  height: 200px;
+  position: absolute;
+  top: 371px;
+  transform: translateY(-100px);
+  display: flex;
+  justify-content: center;
 }
 
 .avatar-image {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  object-fit: cover;
+  border: 10px solid rgb(77, 77, 77);
+}
+
+.public-section {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+}
+
+.coach-col {
+  height: 100%;
+}
+
+/* INFOS */
+
+.coach-infos {
+  width: 25%;
+  min-width: 280px;
+  margin: 5px;
+  background: rgb(226, 226, 226);
+  border-radius: 5px;
+  height: 603px;
+}
+
+/* CALENDAR FORM */
+
+
+/* CALENDAR */
+
+.calendar-form {
+  width: 25%;
+
+}
+
+.calendar-section {
+  width: 50%;
+
 }

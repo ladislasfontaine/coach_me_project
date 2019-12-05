@@ -1,17 +1,57 @@
 
+<div class="coach-jumbotron">
+  <% if @coach.cover.attached? %>
+    <%= image_tag @coach.cover, alt: 'Photo de couverture', class: 'cover-image' %>
+  <% end %>
+  <h2>Coach <%= @coach.first_name %></h2>
+  <div class="profile-pic">
+    <% if @coach.avatar.attached? %>
+      <%= image_tag @coach.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="public-section">
+  <div class="coach-col coach-infos">
+    <div class="coach-name"><%= @coach.first_name %> <%= @coach.last_name %></div>
+    <div class="coach-specialties">
+      <% @coach.specialties.each do |specialty| %>
+        <div class="coach-specialty"><%= specialty.name %></div>
+      <% end %>
+    </div>
+    <div class="coach-city"><%= @coach.city.name %></div>
+    <div class="coach-price"><%= @coach.price %>€ / heure</div>
+    <div class="coach-description"></div>
+  </div>
+  <div class="coach-col calendar-form"></div>
+  <div class="coach-col calendar-section">
+  <h2>Calendrier</h2>
+  <%= week_calendar events: @seances do |date, seances| %>
+    <%= date.day %>
+
+    <% seances.each do |seance| %>
+      <div>
+        <%= link_to seance_path(seance.id) do %>
+          Séance à 
+          <%= seance.start_date.strftime('%Hh%M') %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+</div>
+
+
+
+
+
 <h2>Page Show Coach - <%= @coach.first_name %></h2>
 
 <div>
 
-  <% if @coach.cover.attached? %>
-    <%= image_tag @coach.cover, alt: 'Photo de couverture', class: 'cover-image' %>
-  <% end %>
 
-  <% if @coach.avatar.attached? %>
-    <%= image_tag @coach.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
-  <% else %>
-    <p>=== Il n'y a pas encore d'avatar lié à ce coach ===</p>
-  <% end %>
+
+  
 
   <div>
     Informations :

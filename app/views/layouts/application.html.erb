@@ -20,7 +20,9 @@
     <div id="main">
       <%= render 'layouts/navbar' %>
 
-      <p class="notice alert"><%= notice %><%= alert %></p>
+      <% if !notice.nil? || !alert.nil? %>
+        <p class="notice alert"><%= notice %><%= alert %></p>
+      <% end %>
 
       <%= yield %>
 
