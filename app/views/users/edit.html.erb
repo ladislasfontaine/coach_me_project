@@ -75,9 +75,9 @@
               <%= label_tag 'Date de naissance' %>
               <div class="mt-1">
                 <% if @user.birth_date == nil %>
-                  <%= date_field_tag 'birth_date'%>
+                  <%= date_field_tag 'birth_date', "", class: 'form-control' %>
                 <% else %>
-                  <%= date_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%d")%>
+                  <%= date_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%d"), class: 'form-control' %>
                 <% end %>
               </div>
             </div>
