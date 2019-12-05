@@ -69,3 +69,4 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'letter_opener', :group => :development
 gem 'dotenv-rails'
+gem "simple_calendar", "~> 2.0"

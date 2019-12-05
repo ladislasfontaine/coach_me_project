@@ -245,6 +245,9 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 button {
@@ -2051,10 +2054,10 @@ pre code {
   border: 0;
 }
 
-.form-control:focus {
+.form-control:focus, .form-control:hover {
   color: #495057;
   background-color: #fff;
-  border-color: #b9d0f8;
+  border-color: #ff5630;
   outline: 0;
   box-shadow: none;
 }
@@ -3301,11 +3304,6 @@ input[type="button"].btn-block {
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
-}
-
-.dropdown-menu-2 {
-  top: 95% !important;
-  left: -20% !important;
 }
 
 .dropdown-menu-left {
@@ -5747,9 +5745,9 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .list-group-item.active {
   z-index: 2;
-  color: #fff;
-  background-color: #4582EC;
-  border-color: #4582EC;
+  color: #495057;
+  background: #E9ECEF;
+  border-color: #E9ECEF;
 }
 
 .list-group-horizontal {
