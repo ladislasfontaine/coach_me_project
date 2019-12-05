@@ -1,6 +1,6 @@
- <div class="background-seances">
-     <%= image_tag("background-seances.jpg",alt:"fond d'image")%>
-  </div>
+
+     <%= image_tag("background-seances.jpg", class:'background_seances', alt:"fond d'image")%>
+  
 
 
 <div class="h1_resa">
@@ -10,22 +10,29 @@
 
 
 <!-- coach card -->
-  <div class="coach_card" style="width: 18rem";>
+  <div class="coach_card" style="width: 20rem";>
     <div class="card">
-      <img src="app/assets/images/coach_test.jpg" class="card-img-top" alt="coach_test">
+      
+      <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
+    <div class="text_card_seances_show">
         <div class="card-body">
-          <p><%= @seance.coach.phone_number %></p>
+         <p><%= @seance.coach.first_name %>
+          <br>
+          <br>
+          <%= @seance.coach.last_name %>
+          </p>
           <p class="card-text">
-          <%= @seance.coach.first_name %> <%= @seance.coach.last_name %></p>
+            <%= @seance.coach.phone_number %>
+           </p>
+         </div>
       </div>
     </div>
   </div>
 
-
-
 <!-- Seance show -->
-  <div class="seance_show" style="width: 18rem";>
+  <div class="seance_show" style="width: 30rem";>
      <div class="card">       
+      
           <div class="card-body">          
             <p class="card-text">
               Quand ? Le <%= @seance.start_date %>
@@ -42,9 +49,11 @@
 
 
 <!-- user card -->
-  <div class="user_card" style="width: 18rem";>
+  <div class="user_card" style="width: 20rem";>
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+   
+       <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
+    
       <div class="card-body">
         <p><%= @seance.user.first_name %> <%= @seance.user.last_name %></p>
         <p class="card-text">
