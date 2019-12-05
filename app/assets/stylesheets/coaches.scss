@@ -58,22 +58,87 @@
   width: 25%;
   min-width: 280px;
   margin: 5px;
-  background: rgb(226, 226, 226);
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   height: 603px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 20px;
+  padding-top: 110px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.coach-name {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.coach-specialty {
+  background-color: #adb5bd;
+  font-weight: bolder;
+  padding: 4px 6px;
+  margin: 2px;
+  border-radius: 5px;
+  color: rgb(59, 59, 59);
+}
+
+.coach-description {
+  text-align: center;
+}
+
+.coach-price {
+  font-size: 26px;
+}
+
+.coach-city {
+  text-align: center;
 }
 
 /* CALENDAR FORM */
+.calendar-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.calendar-form form {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.calendar-form label {
+  
+}
+
+.calendar-form input {
+  
+}
+
+.calendar-form .btn {
+  width: 40%;
+}
 
 /* CALENDAR */
 
 .calendar-form {
   width: 25%;
-
+  min-width: 280px;
 }
 
 .calendar-section {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+.calendar-section h2 {
+  margin: 20px 0;
 }
