@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :coaches
   resources :users 
   resources :seances
+  resources :objectives #, only: [:show, :edit, :update, :destroy]
    
   root to: "users#welcome"
 end

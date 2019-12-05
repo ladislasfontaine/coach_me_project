@@ -1,0 +1,15 @@
+  <div class="container">
+    <% if @user.objective %>
+    <% @user.objective == 0 %>
+    
+    <p>Vous avez pas encore des objectives</p>
+    <% else %>
+    <ul class="justify-content-center">
+      <% @objectives.each do |objective| %>
+      <li class="list-group-item">
+        <%= @user.objective.description %>
+      </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
