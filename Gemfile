@@ -63,9 +63,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # chartkick for graph
 gem 'chartkick'
 gem 'groupdate'
- 
 gem 'table_print'
 gem 'faker'
 gem 'devise'
 gem 'jquery-rails'
-gem "simple_calendar", "~> 2.0"
+gem 'letter_opener', :group => :development
+gem 'dotenv-rails'

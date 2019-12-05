@@ -14,36 +14,35 @@
       </li>
     </ul>
 
-    <ul class="nav-item dropdown mt-3">
-    <a class="mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <% if user_signed_in? %>
+    <ul class="nav-item dropdown right-nav-perso">
+    <a class="" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="right-div-nav">
+        <% if user_signed_in? %>
 
-      <% if !current_user.avatar.attached? && current_user.first_name == nil %>
-        <i class="fas fa-user-circle fa-lg"></i>
-      <% elsif !current_user.avatar.attached? %>
-        <p class="small"><%= current_user.first_name %> <span> </span> <%= current_user.last_name %></p>
-        <i class="fas fa-user-circle fa-lg"></i>
-      <% else %>
-        <div class="row mr-3">
-          <div class="mr-3 mt-3">
-            <p class="small"><%= current_user.first_name %> <span> </span> <%= current_user.last_name %></p>
-          </div>
-          <div class="profil-picture">
-            <%= image_tag current_user.avatar, class:'img-rounded', alt: 'avatar' %>
-          </div>
-        </div>
-      <% end %>
+          <% if !current_user.avatar.attached? && current_user.first_name == nil %>
+            Bienvenue <i class="fas fa-user-circle fa-lg default-nav-icon"></i>
+          <% elsif !current_user.avatar.attached? %>
+            <%= current_user.first_name %> <%= current_user.last_name %>
+            <i class="fas fa-user-circle fa-lg default-nav-icon"></i>
+          <% else %>
+            <div class="row mr-3">
+              <div class="mr-3 mt-3">
+                <%= current_user.first_name %> <%= current_user.last_name %>
+              </div>
+              <div class="profil-picture">
+                <%= image_tag current_user.avatar, class:'img-rounded', alt: 'avatar' %>
+              </div>
+            </div>
+          <% end %>
 
-    <% else %>
-      <i class="fas fa-user-circle fa-lg"></i>
-    <% end %>
+        <% else %>
+          Bienvenue <i class="fas fa-user-circle fa-lg default-nav-icon"></i>
+        <% end %>
+      </div>
     </a>
+    
 
-    <% if user_signed_in? %>
-      <div class="dropdown-menu dropdown-menu-2" aria-labelledby="navbarDropdown">
-      <% else %>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <% end %>
+    <div class="dropdown-menu dropdown-menu-perso" aria-labelledby="navbarDropdown">
       <ul>
         <% if user_signed_in? %>
           <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
