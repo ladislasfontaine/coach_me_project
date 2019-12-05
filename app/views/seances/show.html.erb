@@ -1,37 +1,31 @@
+ <div class="background-seances">
+     <%= image_tag("background-seances.jpg",alt:"fond d'image")%>
+  </div>
 
+
+<div class="h1_resa">
+<h1>Votre réservation</h1>
+</div>
 <div class="seance_show_html">
+
+
 <!-- coach card -->
-  <div class="coach_card">
-    <div class="card" style="width: 18rem;">
+  <div class="coach_card" style="width: 18rem";>
+    <div class="card">
       <img src="app/assets/images/coach_test.jpg" class="card-img-top" alt="coach_test">
         <div class="card-body">
-          <p><div><%= @seance.coach.phone_number %></div></p>
-        <p class="card-text">
+          <p><%= @seance.coach.phone_number %></p>
+          <p class="card-text">
           <%= @seance.coach.first_name %> <%= @seance.coach.last_name %></p>
       </div>
     </div>
   </div>
 
 
-<!-- user card -->
-  <div class="user_card">
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <p><%= @seance.user.first_name %> <%= @seance.user.last_name %></p>
-
-        <p class="card-text">
-        <%= @seance.user.address %></p>
-        <%= @seance.user.zip_code %> <%= @seance.user.city.name %>
-        <br>
-        <%= @seance.user.phone_number %>
-      </div>
-    </div>
-  </div>
 
 <!-- Seance show -->
-  <div class="seance_show">
-     <div class="card" style="width: 18rem;">       
+  <div class="seance_show" style="width: 18rem";>
+     <div class="card">       
           <div class="card-body">          
             <p class="card-text">
               Quand ? Le <%= @seance.start_date %>
@@ -45,6 +39,25 @@
         </div>
     </div>
   </div>
+
+
+<!-- user card -->
+  <div class="user_card" style="width: 18rem";>
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <p><%= @seance.user.first_name %> <%= @seance.user.last_name %></p>
+        <p class="card-text">
+        <%= @seance.user.address %></p>
+        <%= @seance.user.zip_code %> 
+        <%= @seance.user.city.name %>
+        <br>
+        <%= @seance.user.phone_number %>
+      </div>
+    </div>
+  </div>
+
+
 
 
 </div>
