@@ -74,13 +74,20 @@ a:hover {
 	color: #fff;
 }
 
+.fa-user-circle:hover {
+	color: #fff;
+	opacity: .7;
+	transition: 0.2s ease;
+}
+
 .fa-user-circle.scrolled {
 	color: #ff5630;
 }
 
-.fa-user-circle:hover {
+.fa-user-circle.scrolled:hover {
 	color: #ff5630;
-	transition: 0.3s ease;
+	opacity: .7;
+	transition: 0.2s ease;
 }
 
 .fa-search {
