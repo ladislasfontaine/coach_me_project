@@ -3,7 +3,6 @@ class CoachesController < ApplicationController
 
   def index
     @coaches = Coach.all
-    
 
   end
 
@@ -12,6 +11,7 @@ class CoachesController < ApplicationController
   end
 
   def edit
+    @cities = City.all
   end
 
   def update

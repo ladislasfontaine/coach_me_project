@@ -21,7 +21,12 @@
       <%= render 'layouts/navbar' %>
 
       <% if !notice.nil? || !alert.nil? %>
-        <p class="notice alert"><%= notice %><%= alert %></p>
+      <div class="alert alert-warning alert-dismissible fade show alert-coach-me" role="alert">
+        <%= notice %><%= alert %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <% end %>
 
       <%= yield %>
