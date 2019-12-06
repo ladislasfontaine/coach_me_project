@@ -21,10 +21,17 @@ a:hover {
 #background {
 	position: absolute;
 	top: 0%;
-	background: linear-gradient(rgba(255, 86, 48, 1), rgba(255, 86, 48, 0)); 
 	background-size: cover;
-	height: 50vh; 
+	height: 100vh; 
 	width: 100%;
+	z-index: -1;
+}
+
+#macbook img {
+	position: absolute;
+	width: 35%;
+	left: 45%;
+	top: 15%;
 }
 
 .small {
@@ -51,6 +58,10 @@ a:hover {
 	color: #E9ECEF;
 }
 
+.white {
+	color: #fff;
+}
+
 /**********************/
 /*  	BUTTON / LOGO	  */
 /**********************/
@@ -60,12 +71,23 @@ a:hover {
 }
 
 .fa-user-circle {
-	color: #868E96;
+	color: #fff;
 }
 
 .fa-user-circle:hover {
+	color: #fff;
+	opacity: .7;
+	transition: 0.2s ease;
+}
+
+.fa-user-circle.scrolled {
 	color: #ff5630;
-	transition: 0.3s ease;
+}
+
+.fa-user-circle.scrolled:hover {
+	color: #ff5630;
+	opacity: .7;
+	transition: 0.2s ease;
 }
 
 .fa-search {
@@ -93,8 +115,65 @@ a:hover {
 .fa-chevron-left:hover, .fa-chevron-right:hover {
 	text-shadow:2px 3px #868E96;
 }
+
 .buttom_sinscrire{
 	display:flex;
 	justify-content: space-around;
 	text-align: center;
 }
+
+
+
+/**********************/
+/*	¨ANIMATION TEXT 	*/
+/**********************/
+
+.container-index {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span.typed-text-index {
+  color: rgb(255, 94, 94);
+  font-weight: 200;
+}
+
+span.cursor-index {
+  display: inline-block;
+  background-color: #fff;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+
+span.cursor-index.typing {
+  animation: none;
+}
+
+/* animation pour faire clignotter le curseur */
+@keyframes blink {
+  0% { background-color: #fff; }
+  49% { background-color: #fff; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100% { background-color: #fff; }
+}
+
+/**************/
+/*	¨INDEX 		*/
+/**************/
+
+#search-container {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+
+}
+
+#text-index {
+	position: absolute;
+	top: 15%;
+	left: 15%;
+

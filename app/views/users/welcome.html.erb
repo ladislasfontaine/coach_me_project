@@ -1,28 +1,45 @@
 <div id="background">
-
-	<div class="row justify-content-center mt-5 pt-4">
-
-		<div class="col-md-3">
-			  <div class="form-group">
-			    <label for="cityDropdown" class="">Où ?</label>
-			    <select class="form-control" id="cityDropdown">
-			      <option>Bordeaux</option>
-			      <option>Paris</option>
-			      <option>Lyon</option>
-			    </select>
-			  </div>
-		</div>
-
-		<div class="col-md-3">
-			  <div class="form-group">
-			    <label for="cityDropdown" class="">Quel sport ?</label>
-			    <select class="form-control" id="cityDropdown">
-			      <option>Yoga</option>
-			      <option>Boxe anglaise</option>
-			      <option>Poney</option>
-			    </select>
-			  </div>
-		</div>
-
-	</div>
+	<%= image_tag('background-index-2.png') %>
 </div>
+
+<div id="macbook">
+	<%= image_tag('macbook-index.png') %>
+</div>
+
+<div id="text-index">
+	<h1 class="white">Trouve un coach <br><span class="ml-4">dans ta ville !</span></h1>
+</div>
+
+<!-- ANIMATION TEXT IN PROGRESS
+
+<div class="container-index">
+  <p>
+    Trouve ton coach de <span class="typed-text-index"></span><span id="test" class="cursor-index">&nbsp;</span>
+  </p>
+</div>
+-->
+
+<div id="search-container" class="row justify-content-center">
+
+	<div class="col-md-3">
+  	<div class="form-group">
+  		<label class="mid-grey" for="cityDropdown">Où ?</label>
+      <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+    </div>
+	</div>
+
+	<div class="col-md-3">
+		  <div class="form-group">
+		    <label class="mid-grey" for="cityDropdown" class="">Quel sport ?</label>
+		    <select class="form-control" id="cityDropdown">
+		      <option>Yoga</option>
+		      <option>Boxe anglaise</option>
+		      <option>Poney</option>
+		    </select>
+		  </div>
+	</div>
+
+</div>
+
+<div style="height: 1000px;"></div>
+
