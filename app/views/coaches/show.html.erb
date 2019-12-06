@@ -1,126 +1,98 @@
 
-
-<div class="container-fluid">
-
-  <div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="images/macbook.png" class="card-img" alt="coach picture">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <div><%= @coach.first_name %> <%= @coach.last_name %>
-        <h5 class="card-title"></h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<h2>Page Show Coach - <%= @coach.first_name %></h2>
-
-<div>
-
+<div class="coach-jumbotron">
   <% if @coach.cover.attached? %>
     <%= image_tag @coach.cover, alt: 'Photo de couverture', class: 'cover-image' %>
   <% end %>
-
-  <% if @coach.avatar.attached? %>
-    <%= image_tag @coach.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
-  <% else %>
-    <p>=== Il n'y a pas encore d'avatar lié à ce coach ===</p>
-  <% end %>
-
-  <div>
-    Informations :
-    <div><%= @coach.first_name %> <%= @coach.last_name %></div>
-    <div><%= @coach.price %>€ / heure</div>
-    <div>
-      <% @coach.specialties.each do |specialty| %>
-        <div><%= specialty.name %></div>
-      <% end %>
-    </div>
-    <div><%= @coach.phone_number %></div>
-
-    <p>==================</p>
-
-    Adresse :
-    <div><%= @coach.address %></div>
-    <div><%= @coach.zip_code %></div>
-    <% if !@coach.city == nil %>
-      <div><%= @coach.city.name %></div>
+  <h2>Coach <%= @coach.first_name %></h2>
+  <div class="profile-pic">
+    <% if @coach.avatar.attached? %>
+      <%= image_tag @coach.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
     <% end %>
-
-    <p>==================</p>
-
-    <% if user_signed_in? %>
-      <h5>Réserver une séance</h5>
-
-      <%= form_tag seances_path, method: "post" do %>
-        <div class="form-group form-check">
-          <%= label_tag 'Date et Heure' %>
-          <%= datetime_field_tag 'start_date' %>
-        </div>
-        <div class="form-group form-check">
-          <%= label_tag 'Durée (min)' %>
-          <%= text_field_tag 'duration', "60" %>
-        </div>
-        <div class="form-group form-check">
-          <%= label_tag 'Lieu' %>
-          <%= text_field_tag 'place', "à domicile" %>
-        </div>
-        <%= hidden_field_tag :coach_id , @coach.id %>
-        <%= submit_tag "Réserver", class: "btn btn-primary" %>
-      <% end %>
-
-      <p>==================</p>
-    <% end %>
-
-    Mes séances :
-    <div>
-      <% if @coach.seances == [] %>
-        Pas encore de séances réservées
-      <% else %>
-
-     
-
-        <h5>Séances à venir</h5>
-        <% @coach.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
-          <div>Début : <%= seance.start_date %></div>
-          <div>Durée : <%= seance.duration %>min</div>
-          <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
-          <%= link_to 'Voir', seance_path(seance.id) %>
-          <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
-        <% end %>
-        <h5>Séances passées</h5>
-        <% @coach.seances.select{|seance| seance.start_date < Time.now }.each do |seance| %>
-          <div>Début : <%= seance.start_date %></div>
-          <div>Durée : <%= seance.duration %>min</div>
-          <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
-          <%= link_to 'Voir', seance_path(seance.id) %>
-          <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
-        <% end %>
-      <% end %>
-    </div>
-
   </div>
-
 </div>
+
+<div class="public-section">
+  <div class="coach-col coach-infos">
+    <div class="coach-name"><%= @coach.first_name %> <%= @coach.last_name %></div>
+    <div class="coach-specialties">
+      <% @coach.specialties.each do |specialty| %>
+        <span class="coach-specialty">#<%= specialty.name %></span>
+      <% end %>
+    </div>
+    <div class="coach-city"><%= @coach.city.name %><br><%= @coach.phone_number %></div>
+    <div class="coach-price"><%= @coach.price %>€ / heure</div>
+    <div class="coach-description">Quotidiennement au contact de personnes exigeantes, je serai à même de vous concevoir un entraînement sur mesure et de qualité !</div>
+  </div>
+  <div class="coach-col calendar-form">
+    <h2>Réserver</h2>
+    <%= form_tag seances_path, method: "post" do %>
+      <div class="form-group form-check coach-form-group">
+        <%= label_tag 'Date et Heure' %>
+        <%= datetime_field_tag 'start_date', Time.now, class: 'form-control' %>
+      </div>
+      <div class="form-group form-check coach-form-group">
+        <%= label_tag 'Durée (min)' %>
+        <%= text_field_tag 'duration', "60", class: 'form-control' %>
+      </div>
+      <div class="form-group form-check coach-form-group">
+        <%= label_tag 'Lieu' %>
+        <%= text_field_tag 'place', "à domicile", class: 'form-control' %>
+      </div>
+      <%= hidden_field_tag :coach_id , @coach.id %>
+      <%= submit_tag "Réserver", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <div class="coach-col calendar-section">
+    <h2>Calendrier</h2>
+    <%= week_calendar events: @seances do |date, seances| %>
+      <%= date.day %>
+
+      <% seances.each do |seance| %>
+        <%= link_to seance_path(seance.id) do %>
+          <div class="coach-specialty">
+            Séance à 
+            <%= seance.start_date.strftime('%Hh%M') %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+Mes séances :
+<div>
+  <% if @coach.seances == [] %>
+    Pas encore de séances réservées
+  <% else %>
+
+  
+
+    <h5>Séances à venir</h5>
+    <% @coach.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
+      <div>Début : <%= seance.start_date %></div>
+      <div>Durée : <%= seance.duration %>min</div>
+      <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+      <%= link_to 'Voir', seance_path(seance.id) %>
+      <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
+    <% end %>
+    <h5>Séances passées</h5>
+    <% @coach.seances.select{|seance| seance.start_date < Time.now }.each do |seance| %>
+      <div>Début : <%= seance.start_date %></div>
+      <div>Durée : <%= seance.duration %>min</div>
+      <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+      <%= link_to 'Voir', seance_path(seance.id) %>
+      <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
+    <% end %>
+  <% end %>
+</div>
+
 
 <p>==================</p>
 
 <%= link_to 'Modifier mes informations', edit_coach_path(params[:id]) %>
 <%= link_to 'Retour', coaches_path %>
+
