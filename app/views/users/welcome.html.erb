@@ -82,7 +82,26 @@
 <div class="d-flex justify-content-center">
 	<hr style="width: 30%;">
 </div>
-<div>
-	<h2 class="text-center my-3">Vos avis</h2>
+
+<!-- carousel -->
+<h2 class="text-center mt-5 mb-4">Vos Avis</h2>
+<div class="d-flex justify-content-center mb-4">
+	<div id="carouselExampleControls" data-interval="5000" class="carousel slide" data-ride="carousel">
+	  <div class="carousel-inner">
+	    <div class="carousel-item active">
+	      <%= image_tag("avistest1.png", class:"d-block w-100", alt:"image avis") %>
+	    </div>
+	    <div class="carousel-item">
+	      <%= image_tag("avistest2.png", class:"d-block w-100", alt:"image avis") %>
+	    </div>
+	  </div>
+	  <!--Controls-->
+	      <div class="my-3 text-center">
+	      	<a class="btn-floating btn-md" href="#carouselExampleControls" data-slide="prev"><button class="btn btn-primary"><i class="fas fa-chevron-left"></i></button></a>
+	      	<a class="btn-floating btn-md" href="#carouselExampleControls" data-slide="next"><button class="btn btn-primary"><i class="fas fa-chevron-right"></i></button></a>
+	      </div>
+		  <!--/.Controls-->
+	</div>
+	<!-- Fin carousel -->
 </div>
 
