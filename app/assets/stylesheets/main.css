@@ -114,10 +114,6 @@ a:hover {
 /*	¨ANIMATION TEXT 	*/
 /**********************/
 
-.typewrite {
-	color: #4e73df;
-}
-
 .container-index {
   height: 50vh;
   display: flex;
@@ -174,14 +170,14 @@ span.cursor-index.typing {
 #macbook img {
 	position: absolute;
 	width: 35%;
-	left: 47%;
+	left: 45%;
 	top: 9%;
 }
 
 #text-index {
 	position: absolute;
-	top: 13%;
-	left: 19%;
+	top: 10%;
+	left: 15%;
 }
 
 #search-button {
@@ -218,4 +214,8 @@ span.cursor-index.typing {
 
 h1 .big {
 	font-size: 60px;
+}
+
+span.wrap {
+	color: #4e73df !important;
 }
