@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
   def welcome
     @cities = City.all
+    @sport = Specialty.all
   end
 
   def show

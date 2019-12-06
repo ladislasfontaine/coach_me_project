@@ -226,12 +226,15 @@ height: 100vh;
 .photo-profil img {
   border-radius: 50%;
   border: 2px solid #FFF;
+  object-fit: cover;
+
 }
 
 .coach_image
 {
 object-fit: cover;
 height: 140px;
+
 }
 
 .map
