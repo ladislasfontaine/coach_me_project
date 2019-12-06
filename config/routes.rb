@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   
     get "/contacts", to: 'statics#contacts'
     get "/cgv", to: 'statics#cgv'
+    get "/cgu", to: 'statics#cgu'
     get "/about", to: 'statics#about'
 end

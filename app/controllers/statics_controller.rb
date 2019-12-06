@@ -8,6 +8,10 @@ class StaticsController < ApplicationController
 
   end
 
+  def cgu
+
+  end
+
   def about
 
   end
