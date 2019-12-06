@@ -1,7 +1,7 @@
 <div class="full-dashboard">
   <div class="dashboard-left">  
     <div class="list-group dashboard-list-group" role="tablist">
-      <a class="list-group-item"><strong>Dashboard</strong></a>
+      <a class="list-group-item dashboard-list-group-item"><strong>Dashboard</strong></a>
       <a class="list-group-item list-group-item-action dashboard-list-group-item active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><i class="fas fa-user-circle mr-3"></i>Mon profil</a>
       <a class="list-group-item list-group-item-action dashboard-list-group-item" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><i class="fas fa-cog mr-3"></i>Éditer</a>
       <a class="list-group-item list-group-item-action dashboard-list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><i class="fas fa-signal fa-sm mr-3"></i>Mes objectifs</a>
@@ -9,30 +9,15 @@
     </div>
   </div>
   <div class="dashboard-right">
-  
-  </div>
-</div>
-
-<div class="space"></div>
-
-
-<div class="col-md-8">
-  <div class="tab-content" id="nav-tabContent">
-    <!-- Account -->
-    <div class="tab-pane fade show active mt-5" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-      En cours
-    </div>
-    <!-- Account -->
-
     <!-- Profil -->
     <div class="tab-pane fade mt-5" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
       <h4 class="my-2">Éditer mon profil</h4>
       <hr>
-      <form> 
+      <%= form_tag coach_path(params[:id]), method: "put", multipart: true do %>
         <div class="form-row">
           <div class="form-column col-md-6">
             <div class="form-group col-md-12 mt-5 pt-3 no-padding">
-              <%= label_tag 'Prenom'%>
+              <%= label_tag 'Prénom'%>
               <%= text_field_tag 'first_name', @coach.first_name, class: 'form-control'%>
             </div>
             <div class="form-group col-md-12 no-padding">
@@ -47,18 +32,11 @@
               <div class="input-group px-lg-4">
                   <div class="custom-file">
                       <input type="file" class="custom-file-input" id="inputGroupFile02">
-                      <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choisir une image</label>
-                  </div>
-                  <div class="input-group-append">
-                      <button class="btn btn-secondary"><i class="fa fa-upload"></i></button>
+                      <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Avatar</label>
                   </div>
               </div>
             <!-- Profil picture --> 
           </div>
-        </div>
-        <div class="form-group">
-          <%= label_tag 'Email'%>
-          <%= text_field_tag 'email', @coach.email, class: 'form-control'%>
         </div>
         <div class="form-group">
           <%= label_tag 'Adresse'%>
@@ -69,8 +47,19 @@
             <%= label_tag 'Code postal' %>
             <%= text_field_tag 'zip_code', @coach.zip_code, class: 'form-control' %>
           </div>
-          <div class="form-group col-md-6 mt-4 pt-2">
+          <div class="form-group col-md-6">
+            <%= label_tag 'Ville' %>
             <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <%= label_tag "Tarif à l'heure (en €)" %>
+            <%= text_field_tag 'price', @coach.price, class: "form-control" %>
+          </div>
+          <div class="form-group col-md-6">
+            <%= label_tag 'Numéro de SIRET' %>
+            <%= text_field_tag 'siret', @coach.siret, class: "form-control" %>
           </div>
         </div>
         <div class="form-row">
@@ -81,19 +70,34 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label class="form-control-label ">Mot de passe</label>
-            <input class="form-control" type="password" value="11111122333" />
+            <%= label_tag 'Nom du bénéficiaire du compte' %>
+            <%= text_field_tag 'account_name', @coach.account_name, class: "form-control" %>
           </div>
           <div class="form-group col-md-6">
-            <label class="form-control-label ">Confirmation</label>
-            <input class="form-control" type="password" value="11111122333" />
+            <%= label_tag 'IBAN du compte' %>
+            <%= text_field_tag 'account_number', @coach.account_number, class: "form-control" %>
           </div>
         </div>
 
         <%= submit_tag "Modifier", class: "btn btn-primary mt-1 mb-5" %>
-      </form>
+      <% end %>
     </div>
     <!-- Profil -->
+  </div>
+</div>
+
+<div class="space"></div>
+
+
+<div class="col-md-8">
+  <div class="tab-content" id="nav-tabContent">
+    <!-- Account -->
+    <div class="tab-pane fade show active mt-5" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+      En cours
+    </div>
+    <!-- Account -->
+
+    
 
     <!-- Goal -->
     <div class="tab-pane fade mt-5" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
