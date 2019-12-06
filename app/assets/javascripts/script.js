@@ -9,7 +9,7 @@ $(window).scroll(function(){
 	$('.fa-user-circle').toggleClass('scrolled', $(this).scrollTop() > 300)
 });
 
-// ANIMATION TEXT INDEX
+// ANIMATION H1 INDEX
 
 const typedTextSpan = document.querySelector(".typed-text-index");
 const cursorSpan = document.getElementById("test");
@@ -55,3 +55,12 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() {
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
+
+
+// ANIMATION TEXT INDEX
+
+// const h1 = document.querySelector('#text-index');
+
+// const tl = new TimelineLite({ paused : true, reversed: true });
+
+
