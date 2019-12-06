@@ -80,6 +80,10 @@ a:hover {
 	transition: 0.2s ease;
 }
 
+.fa-user-circle.dashboard {
+	color: #485057;
+} 
+
 .fa-user-circle.scrolled {
 	color: #ff5630;
 }
