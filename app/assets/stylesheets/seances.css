@@ -31,8 +31,9 @@
 	color: #FF5630;
 }
 .background_seances{
+	position: absolute;
+	top:0;
 	width: 100%;
-	box-sizing: border-box;
 	display: flex;
 	justify-content: space-around;
     filter: brightness(0.5);
