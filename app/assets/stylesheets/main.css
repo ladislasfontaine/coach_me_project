@@ -179,12 +179,10 @@ span.cursor-index.typing {
 
 }
 
-
 .seance_show{
 	background-color: ghostwhite;
 	color: black;
-	}
-
+}
 
 #search-button {
 	position: absolute;
