@@ -4,12 +4,16 @@
       <div class="card mx-5 mb-5 text-center mt-7" style="width: 275px; max-width: 275px;">
           <!-- coach cover-->
           <%if coach.cover.attached?%>
-          <%= image_tag coach.cover, alt: 'Photo de couverture', class: "coach_image", height: "250" %>
+            <%= image_tag coach.cover, alt: 'Photo de couverture', class: "coach_image", height: "250" %>
+          <%else%>
+          <%= image_tag "coach_test.jpg", alt: 'Photo de couverture', class: "coach_image", height: "250" %>
           <%end%>
       <div class="photo-profil">
           <!-- coach profil pic-->
           <%if coach.avatar.attached?%>
-          <%= image_tag coach.avatar, alt: 'Photo de profil', class: "profil-picture", height: "100", width: "100" %>
+            <%= image_tag coach.avatar, alt: 'Photo de profil', class: "profil-picture", height: "100", width: "100" %>
+          <%else%>
+            <%= image_tag "coach_test.jpg", height: "100", width: "100", class: "profil-picture"%>
           <%end%>
       </div>
 
