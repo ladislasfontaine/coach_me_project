@@ -4,10 +4,10 @@
 }
 
 .full-dashboard {
-  position: relative;
   width: 100%;
-  min-height: 110vh;
+  min-height: 83vh;
   display: flex;
+  overflow: hidden;
 }
 
 .dashboard-left {
@@ -19,6 +19,7 @@
   width: 80%;
   background: rgb(233, 233, 233);
   padding: 0 5%;
+  overflow-x: scroll;
 }
 
 .dashboard-list-group {
@@ -36,3 +37,41 @@
   border-color: #345eda;
   color: white;
 }
+
+.tab-coach-dashboard {
+  position: relative;
+}
+
+/* EDIT */
+
+.coach-dashboard-pic {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+/* SEANCES */
+
+.horizontal-card-seances {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.card-el {
+  margin: 0 20px;
+}
+
+.seance-start {
+  font-weight: bold;
+}
+
+h5.title-seances {
+  margin: 20px 0;
+}
+
