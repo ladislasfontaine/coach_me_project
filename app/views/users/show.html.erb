@@ -13,13 +13,7 @@
 <div class="public-section">
   <div class="coach-col coach-infos">
     <div class="coach-name"><%= @user.first_name %> <%= @user.last_name %></div>
-    <div class="coach-specialties">
-      <% @user.specialties.each do |specialty| %>
-        <span class="coach-specialty">#<%= specialty.name %></span>
-      <% end %>
-    </div>
     <div class="coach-city"><%= @user.city.name %><br><%= @user.phone_number %></div>
-    <div class="coach-price"><%= @user.price %>€ / heure</div>
     <div class="coach-description">Quotidiennement au contact de personnes exigeantes, je serai à même de vous concevoir un entraînement sur mesure et de qualité !</div>
   </div>
   <div class="coach-col calendar-form">

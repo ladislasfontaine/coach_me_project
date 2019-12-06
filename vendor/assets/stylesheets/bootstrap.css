@@ -2903,14 +2903,16 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-  color: #4582EC;
-  border-color: #4582EC;
+  color: #ff5630;
+  border-color: #ff5630;
+  background: #fff;
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #4582EC;
-  border-color: #4582EC;
+  border-color: #fff;
+  background: #ff5630;
+  transition: .4s;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {
