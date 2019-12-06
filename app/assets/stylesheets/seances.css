@@ -36,7 +36,7 @@
 	display: flex;
 	justify-content: space-around;
     filter: brightness(0.5);
-    max-width: 100%;
+    height: 100vh;
 }
 .coach_card_seance{
 	width: 100%;
@@ -73,12 +73,5 @@
 }
 .Button_return_Dashboard{
 	position: absolute;
-	top: 0;
-	left: 0;
-	height: 130vh;
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	font-weight: bold;
+	padding-top: 280px;
 }
