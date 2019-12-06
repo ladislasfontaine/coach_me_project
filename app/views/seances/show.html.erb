@@ -27,7 +27,7 @@
          </div>
       </div>
     </div>
-  </div>
+</div>
 
 <!-- Seance show -->
   <div class="seance_show" style="width: 30rem";>
@@ -57,19 +57,32 @@
       <div class="card-body">
         <p><%= @seance.user.first_name %> <%= @seance.user.last_name %></p>
         <p class="card-text">
-        <%= @seance.user.address %></p>
+        <%= @seance.user.address %>
+        <br>
+        <br>
         <%= @seance.user.zip_code %> 
         <%= @seance.user.city.name %>
         <br>
+        <br>
         <%= @seance.user.phone_number %>
+      </p>
       </div>
     </div>
   </div>
-
-
-
-
 </div>
+
+<div class="Button_return_Dashboard">
+  <div class="Button_return_Dashboard_bis">
+  <%= link_to "Retourner au Dashboard", edit_user_path(current_user.id),class:"btn btn-primary mt-3" %>
+</div>
+</div>
+
+
+
+
+  
+
+
 
 
 
