@@ -20,7 +20,8 @@
       <!-- Profil -->
       <div class="tab-pane fade mt-5" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
         <h4 class="my-2">Éditer mon profil</h4>
-        <hr>
+        <hr> 
+        <%= form_tag user_path(@user), method: "put", multipart: true, class: "form-group" do %>
         <form> 
           <div class="form-row">
             <div class="form-column col-md-6">
@@ -82,16 +83,6 @@
               </div>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label class="form-control-label ">Mot de passe</label>
-              <input class="form-control" type="password" value="11111122333" />
-            </div>
-            <div class="form-group col-md-6">
-              <label class="form-control-label ">Confirmation</label>
-              <input class="form-control" type="password" value="11111122333" />
-            </div>
-          </div>
           <div class="form-row mb-3">
             <%= label_tag 'Description'%>
             <%= text_area_tag 'description', @user.description, class: 'form-control' %>
@@ -99,8 +90,16 @@
 
           <%= submit_tag "Modifier", class: "btn btn-primary mt-1 mb-5" %>
         </form>
+        <% end %>
       </div>
       <!-- Profil -->
+
+
+
+
+
+
+
 
       <!-- Goal -->
       <div class="tab-pane fade mt-5" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
