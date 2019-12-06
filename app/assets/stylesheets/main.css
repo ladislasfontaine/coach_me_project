@@ -222,3 +222,11 @@ span.cursor-index.typing {
 	width: 55%;
 }
 
+h1 .big {
+	font-size: 60px;
+}
+
+span.wrap {
+	color: #4e73df !important;
+}
+
