@@ -184,13 +184,24 @@ justify-content: space-around;
 }
 
 .card-informations
-
 {
-font-size: 12px;
-padding-top: 50px;
-padding-bottom: 20px;
-padding-right: 10px;
-padding-left: 10px;
+  font-size: 14px;
+  padding: 30px 10px;
+  padding-top: 40px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+}
+
+.price-index-coach {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-informations h5 {
+  margin-bottom: 0;
 }
 
 .button_booked
@@ -205,13 +216,16 @@ width: 40%;
 height: 100vh;
 }
 
-.photo-profil img
-{
-border-radius: 50%;
-border: 2px solid #FFF;
-position: absolute;
-top: 85px;
-left: 90px;
+.photo-profil {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.photo-profil img {
+  border-radius: 50%;
+  border: 2px solid #FFF;
 }
 
 .coach_image

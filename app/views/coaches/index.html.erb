@@ -1,17 +1,20 @@
 <div class="card-group">
     <div class="cards">
 	   <% @coaches.each do |coach| %>
-      <div class="card my-3 mx-2 text-center" style="width: 320px;">
+      <div class="card my-5 mx-2 text-center" style="width: 320px;">
         <%= image_tag "coach_test.jpg", height: "250", class: "coach_image" %>
           <div class="photo-profil">
              <img height="100" width="100" class="profil-picture" src="https://ruedesvignerons-548724.c.cdn77.org/upload/domains/900/url_photo_profil/photo-1564585881.jpg" alt="">
           </div>
             <div class="card-informations">
               <h5 class="card-title"><a href="<%= coach_path(coach.id) %>"> <%= coach.first_name %> <%= coach.last_name %> </a></h5>
-              <div> <%= coach.price %>€ / heure </div>
+              <div class="price-index-coach"> <%= coach.price %>€ / heure </div>
               <div> <%= coach.city.name %> </div>
-              <div> <%= coach.reviewed %> </div>
-              <div> <%= coach.specialties.name %> </div>
+              <div class="coach-specialties">
+                <% coach.specialties.each do |specialty| %>
+                  <span class="coach-specialty">#<%= specialty.name %></span>
+                <% end %>
+              </div>
             </div>
             <div class="button_booked">
               <%= link_to 'Book', coach_path(coach.id),  class: "btn btn-primary" %>
