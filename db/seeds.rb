@@ -24,9 +24,8 @@ coaches = []
 specialties = []
 seances = []
 
-
 objectives_initialize = ["A définir", "Perdre du poids", "Gagner en masse musculaire", "Préparer une compétition", "Juste pour le fun", "Réduire mon stress"]
-specialties_initialize = ["Boxe", "Yoga", "Course"]
+specialties_initialize = ["Boxe", "Yoga", "Course", "Musculation", "Danse", "Pilates", "Triathlon"]
 cities_initialize = ["A définir", "Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
 durations_initialize = [60, 90, 120]
 
@@ -38,8 +37,12 @@ objectives_initialize.each do |objective|
   objectives << Objective.create(description: objective)
 end
 
+specialties_initialize.each do |s|
+	specialties << Specialty.create(name: s)
+end
+
 10.times do |index|
-  coaches << Coach.create(
+  coach = Coach.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
@@ -53,14 +56,10 @@ end
     account_number: "DE71540515507992382247",
     account_name: Faker::Name.name
   )
-end
-
-specialties_initialize.each do |s|
-	specialties << Specialty.create(name: s)
-end
-
- 10.times do |index|
- 	CoachSpecialty.create(coach: coaches.sample, specialty: specialties.sample)
+  coaches << coach
+  2.times do |index|
+    CoachSpecialty.create(coach: coach, specialty: specialties.sample)
+  end
 end
 
 10.times do |index|

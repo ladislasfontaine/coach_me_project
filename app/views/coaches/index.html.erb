@@ -1,32 +1,38 @@
 <div class="card-group">
-    <div class="cards">
+    <div class="cards mt-5">
 	   <% @coaches.each do |coach| %>
-      <div class="card mx-5 mb-5 text-center mt-7" style="width: 275px; max-width: 275px;">
+      <div class="card mx-2 mb-5 text-center" style="width: 275px; max-width: 275px;">
           <!-- coach cover-->
           <%if coach.cover.attached?%>
-          <%= image_tag coach.cover, alt: 'Photo de couverture', class: "coach_image", height: "250" %>
+            <%= image_tag coach.cover, alt: 'Photo de couverture', class: "coach_image", height: "250" %>
+          <%else%>
+          <%= image_tag "coach_test.jpg", alt: 'Photo de couverture', class: "coach_image", height: "250" %>
           <%end%>
       <div class="photo-profil">
           <!-- coach profil pic-->
           <%if coach.avatar.attached?%>
-          <%= image_tag coach.avatar, alt: 'Photo de profil', class: "profil-picture", height: "100", width: "100" %>
+            <%= image_tag coach.avatar, alt: 'Photo de profil', class: "profil-picture", height: "100", width: "100" %>
+          <%else%>
+            <%= image_tag "coach_test.jpg", height: "100", width: "100", class: "profil-picture"%>
           <%end%>
       </div>
-
-            <div class="card-informations">
-              <h5 class="card-title"><a href="<%= coach_path(coach.id) %>"> <%= coach.first_name %> <%= coach.last_name %> </a></h5>
-              <div> <%= coach.price %>€ / heure </div>
-              <div> <%= coach.city.name %> </div>
-              <div> <%= coach.reviewed %> </div>
-              <div> <%= coach.specialties.name %> </div>
-            </div>
-            <div class="button_booked">
-              <%= link_to 'Book', coach_path(coach.id),  class: "btn btn-primary" %>
-            </div>
-      </div>
-      <% end %>
-    </div> <!-- End of cards class -->
-        <div class="map">
-          <%= image_tag "map.jpg", class: "find_map" %>
+        <div class="card-informations">
+          <h5 class="card-title"><a href="<%= coach_path(coach.id) %>"> <%= coach.first_name %> <%= coach.last_name %> </a></h5>
+          <div class="price-index-coach"> <%= coach.price %>€ / heure </div>
+          <div> <%= coach.city.name %> </div>
+          <div class="coach-specialties">
+            <% coach.specialties.each do |specialty| %>
+              <span class="coach-specialty">#<%= specialty.name %></span>
+            <% end %>
+          </div>
         </div>
+        <div class="button_booked">
+          <%= link_to 'Book', coach_path(coach.id),  class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div> <!-- End of cards class -->
+  <div class="map">
+    <%= image_tag "map.jpg", class: "find_map" %>
+  </div>
 </div>
