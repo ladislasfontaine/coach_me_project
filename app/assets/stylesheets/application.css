@@ -20,5 +20,6 @@
  *= require users
  *= require form
  *= require calendar
+ *= require seances
  *= require alert
  */

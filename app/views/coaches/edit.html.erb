@@ -2,15 +2,105 @@
   <div class="dashboard-left">  
     <div class="list-group dashboard-list-group" role="tablist">
       <a class="list-group-item dashboard-list-group-item"><strong>Dashboard</strong></a>
-      <a class="list-group-item list-group-item-action dashboard-list-group-item active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><i class="fas fa-user-circle mr-3"></i>Mon profil</a>
-      <a class="list-group-item list-group-item-action dashboard-list-group-item" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><i class="fas fa-cog mr-3"></i>Éditer</a>
-      <a class="list-group-item list-group-item-action dashboard-list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><i class="fas fa-signal fa-sm mr-3"></i>Mes objectifs</a>
-      <a class="list-group-item list-group-item-action dashboard-list-group-item" id="list-seances-list" data-toggle="list" href="#list-seances" role="tab" aria-controls="messages" ><i class="far fa-calendar mr-3"></i>Mes séances</a>
+      <a class="list-group-item list-group-item-action dashboard-list-group-item active" data-toggle="list" href="#list-dashboard" role="tab" aria-controls="home"><i class="fas fa-user-circle mr-3"></i>Général</a>
+      <a class="list-group-item list-group-item-action dashboard-list-group-item" data-toggle="list" href="#list-profile" role="tab" aria-controls="home"><i class="fas fa-user-circle mr-3"></i>Mon profil</a>
+      <a class="list-group-item list-group-item-action dashboard-list-group-item" data-toggle="list" href="#list-edit" role="tab" aria-controls="profile"><i class="fas fa-cog mr-3"></i>Éditer</a>
+      <a class="list-group-item list-group-item-action dashboard-list-group-item" data-toggle="list" href="#list-objectives" role="tab" aria-controls="messages"><i class="fas fa-signal fa-sm mr-3"></i>Mes objectifs</a>
+      <a class="list-group-item list-group-item-action dashboard-list-group-item" data-toggle="list" href="#list-seances" role="tab" aria-controls="messages" ><i class="far fa-calendar mr-3"></i>Mes séances</a>
     </div>
   </div>
   <div class="dashboard-right">
+    <!-- Dashboard -->
+    <div class="tab-coach-dashboard fade mt-5 active show" id="list-dashboard" role="tabpanel" aria-labelledby="list-profile-list">
+    <div class="position-absolute">
+      <h4 class="my-2">Dashboard</h4>
+      <hr>
+      <!-- Content Row -->
+      <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs text-primary text-uppercase mb-1">Revenus (Mois)</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">40 000€</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs text-primary text-uppercase mb-1">Revenus (Année)</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">215 000€</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs text-primary text-uppercase mb-1">Tâche</div>
+                  <div class="row no-gutters align-items-center">
+                    <div class="col-auto">
+                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                    </div>
+                    <div class="col">
+                      <div class="progress progress-sm mr-2">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-sm text-primary text-uppercase mb-1">Messages</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-comments fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Dashboard -->
     <!-- Profil -->
-    <div class="tab-pane fade mt-5" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+    <div class="tab-coach-dashboard fade mt-5" id="list-edit" role="tabpanel" aria-labelledby="list-profile-list">
+    <div class="position-absolute">
       <h4 class="my-2">Éditer mon profil</h4>
       <hr>
       <%= form_tag coach_path(params[:id]), method: "put", multipart: true do %>
@@ -27,14 +117,13 @@
           </div>
           <div class="form-group col-md-6 text-center mt-1">
             <!-- Profil picture --> 
-              <img src="//api.adorable.io/avatars/120/trickst3r.png" class="mx-auto img-fluid rounded-circle" alt="avatar" />
+              <% if @coach.avatar.attached? %>
+                <%= image_tag @coach.avatar, class: "mx-auto img-fluid rounded-circle coach-dashboard-pic", alt: "avatar" %>
+              <% else %>
+                <img src="//api.adorable.io/avatars/120/trickst3r.png" class="mx-auto img-fluid rounded-circle" alt="avatar" />
+              <% end %>
               <h6 class="my-4">Photo de profil</h6>
-              <div class="input-group px-lg-4">
-                  <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="inputGroupFile02">
-                      <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Avatar</label>
-                  </div>
-              </div>
+              <%= file_field_tag :avatar %>
             <!-- Profil picture --> 
           </div>
         </div>
@@ -49,7 +138,7 @@
           </div>
           <div class="form-group col-md-6">
             <%= label_tag 'Ville' %>
-            <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+            <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name", @coach.city.id), class: 'form-control' %>
           </div>
         </div>
         <div class="form-row">
@@ -78,146 +167,54 @@
             <%= text_field_tag 'account_number', @coach.account_number, class: "form-control" %>
           </div>
         </div>
-
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <%= label_tag 'Photo de couverture' %>
+            <%= file_field_tag :cover %>
+          </div>
+          <div class="form-group col-md-6">
+            <%= label_tag 'Diplôme de coach sportif' %>
+            <%= file_field_tag :diploma %>
+          </div>
+        </div>
         <%= submit_tag "Modifier", class: "btn btn-primary mt-1 mb-5" %>
       <% end %>
     </div>
+    </div>
     <!-- Profil -->
-  </div>
-</div>
-
-<div class="space"></div>
-
-
-<div class="col-md-8">
-  <div class="tab-content" id="nav-tabContent">
-    <!-- Account -->
-    <div class="tab-pane fade show active mt-5" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-      En cours
-    </div>
-    <!-- Account -->
-
-    
-
-    <!-- Goal -->
-    <div class="tab-pane fade mt-5" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-      Au revoir
-    </div>
-    <!-- Goal -->
-
     <!-- Seances -->
-    <div class="tab-pane fade mt-5" id="list-seances" role="tabpanel" aria-labelledby="list-seances-list">
-      Pour
+    <div class="tab-coach-dashboard fade mt-5" id="list-seances" role="tabpanel" aria-labelledby="list-seances-list">
+    <div class="position-absolute">
+      <h4 class="my-2">Mes séances</h4>
+      <hr>
+      <div>
+        <% if @coach.seances == [] %>
+          Pas encore de séances réservées
+        <% else %>
+          <h5 class="title-seances">Séances à venir</h5>
+          <% @coach.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
+            <div class="horizontal-card-seances">
+              <div class="seance-start card-el"><%= seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
+              <div class="seance-duration card-el"><%= seance.duration %> minutes</div>
+              <div class="seance-user card-el">Avec <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+              <div><%= link_to 'Voir', seance_path(seance.id), class: "btn btn-secondary card-el" %></div>
+              <div><%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"}, class: "btn btn-secondary card-el" %></div>
+            </div>
+          <% end %>
+          <h5 class="title-seances">Séances passées</h5>
+          <% @coach.seances.select{|seance| seance.start_date < Time.now }.each do |seance| %>
+            <div class="horizontal-card-seances">
+              <div class="seance-start card-el"><%= seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
+              <div class="seance-duration card-el"><%= seance.duration %> minutes</div>
+              <div class="seance-user card-el">Avec <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+              <div><%= link_to 'Voir', seance_path(seance.id), class: "btn btn-secondary card-el" %></div>
+              <div><%= link_to 'Archiver', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"}, class: "btn btn-secondary card-el" %></div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
     </div>
     <!-- Seances -->
-
   </div>
-</div>
-
-<div class="space"></div>
-
-<p>==================================================</p>
-
-<div class="headline">Mes informations de coach</div>
-
-<div>
-  <%= form_tag coach_path(params[:id]), method: "put", multipart: true do %>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Prénom' %>
-      <%= text_field_tag 'first_name', @coach.first_name, class: "form-control" %>
-    </div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Nom' %>
-      <%= text_field_tag 'last_name', @coach.last_name, class: "form-control" %>
-    </div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Téléphone' %>
-      <%= text_field_tag 'phone_number', @coach.phone_number, class: "form-control" %>
-    </div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Adresse' %>
-      <%= text_field_tag 'address', @coach.address, class: "form-control" %>
-    </div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Code postal' %>
-      <%= text_field_tag 'zip_code', @coach.zip_code, class: "form-control" %>
-    </div>
-
-<%# Add a field city with a dropdown to show each city.name from cities table %>
-
-    <div class="form-group form-check">
-      <%= label_tag "Tarif à l'heure (en €)" %>
-      <%= text_field_tag 'price', @coach.price, class: "form-control" %>
-    </div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Numéro de SIRET' %>
-      <%= text_field_tag 'siret', @coach.siret, class: "form-control" %>
-    </div>
-
-    <div>======== Images ========</div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Photo de profil' %>
-      <%= file_field_tag :avatar %>
-    </div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Photo de couverture' %>
-      <%= file_field_tag :cover %>
-    </div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Diplôme de coach sportif' %>
-      <%= file_field_tag :diploma %>
-    </div>
-
-    <div>======== Informations bancaires ========</div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'Nom du bénéficiaire du compte' %>
-      <%= text_field_tag 'account_name', @coach.account_name, class: "form-control" %>
-    </div>
-
-    <div class="form-group form-check">
-      <%= label_tag 'IBAN du compte' %>
-      <%= text_field_tag 'account_number', @coach.account_number, class: "form-control" %>
-    </div>
-
-    <%= submit_tag "Modifier", class: "btn btn-primary" %>
-    <button type="button" class="btn btn-secondary"><%= link_to 'Retour', :back %></button>
-    
-  <% end %>
-</div>
-
-<h2>Mes séances</h2>
-<div>
-  <% if @coach.seances == [] %>
-    Pas encore de séances réservées
-  <% else %>
-
-  
-
-    <h5>Séances à venir</h5>
-    <% @coach.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
-      <div>Début : <%= seance.start_date %></div>
-      <div>Durée : <%= seance.duration %>min</div>
-      <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
-      <%= link_to 'Voir', seance_path(seance.id) %>
-      <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
-    <% end %>
-    <h5>Séances passées</h5>
-    <% @coach.seances.select{|seance| seance.start_date < Time.now }.each do |seance| %>
-      <div>Début : <%= seance.start_date %></div>
-      <div>Durée : <%= seance.duration %>min</div>
-      <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
-      <%= link_to 'Voir', seance_path(seance.id) %>
-      <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
-    <% end %>
-  <% end %>
 </div>
