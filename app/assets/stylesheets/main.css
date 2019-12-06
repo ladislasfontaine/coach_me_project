@@ -187,3 +187,19 @@ span.cursor-index.typing {
 	width: 100%;
 	top: 70%;
 }
+
+#border-orange {
+	position: relative;
+	border: 1px solid #ff5630;
+	border-radius: 5%;
+	padding: 15px 15px;
+}
+
+#border-orange:hover {
+	position: relative;
+	border: 1px solid #ff5630;
+	border-radius: 5%;
+	padding: 15px 15px;
+	bottom: 10px;
+	box-shadow: 0px 10px 10px #E9ECEF;
+}

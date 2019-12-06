@@ -2625,10 +2625,13 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary:hover, .btn-primary:focus {
+  position: relative;
   background-color: #ff5630;
   color: #fff;
   border-color: #ff5630;
-  opacity: 0.8;
+  bottom: 2px;
+  opacity: .9;
+  box-shadow: 0 7px 5px #E9ECEF;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {

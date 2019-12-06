@@ -40,7 +40,7 @@
 </div>
 
 <div class="row justify-content-center mw-100">
-	<a href="#"><button class="btn btn-primary">Trouver mon coach</button></a>
+	<%= link_to "Trouver mon coach", coaches_path, class: "btn btn-primary" %>
 </div>
 
 
@@ -55,30 +55,21 @@
 		</div>
 	</div>
 	<div class="d-flex flex-row justify-content-around mx-5 px-5">
-
-		<div class="card border-dark mb-3" style="max-width: 18rem;">
-		  <div class="card-header">Header</div>
-		  <div class="card-body text-dark">
-		    <h5 class="card-title">Dark card title</h5>
-		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		  </div>
-		</div>
-
-		<div class="col-md-3 mx-3">
+		<div id="border-orange" class="col-md-3 mx-3">
 			<div class="text-center">
 				<i class="far fa-calendar-check fa-3x mb-3"></i>
 			</div>
 			<h5 class="text-center"><span class="orange">Suivi</span> de vos séances en temps réel</h5>
 			<p>Ne rater plus une séance grâce à CoachMe, on s'occupe de tout ! Vous avez un contre-temps ? Annuler votre séance en un clic.</p>
 		</div>
-		<div class="col-md-3 mx-3">
+		<div id="border-orange" class="col-md-3 mx-3">
 			<div class="text-center">
 				<i class="fas fa-users fa-3x mb-3"></i>
 			</div>
 			<h5 class="text-center">Une <span class="orange">communauté</span> soudée</h5>
 			<p>Rester connecter avec notre messagerie instantanée, profiter des conseils personnalisés de nos coachs.</p>
 		</div>
-		<div class="col-md-3 mx-3">
+		<div id="border-orange" class="col-md-3 mx-3">
 			<div class="text-center">
 				<i class="fas fa-signal fa-3x mb-3"></i>
 			</div>
