@@ -1,0 +1,64 @@
+
+<div class="coach-jumbotron">
+  <% if @coach.cover.attached? %>
+    <%= image_tag @coach.cover, alt: 'Photo de couverture', class: 'cover-image' %>
+  <% end %>
+  <h2>Coach <%= @coach.first_name %></h2>
+
+  <div class="profile-pic">
+      <%if @coach.avatar.attached?%>
+      <%= image_tag @coach.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
+      <%end%>
+  </div>
+</div>
+
+
+<div class="public-section">
+  <div class="coach-col coach-infos">
+    <div class="coach-name"><%= @coach.first_name %> <%= @coach.last_name %></div>
+    <div class="coach-specialties">
+      <% @coach.specialties.each do |specialty| %>
+        <span class="coach-specialty">#<%= specialty.name %></span>
+      <% end %>
+    </div>
+    <div class="coach-city"><%= @coach.city.name %><br><%= @coach.phone_number %></div>
+    <div class="coach-price"><%= @coach.price %>€ / heure</div>
+    <div class="coach-description">Quotidiennement au contact de personnes exigeantes, je serai à même de vous concevoir un entraînement sur mesure et de qualité !</div>
+      <%= link_to 'Modifier mes informations', edit_coach_path(params[:id]), class:"btn btn-secondary" %>
+      <%= link_to 'Retour', coaches_path, class:"btn btn-secondary" %>
+  </div>
+  <div class="coach-col calendar-form">
+    <h2>Réserver</h2>
+    <%= form_tag seances_path, method: "post" do %>
+      <div class="form-group form-check coach-form-group">
+        <%= label_tag 'Date et Heure' %>
+        <%= datetime_field_tag 'start_date', Time.now, class: 'form-control' %>
+      </div>
+      <div class="form-group form-check coach-form-group">
+        <%= label_tag 'Durée (min)' %>
+        <%= text_field_tag 'duration', "60", class: 'form-control' %>
+      </div>
+      <div class="form-group form-check coach-form-group">
+        <%= label_tag 'Lieu' %>
+        <%= text_field_tag 'place', "à domicile", class: 'form-control' %>
+      </div>
+      <%= hidden_field_tag :coach_id , @coach.id %>
+      <%= submit_tag "Réserver", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <div class="coach-col calendar-section">
+    <h2>Calendrier</h2>
+    <%= week_calendar events: @seances do |date, seances| %>
+      <%= date.day %>
+
+      <% seances.each do |seance| %>
+        <%= link_to seance_path(seance.id) do %>
+          <div class="coach-specialty">
+            Séance à
+            <%= seance.start_date.strftime('%Hh%M') %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
