@@ -67,6 +67,13 @@
 
 
 <div class="Button_return_Dashboard">
+<% if user_signed_in? %>
   <%= link_to "Retourner au Dashboard", edit_user_path(current_user.id),class:"btn btn-primary mt-3" %>
+<% elsif coach_signed_in? %>
+  <%= link_to "Retourner au Dashboard", edit_coach_path(current_coach.id),class:"btn btn-primary mt-3" %>
+<% else %>
+  <%= link_to "Retour", :back, class:"btn btn-primary mt-3" %>
+<% end %>
+
 </div>
 </div>
