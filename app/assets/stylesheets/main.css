@@ -176,7 +176,15 @@ span.cursor-index.typing {
 	position: absolute;
 	top: 15%;
 	left: 15%;
+
 }
+
+
+.seance_show{
+	background-color: ghostwhite;
+	color: black;
+	}
+
 
 #search-button {
 	position: absolute;
