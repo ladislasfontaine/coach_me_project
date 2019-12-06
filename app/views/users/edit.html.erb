@@ -20,14 +20,9 @@
       <!-- Profil -->
       <div class="tab-pane fade mt-5" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
         <h4 class="my-2">Éditer mon profil</h4>
-<<<<<<< HEAD
         <hr> 
         <%= form_tag user_path(@user), method: "put", multipart: true, class: "form-group" do %>
-        <form> 
-=======
-        <hr>
-        <%= form_tag user_path(params[:id]), method: "put", multipart: true do %>
->>>>>>> development
+
           <div class="form-row">
             <div class="form-column col-md-6">
               <div class="form-group col-md-12 mt-5 pt-3 no-padding">
@@ -104,11 +99,10 @@
           </div>
 
           <%= submit_tag "Modifier", class: "btn btn-primary mt-1 mb-5" %>
-<<<<<<< HEAD
-        </form>
-=======
 
->>>>>>> development
+
+<% end %>
+
         <% end %>
       </div>
       <!-- Profil -->
