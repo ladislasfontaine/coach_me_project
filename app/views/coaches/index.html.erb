@@ -1,7 +1,7 @@
 <div class="card-group">
-    <div class="cards">
+    <div class="cards mt-5">
 	   <% @coaches.each do |coach| %>
-      <div class="card mx-5 mb-5 text-center mt-7" style="width: 275px; max-width: 275px;">
+      <div class="card mx-2 mb-5 text-center" style="width: 275px; max-width: 275px;">
           <!-- coach cover-->
           <%if coach.cover.attached?%>
             <%= image_tag coach.cover, alt: 'Photo de couverture', class: "coach_image", height: "250" %>
