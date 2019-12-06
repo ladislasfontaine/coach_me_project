@@ -38,6 +38,10 @@
   background: #fff !important;
 }
 
+nav.scrolled  {
+	box-shadow: 0 2px 5px #E9ECEF;
+}
+
 .navbar-brand {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;

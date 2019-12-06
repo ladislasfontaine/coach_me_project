@@ -31,7 +31,7 @@ a:hover {
 	position: absolute;
 	width: 35%;
 	left: 45%;
-	top: 15%;
+	top: 12%;
 }
 
 .small {
@@ -174,4 +174,16 @@ span.cursor-index.typing {
 	position: absolute;
 	top: 15%;
 	left: 15%;
+}
+
+#search-button {
+	position: absolute;
+	width: 100%;
+	top: 58%;
+}
+
+#promise {
+	position: absolute;
+	width: 100%;
+	top: 70%;
 }
