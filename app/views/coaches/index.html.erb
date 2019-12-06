@@ -2,10 +2,17 @@
     <div class="cards">
 	   <% @coaches.each do |coach| %>
       <div class="card mx-5 mb-5 text-center mt-7" style="width: 275px; max-width: 275px;">
-        <%= image_tag "coach_test.jpg", height: "250", class: "coach_image" %>
-          <div class="photo-profil">
-             <img height="100" width="100" class="profil-picture" src="https://ruedesvignerons-548724.c.cdn77.org/upload/domains/900/url_photo_profil/photo-1564585881.jpg" alt="">
-          </div>
+          <!-- coach cover-->
+          <%if coach.cover.attached?%>
+          <%= image_tag coach.cover, alt: 'Photo de couverture', class: "coach_image", height: "250" %>
+          <%end%>
+      <div class="photo-profil">
+          <!-- coach profil pic-->
+          <%if coach.avatar.attached?%>
+          <%= image_tag coach.avatar, alt: 'Photo de profil', class: "profil-picture", height: "100", width: "100" %>
+          <%end%>
+      </div>
+
             <div class="card-informations">
               <h5 class="card-title"><a href="<%= coach_path(coach.id) %>"> <%= coach.first_name %> <%= coach.last_name %> </a></h5>
               <div> <%= coach.price %>€ / heure </div>

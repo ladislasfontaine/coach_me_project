@@ -4,12 +4,14 @@
     <%= image_tag @coach.cover, alt: 'Photo de couverture', class: 'cover-image' %>
   <% end %>
   <h2>Coach <%= @coach.first_name %></h2>
+
   <div class="profile-pic">
-    <% if @coach.avatar.attached? %>
+      <%if @coach.avatar.attached?%>
       <%= image_tag @coach.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
-    <% end %>
+      <%end%>
   </div>
 </div>
+
 
 <div class="public-section">
   <div class="coach-col coach-infos">
@@ -50,7 +52,7 @@
       <% seances.each do |seance| %>
         <%= link_to seance_path(seance.id) do %>
           <div class="coach-specialty">
-            Séance à 
+            Séance à
             <%= seance.start_date.strftime('%Hh%M') %>
           </div>
         <% end %>
@@ -69,7 +71,7 @@ Mes séances :
     Pas encore de séances réservées
   <% else %>
 
-  
+
 
     <h5>Séances à venir</h5>
     <% @coach.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
@@ -95,4 +97,3 @@ Mes séances :
 
 <%= link_to 'Modifier mes informations', edit_coach_path(params[:id]) %>
 <%= link_to 'Retour', coaches_path %>
-

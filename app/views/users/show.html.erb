@@ -43,7 +43,7 @@
       <% seances.each do |seance| %>
         <%= link_to seance_path(seance.id) do %>
           <div class="coach-specialty">
-            Séance à 
+            Séance à
             <%= seance.start_date.strftime('%Hh%M') %>
           </div>
         <% end %>
@@ -58,7 +58,7 @@ Mes séances :
     Pas encore de séances réservées
   <% else %>
 
-  
+
 
     <h5>Séances à venir</h5>
     <% @user.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
@@ -86,7 +86,6 @@ Mes séances :
 <%= link_to 'Retour', coaches_path %>
 
 
-<!--
     Mes Informations :
     <div class="name">
         <%= @user.first_name %>
