@@ -16,8 +16,13 @@
  *= require navbar
  *= require footer
  *= require coaches
+ *= require coaches_dashboard
  *= require users
  *= require form
  *= require calendar
+<<<<<<< HEAD
  *= require seances
+=======
+ *= require alert
+>>>>>>> 01565a762444940e71de3332d5d295197b99842b
  */

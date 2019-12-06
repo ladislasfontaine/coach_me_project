@@ -1,0 +1,38 @@
+.space {
+  height: 100vh;
+  width: 100%;
+}
+
+.full-dashboard {
+  position: relative;
+  width: 100%;
+  min-height: 110vh;
+  display: flex;
+}
+
+.dashboard-left {
+  width: 20%;
+  min-width: 280px;
+}
+
+.dashboard-right {
+  width: 80%;
+  background: rgb(233, 233, 233);
+  padding: 0 5%;
+}
+
+.dashboard-list-group {
+  height: 100%;
+  background-color: #4e73df;
+}
+
+.dashboard-list-group-item, .dashboard-list-group-item strong {
+  background-color: transparent;
+  color: white;
+}
+
+.dashboard-list-group-item.active, .dashboard-list-group-item:hover {
+  background-color: #345eda;
+  border-color: #345eda;
+  color: white;
+}

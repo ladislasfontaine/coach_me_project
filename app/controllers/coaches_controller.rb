@@ -11,6 +11,7 @@ class CoachesController < ApplicationController
   end
 
   def edit
+    @cities = City.all
   end
 
   def update
