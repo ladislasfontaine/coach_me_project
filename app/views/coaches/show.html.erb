@@ -4,12 +4,14 @@
     <%= image_tag @coach.cover, alt: 'Photo de couverture', class: 'cover-image' %>
   <% end %>
   <h2>Coach <%= @coach.first_name %></h2>
+
   <div class="profile-pic">
-    <% if @coach.avatar.attached? %>
+      <%if @coach.avatar.attached?%>
       <%= image_tag @coach.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
-    <% end %>
+      <%end%>
   </div>
 </div>
+
 
 <div class="public-section">
   <div class="coach-col coach-infos">
@@ -52,7 +54,7 @@
       <% seances.each do |seance| %>
         <%= link_to seance_path(seance.id) do %>
           <div class="coach-specialty">
-            Séance à 
+            Séance à
             <%= seance.start_date.strftime('%Hh%M') %>
           </div>
         <% end %>

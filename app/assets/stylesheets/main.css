@@ -115,8 +115,63 @@ a:hover {
 .fa-chevron-left:hover, .fa-chevron-right:hover {
 	text-shadow:2px 3px #868E96;
 }
+
 .buttom_sinscrire{
 	display:flex;
 	justify-content: space-around;
 	text-align: center;
+}
+
+/**********************/
+/*	¨ANIMATION TEXT 	*/
+/**********************/
+
+.container-index {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span.typed-text-index {
+  color: rgb(255, 94, 94);
+  font-weight: 200;
+}
+
+span.cursor-index {
+  display: inline-block;
+  background-color: #fff;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+
+span.cursor-index.typing {
+  animation: none;
+}
+
+/* animation pour faire clignotter le curseur */
+@keyframes blink {
+  0% { background-color: #fff; }
+  49% { background-color: #fff; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100% { background-color: #fff; }
+}
+
+/**************/
+/*	¨INDEX 		*/
+/**************/
+
+#search-container {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+
+}
+
+#text-index {
+	position: absolute;
+	top: 15%;
+	left: 15%;
 }
