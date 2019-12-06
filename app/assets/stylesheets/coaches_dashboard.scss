@@ -1,0 +1,38 @@
+.space {
+  height: 100vh;
+  width: 100%;
+}
+
+.full-dashboard {
+  width: 100%;
+  min-height: 83vh;
+  display: flex;
+}
+
+.dashboard-left {
+  width: 20%;
+  min-width: 280px;
+  height: 100%;
+  background-color: salmon;
+}
+
+.dashboard-right {
+  width: 80%;
+  height: 83vh;
+  background-color: salmon;
+}
+
+.dashboard-list-group {
+  height: 83vh;
+  background-color: #4e73df;
+}
+
+.dashboard-list-group-item {
+  background-color: transparent;
+  color: white;
+}
+
+.dashboard-list-group-item.active {
+  background-color: #4e73df;
+  color: white;
+}
