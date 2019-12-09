@@ -33,7 +33,7 @@
 </div>
 
 <div style="height: 450px;"></div>
-
+-------------------------------------------------------------------------------------------------------
 <div class="row justify-content-center mw-100">
 
 	<div class="col-md-3">
@@ -51,11 +51,15 @@
 	</div>
 
 </div>
-
 <div class="row justify-content-center mw-100">
 	<%= link_to "Trouver mon coach", coaches_path, class: "btn btn-primary" %>
 </div>
+-------------------------------------------------------------------------------------------------------
 
+<%= form_tag coaches_path, method: :get do %>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search" %>
+<% end %>
 
 <div class="my-5">
 	<div class="d-flex justify-content-center mb-4">
@@ -117,4 +121,3 @@
 	</div>
 	<!-- Fin carousel -->
 </div>
-
