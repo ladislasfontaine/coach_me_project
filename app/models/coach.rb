@@ -26,8 +26,21 @@ class Coach < ApplicationRecord
 
   #MAILER
   def welcome_send
-
     UserMailer.welcome_email(self).deliver_now
-
   end
+
+ #SEARCHBAR
+ def self.search(search)
+   if search
+     where(["first_name LIKE ?","%#{search}%"])
+     #where(["address LIKE ?","%#{search}%"])
+     #where(["price LIKE ?","%#{search}%"])
+   else
+      all
+   end
+
+ end
+
+
+
 end

@@ -33,7 +33,7 @@ var mapFunction = function() {
       .bindPopup(customPopup);
 };
 
-$(document).ready(mapFunction);
-$(document).on('page:load', mapFunction); // Classic Turbolinks
+// $(document).ready(mapFunction);
+// $(document).on('page:load', mapFunction); // Classic Turbolinks
 $(document).on('turbolinks:load', mapFunction); // Turbolinks 5
 
