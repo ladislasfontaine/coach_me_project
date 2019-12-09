@@ -2,9 +2,17 @@ class CoachesController < ApplicationController
   before_action :set_coach, only: %i[show edit update]
 
   def index
-    @coaches = Coach.all
+    #@coaches = Coach.all
+    #@coaches = Coach.where(["first_name LIKE ?", "%#{params[:search]}%"])
+    @coaches = Coach.search(params[:search])
 
   end
+
+  def coach_params
+    #params.require(:coach).permit(:first_name)
+
+  end
+
 
   def show
     @seances = @coach.seances
