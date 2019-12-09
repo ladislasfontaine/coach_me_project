@@ -93,6 +93,7 @@
           </div>
             <%= submit_tag "Modifier", class: "btn btn-primary mt-1 mb-5" %>
           <% end %>
+        </div>
         
         <!-- Profil -->
 
@@ -100,10 +101,8 @@
         <div class="tab-pane fade mt-5" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
             <div class="container">
                 <div class="col">
-                  <% if @user.objective %>
-                  <% @user.objective == 0 %>
+                  <% if @user.objective_id == nil %>
                   <p>Vous avez pas encore des objectives</p>
-                     <%= link_to 'Modifier', edit_user_path(params[:id]), class: "btn btn-primary" %>
                   <% else %>
                   <ul class="justify-content-center">
                     <li class="list-group-item">
@@ -120,9 +119,22 @@
 
 
 
-        <!-- Account -->
+        <!-- Account/ Mon profil -->
         <div class="tab-pane fade show active mt-5" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-          En cours
+          <div class="container">
+            <div class="row">
+              <!-- photo -->
+              <div class="col-md-6">
+                <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
+              </div>
+
+              <div class="col-md-6">
+
+                
+              </div>
+              
+            </div>
+          </div>
         </div>
         <!-- Account -->
 
@@ -134,5 +146,5 @@
         <!-- Seances -->
       </div>
       </div>
-    </div>
+  
   </div>
