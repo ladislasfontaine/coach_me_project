@@ -123,7 +123,11 @@
             <div class="row">
               <!-- photo -->
               <div class="col-md-3">
-                <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
+                <% if @user.avatar.attached? %>
+                  <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
+                <% else %>
+                  <img src="//api.adorable.io/avatars/120/trickst3r.png" class="avatar-image" alt="avatar" />
+                <% end %>
               </div>
 
               <div class="col-md-6">
@@ -159,7 +163,7 @@
                   <div class="horizontal-card-seances">
                     <div class="seance-start card-el"><%= seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
                     <div class="seance-duration card-el"><%= seance.duration %> minutes</div>
-                    <div class="seance-user card-el">Avec <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+                    <div class="seance-user card-el">Avec <%= seance.coach.first_name %> <%= seance.coach.last_name.upcase %></div>
                     <div><%= link_to 'Voir', seance_path(seance.id), class: "btn btn-secondary card-el" %></div>
                     <div><%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"}, class: "btn btn-secondary card-el" %></div>
                   </div>
@@ -169,7 +173,7 @@
                   <div class="horizontal-card-seances">
                     <div class="seance-start card-el"><%= seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
                     <div class="seance-duration card-el"><%= seance.duration %> minutes</div>
-                    <div class="seance-user card-el">Avec <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+                    <div class="seance-user card-el">Avec <%= seance.coach.first_name %> <%= seance.coach.last_name %></div>
                     <div><%= link_to 'Voir', seance_path(seance.id), class: "btn btn-secondary card-el" %></div>
                     <div><%= link_to 'Archiver', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"}, class: "btn btn-secondary card-el" %></div>
                   </div>
