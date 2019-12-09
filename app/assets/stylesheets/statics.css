@@ -12,10 +12,10 @@
 	margin-top:-2%	
 }
 
-.jumbotron jumbotron-fluid{
-	background-color:#FF5630 !important;
-	margin-top:2%;
-	color:white;
-	text-align: center;
-}
 
+.test_jumbo{
+	text-align: center;
+	color: white;
+	margin-top: 2%;
+
+}
