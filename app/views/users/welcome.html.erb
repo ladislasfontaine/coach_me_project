@@ -5,58 +5,51 @@
 <div id="macbook">
 	<%= image_tag('macbook-index.png') %>
 </div>
-
-<div id="text-index">
-	<h4 class="white mb-3">Trouve un coach dans ta ville !</span></h4>
-	<h6 class="white mb-3">Simplifiez-vous la vie avec CoachMe.</h6>
-	<div class="w-50">
-		<h6 class="white">Dans toute la France, CoachMe t'accompagne dans la réussite de tes objectifs sportifs. </h6>
-	</div>
-</div>
-
-<!-- ANIMATION TEXT IN PROGRESS
-
-<div class="container-index">
-  <p>
-    Trouve ton coach de <span class="typed-text-index"></span><span id="test" class="cursor-index">&nbsp;</span>
-  </p>
-</div>
--->
-
-<div class="d-flex justify-content-center mt-4">
-	<h1>
-		<span class="white big">Coach de</span>
-	  <a href="" class="typewrite big" data-period="3000" data-type='[ "Yoga.", "Boxe.", "Danse.", "Musculation." ]'>
-	    <span class="wrap" style="color: #4e73df !important;"></span>
-	  </a>
-	</h1>
-</div>
-
-<div style="height: 450px;"></div>
-
-<div class="row justify-content-center mw-100">
+<div class="row justify-content-center mt-5 mw-100">
 
 	<div class="col-md-3">
   	<div class="form-group">
-  		<label class="mid-grey" for="cityDropdown">Où ?</label>
+  		<label class="white" for="cityDropdown"><h6>Où ?</h6></label>
       <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
     </div>
 	</div>
-
 	<div class="col-md-3">
 		  <div class="form-group">
-		    <label class="mid-grey" for="cityDropdown" class="">Quel sport ?</label>
+		    <label class="white" for="cityDropdown"><h6>Quel sport ?</h6></label>
 		    <%= select_tag "sport", options_from_collection_for_select(@sport, "id", "name"), class: 'form-control' %>
 		  </div>
 	</div>
 
 </div>
-
 <div class="row justify-content-center mw-100">
-	<%= link_to "Trouver mon coach", coaches_path, class: "btn btn-primary" %>
+	<%= link_to "Trouver mon coach", coaches_path, class: "btn btn-outline-primary index" %>
 </div>
 
+<div id="macbook">
+	<%= image_tag('macbook-index.png') %>
+</div>
 
+<div style="height: 500px;"></div>
+
+<div id="animation-text" class="d-flex justify-content-center mt-4">
+	<h1>
+		<span class="big">Rechercher un coach <br> de</span>
+	  <a href="" class="typewrite big" data-period="1500" data-type='["yoga vinyasa", "boxe anglaise", "course à pied", "musculation", "danse", "pilates", "triathlon"]'>
+	    <span class="wrap" style="color: #4e73df !important;"></span>
+	  </a>
+	</h1>
+</div>
+<%= form_tag coaches_path, method: :get do %>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search" %>
+<% end %>
+
+<div id="text-index">
+	<h6 class="mb-3">Simplifiez-vous la vie avec CoachMe.</h6>
+	<div class="w-50">
+		<h6>Dans toute la France, CoachMe vous accompagne dans la réussite de vos <br> objectifs sportifs. </h6>
+	</div>
+</div>
 <div class="my-5">
 	<div class="d-flex justify-content-center mb-4">
 		<hr style="width: 30%;">
@@ -117,4 +110,3 @@
 	</div>
 	<!-- Fin carousel -->
 </div>
-

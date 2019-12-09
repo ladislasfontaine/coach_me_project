@@ -171,16 +171,16 @@ span.cursor-index.typing {
 
 #macbook img {
 	position: absolute;
-	width: 35%;
-	left: 45%;
-	top: 9%;
+	width: 30%;
+	left: 55%;
+	top: 14%;
 }
 
 #text-index {
 	position: absolute;
-	top: 10%;
-	left: 15%;
-
+	top: 17%;
+	left: 18%;
+	color: #fff;
 }
 
 .seance_show{
@@ -200,7 +200,6 @@ span.cursor-index.typing {
 	top: 70%;
 }
 
-
 #border-orange {
 	position: relative;
 	bottom: 0px;
@@ -217,16 +216,28 @@ span.cursor-index.typing {
 	box-shadow: 0px 10px 10px #E9ECEF;
 }
 
-
 #carouselExampleControls {
 	width: 55%;
 }
 
+select#city, select#sport {
+	box-shadow: 0 10px 10px rgba(0, 0, 0, .1); 
+}
+
+/********************/
+/* 	ANIMATION TEXT 	*/
+/********************/
+
 h1 .big {
-	font-size: 60px;
+	font-size: 45px;
 }
 
 span.wrap {
 	color: #4e73df !important;
 }
 
+#animation-text {
+	position: absolute;
+	top: 30%;
+	left: 47%;
+}
