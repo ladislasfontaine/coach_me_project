@@ -2,14 +2,34 @@ class SeancesController < ApplicationController
   before_action :set_seance, only: %i[show destroy]
 
   def create
-    @coach = Coach.find(params[:coach_id])
+     @coach = Coach.find(params[:coach_id])
+    
+    # Amount in cents
+      
+    @amount = (@coach.price * 100).to_i
+
+    customer = Stripe::Customer.create({
+      email: params[:stripeEmail],
+      source: params[:stripeToken],
+      })
+
+    charge = Stripe::Charge.create({
+        customer: customer.id,
+        amount: @amount,
+        description: 'Rails Stripe customer',
+        currency: 'eur',
+      })
+
     @seance = Seance.new(coach: @coach, user: current_user, start_date: params[:start_date], duration: params[:duration], place: params[:place])
     if @seance.save
       flash[:notice] = "La séance est créée. Merci d'avoir réservé avec CoachMe."
     else
       flash[:notice] = "Un problème est survenu."
     end
-    redirect_to coach_path(@coach.id)
+    redirect_to seance_path(Seance.last.id)
+    rescue Stripe::CardError => e
+      flash[:alert] = e.message
+      redirect_to seance_path(params[:id])
   end
 
   def show
