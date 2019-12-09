@@ -11,14 +11,14 @@
 
 
   <div class="dashboard-right">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <div class="tab-content" id="nav-tabContent">
         <!-- Profil -->
         <div class="tab-pane fade mt-5" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
           <h4 class="my-2">Éditer mon profil</h4>
           <hr> 
           <%= form_tag user_path(@user), method: "put", multipart: true, class: "form-group" do %>
-
+          <!-- Name -->
             <div class="form-row">
               <div class="form-column col-md-6">
                 <div class="form-group col-md-12 mt-5 pt-3 no-padding">
@@ -35,24 +35,25 @@
 
 
                 <!-- Profil picture --> 
+              <% if @user.avatar.attached? %>
+                <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
+              <% else %>
+                <img src="//api.adorable.io/avatars/120/trickst3r.png" class="avatar-image" alt="avatar" />
+              <% end %>
+              <h6 class="my-4">Photo de profil</h6>
+              <%= file_field_tag :avatar %>
+            <!-- Profil picture --> 
+          </div>
+        </div>
 
-                <%= image_tag @user.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
-                  <div class="mx-auto img-fluid rounded-circle" alt="avatar" />
-                      <%= label_tag 'Photo de profil' %>
-                         <%= file_field_tag :avatar %>
-                     </div>
-                      
-                <!-- Profil picture --> 
-              </div>
-            </div>
-                                 <div class="form-group col-md-6 mt-4 pt-2">
-              <%= label_tag 'Objective'%>
-             <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description"), class: 'form-control' %>
-           </div>
+
+
+           <!-- Email -->
             <div class="form-group ">
               <%= label_tag 'Email'%>
               <%= text_field_tag 'email', @user.email, class: 'form-control'%>
             </div>
+            <!-- Adresse -->
             <div class="form-group">
               <%= label_tag 'Adresse'%>
               <%= text_field_tag 'address', @user.address, class: 'form-control' %>
@@ -62,33 +63,37 @@
                 <%= label_tag 'Code postal' %>
                 <%= text_field_tag 'zip_code', @user.zip_code, class: 'form-control' %>
               </div>
-              <div class="form-group col-md-6 mt-4 pt-2">
+              <div class="form-group col-md-6">
+                  <%= label_tag 'Ville' %>
                 <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
-              </div>
             </div>
-            <div class="form-row">
+            <!-- Phone n . -->
               <div class="form-group col-md-6">
                 <%= label_tag 'Téléphone'%>
                 <%= text_field_tag 'phone_number', @user.phone_number, class: 'form-control' %>
               </div>
+              <!-- B-day -->
               <div class="form-group col-md-6">
                 <%= label_tag 'Date de naissance' %>
-                <div class="mt-1">
                   <% if @user.birth_date == nil %>
                     <%= date_field_tag 'birth_date', "", class: 'form-control' %>
                   <% else %>
                     <%= date_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%d"), class: 'form-control' %>
                   <% end %>
-                </div>
               </div>
-            </div>
-            <div class="form-row mb-3">
+              <!-- Goal Edit -->
+              <div class="form-group col-md-12">  
+              <%= label_tag 'Objective'%>
+             <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description"), class: 'form-control' %>
+           </div>
+            <div class="form-row col-md-12">
               <%= label_tag 'Description'%>
               <%= text_area_tag 'description', @user.description, class: 'form-control' %>
             </div>
+          </div>
             <%= submit_tag "Modifier", class: "btn btn-primary mt-1 mb-5" %>
           <% end %>
-        </div>
+        
         <!-- Profil -->
 
         <!-- Goal -->
@@ -127,7 +132,7 @@
           Pour
         </div>
         <!-- Seances -->
-
+      </div>
       </div>
     </div>
   </div>
