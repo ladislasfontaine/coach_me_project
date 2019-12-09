@@ -31,37 +31,18 @@
                 </div>
               </div>
               <div class="form-group col-md-6 text-center mt-1">
-
-
-
                 <!-- Profil picture --> 
-              <% if @user.avatar.attached? %>
-                <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
-              <% else %>
-                <img src="//api.adorable.io/avatars/120/trickst3r.png" class="avatar-image" alt="avatar" />
-              <% end %>
-              <h6 class="my-4">Photo de profil</h6>
-              <%= file_field_tag :avatar %>
-            <!-- Profil picture --> 
-          </div>
-        </div>
-
                 <% if @user.avatar.attached? %>
-                  <%= image_tag @user.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
-                  <div class="mx-auto img-fluid rounded-circle" alt="avatar" />
-                    <%= label_tag 'Photo de profil' %>
-                    <%= file_field_tag :avatar %>
-                  </div>
+                  <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
                 <% else %>
-                  <div class="mx-auto img-fluid rounded-circle" alt="avatar" />
-                    <%= label_tag 'Photo de profil' %>
-                    <%= file_field_tag :avatar %>
-                  </div>
+                  <img src="//api.adorable.io/avatars/120/trickst3r.png" class="avatar-image" alt="avatar" />
                 <% end %>
-                      
+                <h6 class="my-4">Photo de profil</h6>
+                <%= file_field_tag :avatar %>
                 <!-- Profil picture --> 
               </div>
             </div>
+
             <div class="form-group col-md-6 mt-4 pt-2">
               <%= label_tag 'Objective'%>
              <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description"), class: 'form-control' %>
