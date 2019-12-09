@@ -1,18 +1,19 @@
 
-  <%= image_tag("background-seances.jpg", class:'background_seances', alt:"fond d'image")%>
+<%= image_tag("background-seances.jpg", class:'background_seances', alt:"fond d'image")%>
 
-    <div class="h1_resa">
-      <h1>Votre réservation</h1>
-    </div>
+<div class="h1_resa">
+  <h1>Réservation</h1>
+</div>
 
 <div class="seance_show_html">
 
 <!-- coach card -->
-  <div class="coach_card" style="width: 20rem";>
+  <div class="coach_card seance-container" style="width: 20rem;">
     <div class="card">  
       <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
     <div class="text_card_seances_show">
         <div class="card-body">
+          <h5>Coach</h5>
          <p><%= @seance.coach.first_name %>
           <br>
           <br>
@@ -27,29 +28,20 @@
   </div>
 
 <!-- Seance show -->
-  <div class="seance_show" style="width: 30rem";>
-     <div class="card">       
-      
-          <div class="card-body">          
-            <p class="card-text">
-              Quand ? Le <%= @seance.start_date %>
-              <br>
-              Combient de temps ? <%= @seance.duration %>min
-              <br>
-              Où ? Rdv <%= @seance.place %>
-              <br>
-              Prix ? <%= @price %>€
-            </p>
-          </div>
-      </div>
+  <div class="seance_show seance-container d-flex flex-column justify-content-around align-items-center mb-5">
+    <h5>Détails</h5>
+    <div>Quand ? <%= @seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
+    <div>Combient de temps ? <%= @seance.duration %> minutes</div>
+    <div>Où ? Rdv <%= @seance.place %></div>
+    <div>Prix ? <%= @price %>€</div>
   </div>
 
-
 <!-- user card -->
-  <div class="user_card" style="width: 20rem";>
+  <div class="user_card seance-container" style="width: 20rem;">
     <div class="card">
        <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
       <div class="card-body">
+        <h5>Sportif</h5>
         <p><%= @seance.user.first_name %> <%= @seance.user.last_name %></p>
         <p class="card-text">
         <%= @seance.user.address %>
@@ -65,15 +57,13 @@
     </div>
   </div>
 
-
-<div class="Button_return_Dashboard">
-<% if user_signed_in? %>
-  <%= link_to "Retourner au Dashboard", edit_user_path(current_user.id),class:"btn btn-primary mt-3" %>
-<% elsif coach_signed_in? %>
-  <%= link_to "Retourner au Dashboard", edit_coach_path(current_coach.id),class:"btn btn-primary mt-3" %>
-<% else %>
-  <%= link_to "Retour", :back, class:"btn btn-primary mt-3" %>
-<% end %>
-
-</div>
+  <div class="Button_return_Dashboard">
+    <% if user_signed_in? %>
+      <%= link_to "Retourner au Dashboard", edit_user_path(current_user.id),class:"btn btn-outline-primary mt-3" %>
+    <% elsif coach_signed_in? %>
+      <%= link_to "Retourner au Dashboard", edit_coach_path(current_coach.id),class:"btn btn-outline-primary mt-3" %>
+    <% else %>
+      <%= link_to "Retour", :back, class:"btn btn-outline-primary mt-3" %>
+    <% end %>
+  </div>
 </div>
