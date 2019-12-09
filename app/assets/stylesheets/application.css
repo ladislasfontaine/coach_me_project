@@ -22,4 +22,6 @@
  *= require calendar
  *= require seances
  *= require alert
+ *= require statics
+ *= require map
  */

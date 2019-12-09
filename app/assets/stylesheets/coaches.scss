@@ -153,38 +153,33 @@
   margin: 20px 0;
 }
 
-.cover-image
-{
+.cover-image {
 width: 100%;
 height: 400px;
 object-fit: cover;
 }
 
-.avatar-image
-{
+.avatar-image {
 width: 150px;
 height: 150px;
 border-radius: 50%;
 object-fit: cover;
 }
 
-.card-group
-{
+.card-group {
 display: flex;
 width: 100%;
 
 }
 
-.cards
-{
+.cards {
 width: 60%;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
 }
 
-.card-informations
-{
+.card-informations {
   font-size: 14px;
   padding: 30px 10px;
   padding-top: 40px;
@@ -204,16 +199,10 @@ justify-content: space-around;
   margin-bottom: 0;
 }
 
-.button_booked
-{
+.button_booked {
   padding-bottom: 20px;
   padding-right: 10px;
   padding-left: 10px;
-}
-
-.map {
-width: 40%;
-height: 100vh;
 }
 
 .photo-profil {
@@ -226,26 +215,27 @@ height: 100vh;
 .photo-profil img {
   border-radius: 50%;
   border: 2px solid #FFF;
+  object-fit: cover;
+
 }
 
-.coach_image
-{
+.coach_image {
 object-fit: cover;
 height: 140px;
+
 }
 
-.map
-{
+.map {
 width: 40%;
 height: 100vh;
+position: -webkit-sticky;
+position: sticky;
+top: 71px;
 }
 
-.find_map
-{
+.find_map {
 width: 100%;
 height: 100%;
-position: fixed;
 object-fit: cover;
-
 
 }

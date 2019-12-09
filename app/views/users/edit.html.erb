@@ -1,137 +1,157 @@
-<div class="row mx-5 px-5">
-  <div class="col-md-3">
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item"><strong>Dashboard</strong></a>
-      <div class="divider"></div>
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><i class="fas fa-user-circle dashboard mr-3"></i>Mon profil</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><i class="fas fa-cog mr-3"></i>Éditer</a>
-      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><i class="fas fa-signal fa-sm mr-3"></i>Mes objectifs</a>
-      <a class="list-group-item list-group-item-action" id="list-seances-list" data-toggle="list" href="#list-seances" role="tab" aria-controls="messages" ><i class="far fa-calendar mr-3"></i>Mes séances</a>
+  <div class="full-dashboard">
+    <div class="dashboard-left">
+      <div class=" list-group dashboard-list-group" role="tablist">
+        <a class="list-group-item dashboard-list-group-item"><strong>Dashboard</strong></a>
+        <a class="list-group-item list-group-item-action active dashboard-list-group-item " id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><i class="fas fa-user-circle mr-3"></i>Mon profil</a>
+        <a class="list-group-item list-group-item-action dashboard-list-group-item" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><i class="fas fa-cog mr-3"></i>Éditer</a>
+        <a class="list-group-item list-group-item-action dashboard-list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><i class="fas fa-signal fa-sm mr-3"></i>Mes objectifs</a>
+        <a class="list-group-item list-group-item-action dashboard-list-group-item" id="list-seances-list" data-toggle="list" href="#list-seances" role="tab" aria-controls="messages" ><i class="far fa-calendar mr-3"></i>Mes séances</a>
     </div>
   </div>
-  <div class="col-md-8">
-    <div class="tab-content" id="nav-tabContent">
-      <!-- Account -->
-      <div class="tab-pane fade show active mt-5" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-        En cours
-      </div>
-      <!-- Account -->
 
-      <!-- Profil -->
-      <div class="tab-pane fade mt-5" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-        <h4 class="my-2">Éditer mon profil</h4>
-        <hr> 
-        <%= form_tag user_path(@user), method: "put", multipart: true, class: "form-group" do %>
 
-          <div class="form-row">
-            <div class="form-column col-md-6">
-              <div class="form-group col-md-12 mt-5 pt-3 no-padding">
-                <%= label_tag 'Prenom'%>
-                <%= text_field_tag 'first_name', @user.first_name, class: 'form-control'%>
-              </div>
-              <div class="form-group col-md-12 no-padding">
-                <%= label_tag 'Nom'%>
-                <%= text_field_tag 'last_name', @user.last_name, class: 'form-control'%>
-              </div>
-            </div>
-            <div class="form-group col-md-6 text-center mt-1">
-              <!-- Profil picture --> 
-              <% if @user.avatar.attached? %>
-                  <%= image_tag @user.avatar, alt: 'avatar' %>
-                <%else%>
-                  <p>=== Il n'y a pas encore photo de profil ===</p>
-                
-                  <div class="form-group form-check">
-                        <%= label_tag 'Photo de profil' %>
-                        <%= file_field_tag :avatar %>
-                      </div>
-                <img src="//api.adorable.io/avatars/120/trickst3r.png" class="mx-auto img-fluid rounded-circle" alt="avatar" />
-                <h6 class="my-4">Photo de profil</h6>
-                <div class="input-group px-lg-4">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputGroupFile02">
-                        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choisir une image</label>
-                        <%end%>
-                    </div>
-                    <div class="input-group-append">
-                        <button class="btn btn-secondary"><i class="fa fa-upload"></i></button>
-                    </div>
+  <div class="dashboard-right">
+    <div class="col-md-12">
+      <div class="tab-content" id="nav-tabContent">
+        <!-- Profil -->
+        <div class="tab-pane fade mt-5" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+          <h4 class="my-2">Éditer mon profil</h4>
+          <hr> 
+          <%= form_tag user_path(@user), method: "put", multipart: true, class: "form-group" do %>
+          <!-- Name -->
+            <div class="form-row">
+              <div class="form-column col-md-6">
+                <div class="form-group col-md-12 mt-5 pt-3 no-padding">
+                  <%= label_tag 'Prenom'%>
+                  <%= text_field_tag 'first_name', @user.first_name, class: 'form-control'%>
                 </div>
-              <!-- Profil picture --> 
-            </div>
-          </div>
-          <div class="form-group">
-            <%= label_tag 'Email'%>
-            <%= text_field_tag 'email', @user.email, class: 'form-control'%>
-          </div>
-          <div class="form-group">
-            <%= label_tag 'Adresse'%>
-            <%= text_field_tag 'address', @user.address, class: 'form-control' %>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <%= label_tag 'Code postal' %>
-              <%= text_field_tag 'zip_code', @user.zip_code, class: 'form-control' %>
-            </div>
-            <div class="form-group col-md-6 mt-4 pt-2">
-              <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <%= label_tag 'Téléphone'%>
-              <%= text_field_tag 'phone_number', @user.phone_number, class: 'form-control' %>
-            </div>
-            <div class="form-group col-md-6">
-              <%= label_tag 'Date de naissance' %>
-              <div class="mt-1">
-                <% if @user.birth_date == nil %>
-                  <%= date_field_tag 'birth_date', "", class: 'form-control' %>
+                <div class="form-group col-md-12 no-padding">
+                  <%= label_tag 'Nom'%>
+                  <%= text_field_tag 'last_name', @user.last_name, class: 'form-control'%>
+                </div>
+              </div>
+              <div class="form-group col-md-6 text-center mt-1">
+                <!-- Profil picture --> 
+                <% if @user.avatar.attached? %>
+                  <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
                 <% else %>
-                  <%= date_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%d"), class: 'form-control' %>
+                  <img src="//api.adorable.io/avatars/120/trickst3r.png" class="avatar-image" alt="avatar" />
+                <% end %>
+                <h6 class="my-4">Photo de profil</h6>
+                <%= file_field_tag :avatar %>
+                <!-- Profil picture --> 
+              </div>
+            </div>
+
+            <div class="form-group col-md-6 mt-4 pt-2">
+              <%= label_tag 'Objective'%>
+             <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description"), class: 'form-control' %>
+            </div>
+
+           <!-- Email -->
+            <div class="form-group ">
+              <%= label_tag 'Email'%>
+              <%= text_field_tag 'email', @user.email, class: 'form-control'%>
+            </div>
+            <!-- Adresse -->
+            <div class="form-group">
+              <%= label_tag 'Adresse'%>
+              <%= text_field_tag 'address', @user.address, class: 'form-control' %>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <%= label_tag 'Code postal' %>
+                <%= text_field_tag 'zip_code', @user.zip_code, class: 'form-control' %>
+              </div>
+              <div class="form-group col-md-6">
+                  <%= label_tag 'Ville' %>
+                <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+            </div>
+            <!-- Phone n . -->
+              <div class="form-group col-md-6">
+                <%= label_tag 'Téléphone'%>
+                <%= text_field_tag 'phone_number', @user.phone_number, class: 'form-control' %>
+              </div>
+              <!-- B-day -->
+              <div class="form-group col-md-6">
+                <%= label_tag 'Date de naissance' %>
+                  <% if @user.birth_date == nil %>
+                    <%= date_field_tag 'birth_date', "", class: 'form-control' %>
+                  <% else %>
+                    <%= date_field_tag 'birth_date', @user.birth_date.strftime("%Y-%m-%d"), class: 'form-control' %>
+                  <% end %>
+              </div>
+              <!-- Goal Edit -->
+              <div class="form-group col-md-12">  
+              <%= label_tag 'Objective'%>
+             <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description"), class: 'form-control' %>
+           </div>
+            <div class="form-row col-md-12">
+              <%= label_tag 'Description'%>
+              <%= text_area_tag 'description', @user.description, class: 'form-control' %>
+            </div>
+          </div>
+            <%= submit_tag "Modifier", class: "btn btn-primary mt-1 mb-5" %>
+          <% end %>
+        </div>
+        
+        <!-- Profil -->
+
+        <!-- Goal -->
+        <div class="tab-pane fade mt-5" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+            <div class="container">
+                <div class="col">
+                  <% if @user.objective_id == nil %>
+                  <p>Vous avez pas encore des objectives</p>
+                  <% else %>
+                  <ul class="justify-content-center">
+                    <li class="list-group-item">
+                      <%= @user.objective.description %>
+                      <li class="list-group-item">
+                     
+                    </li>
+                  </ul>
                 <% end %>
               </div>
             </div>
-          </div>
-          <div class="form-row mb-3">
-            <%= label_tag 'Description'%>
-            <%= text_area_tag 'description', @user.description, class: 'form-control' %>
-          </div>
+        </div>
+        <!-- Goal -->
 
-          <%= submit_tag "Modifier", class: "btn btn-primary mt-1 mb-5" %>
 
-        <% end %>
-      </div>
-      <!-- Profil -->
 
-      <!-- Goal -->
-      <div class="tab-pane fade mt-5" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+        <!-- Account/ Mon profil -->
+        <div class="tab-pane fade show active mt-5" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
           <div class="container">
-              <div class="col">
-                <% if @user.objective %>
-                <% @user.objective == 0 %>
-                <p>Vous avez pas encore des objectives</p>
-                   <%= link_to "Modifier", edit_user_path(params[:id]), class: "btn btn-primary" %>
-                <% else %>
-                <ul class="justify-content-center">
-                  <li class="list-group-item">
-                    <%= @user.objective.description %>
-                    <li class="list-group-item">
-                   
-                  </li>
-                </ul>
-              <% end %>
+            <div class="row">
+              <!-- photo -->
+              <div class="col-md-3">
+                <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
+              </div>
+
+              <div class="col-md-6">
+                 <div class="card" style="width: 25rem;">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item"><%= @user.last_name.upcase %> <%= @user.first_name %></li>
+                          <li class="list-group-item"><%= @user.city.name %></li>
+                          <li class="list-group-item"><%= %></li>
+                        </ul>
+                      </div>
+
+                
+              </div>
+              
             </div>
           </div>
-      </div>
-      <!-- Goal -->
+        </div>
+        <!-- Account -->
 
-      <!-- Seances -->
-      <div class="tab-pane fade mt-5" id="list-seances" role="tabpanel" aria-labelledby="list-seances-list">
-        Pour
-      </div>
-      <!-- Seances -->
 
-    </div>
+        <!-- Seances -->
+        <div class="tab-pane fade mt-5" id="list-seances" role="tabpanel" aria-labelledby="list-seances-list">
+          Pour
+        </div>
+        <!-- Seances -->
+      </div>
+      </div>
+  
   </div>
-</div>
