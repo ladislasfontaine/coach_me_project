@@ -1,6 +1,5 @@
 <div class="coach-jumbotron">
-  <%= image_tag @user.cover, alt: 'Photo de couverture', class: 'cover-image' %>
-  <h2>Coach <%= @user.first_name %></h2>
+  <%= image_tag 'background-form-3.jpg', alt: 'Photo de couverture', class: 'cover-image' %>
   <div class="profile-pic">
     <% if @user.avatar.attached? %>
       <%= image_tag @user.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
@@ -11,44 +10,8 @@
 <div class="public-section">
   <div class="coach-col coach-infos">
     <div class="coach-name"><%= @user.first_name %> <%= @user.last_name %></div>
-    <div class="coach-city"><%= @user.city.name %><br><%= @user.phone_number %></div>
-    <div class="name">
-        <%= @user.first_name %>
-        <%= @user.last_name %>
-        <%= @user.description %>
-        <% if !@user.birth_date == nil %>
-          <%= @user.birth_date.strftime("%Y-%m-%dT%H:%M") %>
-        <% end %>
-    </div>
-
-    <p>===============</p>
-
-    Contact :
-    <div class="phone">
-        <%= @user.phone_number %>
-    </div>
-
-    <p>===============</p>
-
-    Adresse :
-    <div class="address">
-      <%= @user.address %>
-      <%= @user.zip_code %>
-    </div>
-
-    <p>===============</p>
-
-    Ville :
-    <div class="city">
-      <%= @user.city.name %>
-    </div>
-
-    <p>===============</p>
-
-    Objectif :
-    <div class="objective">
-      <%= @user.objective.description %>
-    </div>
+    <div class="coach-city"><%= @user.city.name %></div>
+    <div class="objective"><%= @user.objective.description %></div>
 
   </div>
 
@@ -103,6 +66,8 @@
 <%= link_to 'Modifier mes informations', edit_user_path(params[:id]) %>
 <%= link_to 'Retour', coaches_path %>
 
+<!-- EDIT VIEW BELOW
+
     <p>===============</p>
 
     Mes séances:
@@ -111,14 +76,12 @@
       Pas encore de séances réservées
     <% else %>
       <h5>Séances à venir</h5>
-      <!-- seance.start_date > Time.now -->
       <% @user.seances.select {|seance| seance.start_date }.each do |seance| %>
         <div class=""><%= seance.start_date.strftime("%Y-%m-%dT%H:%M") %></div>
         <div class=""><%= seance.duration %> minutes</div>
         <div class=""><%= seance.place %></div>
       <% end %>
       <h5>Séances passées</h5>
-      <!-- seance.start_date < Time.now -->
       <% @user.seances.select {|seance| seance.start_date }.each do |seance| %>
         <div class=""><%= seance.start_date.strftime("%Y-%m-%dT%H:%M") %></div>
         <div class=""><%= seance.duration %> minutes</div>
@@ -142,4 +105,6 @@
     <div class="edit_setting">
     <button type="button" name="button"><%= link_to 'Editer mes informations', edit_user_path(@user) %></button>
     </div>
+
+-->
 
