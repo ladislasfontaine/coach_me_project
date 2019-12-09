@@ -241,3 +241,13 @@ span.wrap {
 	top: 30%;
 	left: 47%;
 }
+
+
+/********************/
+/* 	CARROUSEL	 	*/
+/********************/
+
+.carrou{
+	max-width: 1024px;
+	margin-left: 380px;
+}
