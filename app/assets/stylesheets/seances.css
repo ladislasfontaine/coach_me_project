@@ -36,8 +36,9 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
-    filter: brightness(0.5);
-    height: 100vh;
+	filter: brightness(0.2);
+	height: 100vh;
+	object-fit: cover;
 }
 .coach_card_seance{
 	width: 100%;
@@ -45,29 +46,25 @@
 	margin: auto;
 	background-color: ghostwhite;
 	font-weight: bolder;
+	object-fit: cover;
 }
 .text_card_seances_show{
 	font-weight: 200;
 	background-color: ghostwhite;
 	color: black;
-	text-transform: uppercase;
 	font-weight: bolder;
 	font-weight: 900;
 	text-align: center;
 }
 .seance_show{
-	background-color: ghostwhite;
-	color: black;
-	text-transform: uppercase;
-	font-weight: bolder;
-	font-weight: 900;
-	text-align: center;
+	padding: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
 }
 .user_card{
 	font-weight: 200;
 	background-color: ghostwhite;
 	color: black;
-	text-transform: uppercase;
 	font-weight: bolder;
 	font-weight: 900;
 	text-align: center;
@@ -75,4 +72,10 @@
 .Button_return_Dashboard{
 	position: absolute;
 	padding-top: 280px;
+}
+
+.seance-container {
+	border-radius: 10px;
+	font-family: 'Roboto', sans-serif;
+	min-height: 250px;
 }
