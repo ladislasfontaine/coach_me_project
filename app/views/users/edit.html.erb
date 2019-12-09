@@ -36,19 +36,26 @@
 
                 <!-- Profil picture --> 
 
-                <%= image_tag @user.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
+                <% if @user.avatar.attached? %>
+                  <%= image_tag @user.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
                   <div class="mx-auto img-fluid rounded-circle" alt="avatar" />
-                      <%= label_tag 'Photo de profil' %>
-                         <%= file_field_tag :avatar %>
-                     </div>
+                    <%= label_tag 'Photo de profil' %>
+                    <%= file_field_tag :avatar %>
+                  </div>
+                <% else %>
+                  <div class="mx-auto img-fluid rounded-circle" alt="avatar" />
+                    <%= label_tag 'Photo de profil' %>
+                    <%= file_field_tag :avatar %>
+                  </div>
+                <% end %>
                       
                 <!-- Profil picture --> 
               </div>
             </div>
-                                 <div class="form-group col-md-6 mt-4 pt-2">
+            <div class="form-group col-md-6 mt-4 pt-2">
               <%= label_tag 'Objective'%>
              <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description"), class: 'form-control' %>
-           </div>
+            </div>
             <div class="form-group ">
               <%= label_tag 'Email'%>
               <%= text_field_tag 'email', @user.email, class: 'form-control'%>
