@@ -14,10 +14,11 @@
     <div class="text_card_seances_show">
         <div class="card-body">
           <h5>Coach</h5>
-         <p><%= @seance.coach.first_name %>
-          <br>
-          <br>
-          <%= @seance.coach.last_name %>
+          <p>
+            <%= @seance.coach.first_name %>
+            <br>
+            <br>
+            <%= @seance.coach.last_name %>
           </p>
           <p class="card-text">
             <%= @seance.coach.phone_number %>
@@ -57,13 +58,12 @@
     </div>
   </div>
 
-  <div class="Button_return_Dashboard">
-    <% if user_signed_in? %>
-      <%= link_to "Retourner au Dashboard", edit_user_path(current_user.id),class:"btn btn-outline-primary mt-3" %>
-    <% elsif coach_signed_in? %>
-      <%= link_to "Retourner au Dashboard", edit_coach_path(current_coach.id),class:"btn btn-outline-primary mt-3" %>
-    <% else %>
-      <%= link_to "Retour", :back, class:"btn btn-outline-primary mt-3" %>
-    <% end %>
-  </div>
+
+
+<div class="Button_return_Dashboard">
+  <%= link_to "Retourner au Dashboard", edit_user_path(params[:id]),class:"btn btn-primary mt-3" %>
+</div>
+
+  
+
 </div>
