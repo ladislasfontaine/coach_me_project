@@ -17,3 +17,4 @@
 //= require jquery
 //= require turbolinks
 //= require script
+//= require map

@@ -228,10 +228,9 @@ height: 140px;
 .map {
 width: 40%;
 height: 100vh;
+position: -webkit-sticky;
 position: sticky;
-top:71px;
-
-
+top: 71px;
 }
 
 .find_map {

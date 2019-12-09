@@ -7,3 +7,15 @@
 	margin-left: 20px;
 	margin-right: 20px;
 }
+
+.title_contact{
+	margin-top:-2%	
+}
+
+.jumbotron jumbotron-fluid{
+	background-color:#FF5630 !important;
+	margin-top:2%;
+	color:white;
+	text-align: center;
+}
+
