@@ -10,9 +10,8 @@
 <div class="public-section">
   <div class="coach-col coach-infos">
     <div class="coach-name"><%= @user.first_name %> <%= @user.last_name %></div>
-    <div class="coach-city"><%= @user.city.name %></div>
-    <div class="objective"><%= @user.objective.description %></div>
-
+    <div class="coach-city"><i class="fas fa-home mr-3"></i><%= @user.city.name %></div>
+    <div class="objective"><i class="fas fa-signal"></i> Objectif : <%= @user.objective.description %></div>
   </div>
 
   <div class="coach-col calendar-form">
