@@ -1,7 +1,5 @@
 <div class="coach-jumbotron">
-  <% if @user.cover.attached? %>
-    <%= image_tag @user.cover, alt: 'Photo de couverture', class: 'cover-image' %>
-  <% end %>
+  <%= image_tag @user.cover, alt: 'Photo de couverture', class: 'cover-image' %>
   <h2>Coach <%= @user.first_name %></h2>
   <div class="profile-pic">
     <% if @user.avatar.attached? %>
