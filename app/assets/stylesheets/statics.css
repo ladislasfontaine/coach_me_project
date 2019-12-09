@@ -1,21 +1,17 @@
 .cgu{
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: 50px 10%;
 }
 
 .cgv{
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: 50px 10%;
 }
 
 .title_contact{
-	margin-top:-2%	
-}
-
-
-.test_jumbo{
 	text-align: center;
 	color: white;
-	margin-top: 2%;
+	margin-top: 60px;
+}
 
+.contact_container{
+	margin-top: 60px;
 }
