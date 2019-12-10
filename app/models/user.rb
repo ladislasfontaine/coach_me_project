@@ -9,7 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
-  belongs_to :city, optional: true
+  belongs_to :city, optional: true 
   belongs_to :objective, optional: true
   has_many :data
   has_many :seances

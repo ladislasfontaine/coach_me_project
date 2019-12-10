@@ -12,6 +12,8 @@
       <h4 class="mt-3">Se connecter</h4>
 
       <%= link_to 'Se connecter via Facebook', user_facebook_omniauth_authorize_path, class:"btn btn-primary mt-4" %>
+      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+      </fb:login-button>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field form my-2">
@@ -57,3 +59,24 @@
   
 </div>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '490446361589071',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v5.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
