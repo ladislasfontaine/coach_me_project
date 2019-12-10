@@ -2,7 +2,27 @@ class CoachesController < ApplicationController
   before_action :set_coach, only: %i[show edit update]
 
   def index
-    @coaches = Coach.all
+    if (params[:city].nil? && params[:sport].nil?) || (params[:city] == "1" && params[:sport] == "1")
+      @coaches = Coach.all
+    elsif params[:city] == "1"
+      @coaches = Coach.all.select{ |coach|
+        coach.specialties.map{ |specialty|
+          if specialty.id == params[:sport].to_i
+            true
+          end 
+        }.include?(true)
+      }
+    elsif params[:sport] == "1"
+      @coaches = Coach.all.select{ |coach| coach.city.id == params[:city].to_i }
+    else
+      @coaches = Coach.all.select{ |coach| coach.city.id == params[:city].to_i }.select{ |coach|
+        coach.specialties.map{ |specialty|
+          if specialty.id == params[:sport].to_i
+            true
+          end 
+        }.include?(true)
+      }
+    end
   end
 
   def coach_params

@@ -25,7 +25,7 @@ specialties = []
 seances = []
 
 objectives_initialize = ["A définir", "Perdre du poids", "Gagner en masse musculaire", "Préparer une compétition", "Juste pour le fun", "Réduire mon stress"]
-specialties_initialize = ["Boxe", "Yoga", "Course", "Musculation", "Danse", "Pilates", "Triathlon"]
+specialties_initialize = ["Tous les sports", "Boxe", "Yoga", "Course", "Musculation", "Danse", "Pilates", "Triathlon"]
 cities_initialize = ["A définir", "Paris", "Bordeaux", "Lyon", "Nantes", "Marseille", "Lille", "Rennes", "Strasbourg"]
 durations_initialize = [60, 90, 120]
 
