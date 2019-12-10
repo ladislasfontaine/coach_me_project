@@ -65,7 +65,7 @@
               </div>
               <div class="form-group col-md-6">
                   <%= label_tag 'Ville' %>
-                <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+                <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name", @user.city.id), class: 'form-control' %>
             </div>
             <!-- Phone n . -->
               <div class="form-group col-md-6">
@@ -84,7 +84,7 @@
               <!-- Goal Edit -->
               <div class="form-group col-md-12">  
               <%= label_tag 'Objective'%>
-             <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description"), class: 'form-control' %>
+             <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description", @user.objective.id), class: 'form-control' %>
            </div>
             <div class="form-row col-md-12">
               <%= label_tag 'Description'%>
@@ -107,8 +107,6 @@
                   <ul class="justify-content-center">
                     <li class="list-group-item">
                       <%= @user.objective.description %>
-                      <li class="list-group-item">
-                     
                     </li>
                   </ul>
                 <% end %>
@@ -119,27 +117,32 @@
 
 
 
-        <!-- Account/ Mon profil -->
+        <!-- Account/ My profil -->
         <div class="tab-pane fade show active mt-5" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
           <div class="container">
             <div class="row">
               <!-- photo -->
               <div class="col-md-3">
-                <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
+                <% if @user.avatar.attached? %>
+                  <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
+                <% else %>
+                  <img src="//api.adorable.io/avatars/120/trickst3r.png" class="avatar-image" alt="avatar" />
+                <% end %>
               </div>
 
               <div class="col-md-6">
                  <div class="card" style="width: 25rem;">
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item"><%= @user.last_name.upcase %> <%= @user.first_name %></li>
-                          <li class="list-group-item"><%= @user.city.name %></li>
-                          <li class="list-group-item"><%= %></li>
-                        </ul>
-                      </div>
-
-                
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><%= @user.last_name.upcase %> <%= @user.first_name %></li>
+                      <% if @user.description && @user.city.name === "" %>
+                        <li class="list-group-item"> Complete votre Profil dans Éditer. </li>
+                      <% else %>
+                        <li class="list-group-item">J'habite à <%= @user.city.name %>.</li>
+                        <li class="list-group-item"><%= @user.description%>!</li>
+                        <% end %>
+                      </ul>
+                  </div>
               </div>
-              
             </div>
           </div>
         </div>
@@ -147,11 +150,39 @@
 
 
         <!-- Seances -->
-        <div class="tab-pane fade mt-5" id="list-seances" role="tabpanel" aria-labelledby="list-seances-list">
-          Pour
+        <div class="tab-coach-dashboard fade mt-5" id="list-seances" role="tabpanel" aria-labelledby="list-seances-list">
+          <div class="position-absolute">
+            <h4 class="my-2">Mes séances</h4>
+            <hr>
+            <div>
+              <% if @user.seances == [] %>
+                Pas encore de séances réservées
+              <% else %>
+                <h5 class="title-seances">Séances à venir</h5>
+                <% @user.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
+                  <div class="horizontal-card-seances">
+                    <div class="seance-start card-el"><%= seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
+                    <div class="seance-duration card-el"><%= seance.duration %> minutes</div>
+                    <div class="seance-user card-el">Avec <%= seance.coach.first_name %> <%= seance.coach.last_name.upcase %></div>
+                    <div><%= link_to 'Voir', seance_path(seance.id), class: "btn btn-secondary card-el" %></div>
+                    <div><%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"}, class: "btn btn-secondary card-el" %></div>
+                  </div>
+                <% end %>
+                <h5 class="title-seances">Séances passées</h5>
+                <% @user.seances.select{|seance| seance.start_date < Time.now }.each do |seance| %>
+                  <div class="horizontal-card-seances">
+                    <div class="seance-start card-el"><%= seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
+                    <div class="seance-duration card-el"><%= seance.duration %> minutes</div>
+                    <div class="seance-user card-el">Avec <%= seance.coach.first_name %> <%= seance.coach.last_name %></div>
+                    <div><%= link_to 'Voir', seance_path(seance.id), class: "btn btn-secondary card-el" %></div>
+                    <div><%= link_to 'Archiver', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"}, class: "btn btn-secondary card-el" %></div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
         <!-- Seances -->
       </div>
-      </div>
-  
+    </div>
   </div>

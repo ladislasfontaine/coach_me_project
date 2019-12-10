@@ -1,21 +1,27 @@
 .cgu{
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: 50px 10%;
 }
 
 .cgv{
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: 50px 10%;
 }
 
 .title_contact{
-	margin-top:-2%	
-}
-
-.jumbotron jumbotron-fluid{
-	background-color:#FF5630 !important;
-	margin-top:2%;
-	color:white;
 	text-align: center;
+	color: white;
+	margin-top: 60px;
 }
 
+.contact_container{
+	margin-top: 60px;
+}
+
+.icones{
+	line-height:6%;
+	color:#FF5630;
+}
+
+.team_images {
+  width: 12rem;
+  border-radius: 50%;
+}

@@ -5,8 +5,13 @@
   z-index: 5;
   width: 90%;
   height: 50px;
-  background: #ff5630cc;
+  background: #4e72dfc7;
+  border: 4px solid #4e72df;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.alert-dismissible .close {
+  top: -5px;
 }
