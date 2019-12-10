@@ -1,3 +1,6 @@
+/**********************/
+/*       CGV-CGU   	  */
+/**********************/
 .cgu{
 	margin: 50px 10%;
 }
@@ -5,7 +8,18 @@
 .cgv{
 	margin: 50px 10%;
 }
+.title_CGV{
+	display: flex;
+	justify-content: center;
+}
+.title_CGU{
+	display: flex;
+	justify-content: center;
+}
 
+/**********************/
+/*     	CONTACT		  */
+/**********************/
 .title_contact{
 	text-align: center;
 	color: white;
@@ -21,7 +35,18 @@
 	color:#FF5630;
 }
 
+/**********************/
+/*    	ABOUT		  */
+/**********************/
+
 .team_images {
   width: 12rem;
   border-radius: 50%;
+}
+
+
+.title_about{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 50px;
 }
