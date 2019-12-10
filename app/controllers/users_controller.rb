@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
-  before_action :set_cities, only: %i[welcome edit]
-  before_action :set_objectives, only: %i[show edit]
+  before_action :set_cities, only: %i[welcome edit update]
+  before_action :set_objectives, only: %i[show edit update]
 
   def welcome
     @sport = Specialty.all

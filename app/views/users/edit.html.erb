@@ -43,11 +43,6 @@
               </div>
             </div>
 
-            <div class="form-group col-md-6 mt-4 pt-2">
-              <%= label_tag 'Objective'%>
-             <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description"), class: 'form-control' %>
-            </div>
-
            <!-- Email -->
             <div class="form-group ">
               <%= label_tag 'Email'%>
@@ -64,9 +59,9 @@
                 <%= text_field_tag 'zip_code', @user.zip_code, class: 'form-control' %>
               </div>
               <div class="form-group col-md-6">
-                  <%= label_tag 'Ville' %>
+                <%= label_tag 'Ville' %>
                 <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name", @user.city.id), class: 'form-control' %>
-            </div>
+              </div>
             <!-- Phone n . -->
               <div class="form-group col-md-6">
                 <%= label_tag 'Téléphone'%>
@@ -83,9 +78,9 @@
               </div>
               <!-- Goal Edit -->
               <div class="form-group col-md-12">  
-              <%= label_tag 'Objective'%>
-             <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description", @user.objective.id), class: 'form-control' %>
-           </div>
+                <%= label_tag 'Objectif'%>
+                <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description", @user.objective.id), class: 'form-control' %>
+              </div>
             <div class="form-row col-md-12">
               <%= label_tag 'Description'%>
               <%= text_area_tag 'description', @user.description, class: 'form-control' %>
@@ -133,7 +128,7 @@
               <div class="col-md-6">
                  <div class="card" style="width: 25rem;">
                       <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><%= @user.last_name.upcase %> <%= @user.first_name %></li>
+                        <li class="list-group-item"><%= @user.last_name %> <%= @user.first_name %></li>
                       <% if @user.description && @user.city.name === "" %>
                         <li class="list-group-item"> Complete votre Profil dans Éditer. </li>
                       <% else %>
