@@ -18,15 +18,6 @@ a:hover {
 	text-decoration: none !important;
 }
 
-#background {
-	position: absolute;
-	top: 0%;
-	background: linear-gradient(rgba(255, 86, 48, 1), rgba(255, 86, 48, 0)); 
-	background-size: cover;
-	height: 50vh; 
-	width: 100%;
-}
-
 .small {
 	font-size: 14px;
 }
@@ -51,6 +42,10 @@ a:hover {
 	color: #E9ECEF;
 }
 
+.white {
+	color: #fff;
+}
+
 /**********************/
 /*  	BUTTON / LOGO	  */
 /**********************/
@@ -60,12 +55,27 @@ a:hover {
 }
 
 .fa-user-circle {
-	color: #868E96;
+	color: #fff;
 }
 
 .fa-user-circle:hover {
+	color: #fff;
+	opacity: .7;
+	transition: 0.2s ease;
+}
+
+.fa-user-circle.dashboard {
+	color: #485057;
+} 
+
+.fa-user-circle.scrolled {
 	color: #ff5630;
-	transition: 0.3s ease;
+}
+
+.fa-user-circle.scrolled:hover {
+	color: #ff5630;
+	opacity: .7;
+	transition: 0.2s ease;
 }
 
 .fa-search {
@@ -93,8 +103,141 @@ a:hover {
 .fa-chevron-left:hover, .fa-chevron-right:hover {
 	text-shadow:2px 3px #868E96;
 }
+
 .buttom_sinscrire{
 	display:flex;
 	justify-content: space-around;
 	text-align: center;
+}
+
+
+
+/**********************/
+/*	¨ANIMATION TEXT 	*/
+/**********************/
+
+.container-index {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span.typed-text-index {
+  color: rgb(255, 94, 94);
+  font-weight: 200;
+}
+
+span.cursor-index {
+  display: inline-block;
+  background-color: #fff;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+
+span.cursor-index.typing {
+  animation: none;
+}
+
+/* animation pour faire clignotter le curseur */
+@keyframes blink {
+  0% { background-color: #fff; }
+  49% { background-color: #fff; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100% { background-color: #fff; }
+}
+
+/**************/
+/*	¨INDEX 		*/
+/**************/
+
+#search-container {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+
+}
+
+#background {
+	position: absolute;
+	top: 0%;
+	background-size: cover;
+	height: 100vh; 
+	width: 100%;
+	z-index: -1;
+}
+
+#macbook img {
+	position: absolute;
+	width: 30%;
+	left: 55%;
+	top: 14%;
+}
+
+#text-index {
+	position: absolute;
+	top: 17%;
+	left: 18%;
+	color: #fff;
+}
+
+.seance_show{
+	background-color: ghostwhite;
+	color: black;
+}
+
+#search-button {
+	position: absolute;
+	width: 100%;
+	top: 58%;
+}
+
+#promise {
+	position: absolute;
+	width: 100%;
+	top: 70%;
+}
+
+#border-orange {
+	position: relative;
+	bottom: 0px;
+	border: 1px solid #ff5630;
+	border-radius: 5%;
+	padding: 15px 15px;
+	box-shadow: none;
+	-webkit-transition: bottom 0.5s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.5s ease;
+}
+
+#border-orange:hover {
+	bottom: 10px;
+	box-shadow: 0px 10px 10px #E9ECEF;
+}
+
+#carouselExampleControls {
+	width: 55%;
+}
+
+select#city, select#sport {
+	box-shadow: 0 10px 10px rgba(0, 0, 0, .1); 
+}
+
+/********************/
+/* 	ANIMATION TEXT 	*/
+/********************/
+
+h1 .big {
+	font-size: 45px;
+}
+
+span.wrap {
+	color: #4e73df !important;
+}
+
+#animation-text {
+	position: absolute;
+	top: 30%;
+	left: 47%;
 }

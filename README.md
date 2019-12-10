@@ -1,24 +1,21 @@
-# README
+<h1>Coach Me 💻</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Coach Me est une plateforme permettant à un utilisateur de réserver une séance avec un coach sportif de sa ville.
 
-Things you may want to cover:
+* Ruby version 2.5.1
+* Rails version 5.2.3
+* `bundle install`
+* `rails db:create`
+* `rails db:migrate`
+* `rails db:seed`
+* `rails server`
+* en local : `http://localhost:3000/`
+* en production : `https://coachme.herokuapp.com/`
 
-* Ruby version
+<h2>Architecture</h2>
 
-* System dependencies
+![Architecture Base de données](app/assets/images/db.png)
 
-* Configuration
+--------
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Fait par Maja, Guillaume, Nicolas, Rémi et Ladislas 🤙 en utilisant les ressources de [The Hacking Project](https://www.thehackingproject.org)

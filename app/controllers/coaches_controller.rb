@@ -3,18 +3,26 @@ class CoachesController < ApplicationController
 
   def index
     @coaches = Coach.all
-    
+
 
   end
+
+  def coach_params
+    #params.require(:coach).permit(:first_name)
+
+  end
+
 
   def show
     @seances = @coach.seances
   end
 
   def edit
+    @cities = City.all
   end
 
   def update
+    @city = City.find(params[:city])
     # check for images and attach them
     if !params[:avatar].nil?
       @coach.avatar.purge
@@ -35,6 +43,7 @@ class CoachesController < ApplicationController
       phone_number: params[:phone_number],
       address: params[:address],
       zip_code: params[:zip_code],
+      city: @city,
       price: params[:price],
       siret: params[:siret],
       account_name: params[:account_name],

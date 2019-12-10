@@ -16,7 +16,12 @@
  *= require navbar
  *= require footer
  *= require coaches
+ *= require coaches_dashboard
  *= require users
  *= require form
  *= require calendar
+ *= require seances
+ *= require alert
+ *= require statics
+ *= require map
  */

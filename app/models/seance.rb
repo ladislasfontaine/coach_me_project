@@ -3,6 +3,7 @@ class Seance < ApplicationRecord
   belongs_to :coach
   after_create :welcome_send
 
+
   def start_time
     self.start_date
   end
@@ -10,6 +11,9 @@ class Seance < ApplicationRecord
   def welcome_send
 
     SeanceMailer.welcome_email(self).deliver_now
+
+    SeanceMailer.seance_email(self).deliver_now
+
 
   end
 end

@@ -16,3 +16,5 @@
 //= require Chart.bundle
 //= require jquery
 //= require turbolinks
+//= require script
+//= require map

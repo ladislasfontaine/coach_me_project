@@ -1,28 +1,108 @@
 <div id="background">
+	<%= image_tag('background-index-2.png') %>
+</div>
 
-	<div class="row justify-content-center mt-5 pt-4">
+<div id="macbook">
+	<%= image_tag('macbook-index.png') %>
+</div>
+<div class="row justify-content-center mt-5 mw-100">
 
-		<div class="col-md-3">
-			  <div class="form-group">
-			    <label for="cityDropdown" class="">Où ?</label>
-			    <select class="form-control" id="cityDropdown">
-			      <option>Bordeaux</option>
-			      <option>Paris</option>
-			      <option>Lyon</option>
-			    </select>
-			  </div>
-		</div>
-
-		<div class="col-md-3">
-			  <div class="form-group">
-			    <label for="cityDropdown" class="">Quel sport ?</label>
-			    <select class="form-control" id="cityDropdown">
-			      <option>Yoga</option>
-			      <option>Boxe anglaise</option>
-			      <option>Poney</option>
-			    </select>
-			  </div>
-		</div>
-
+	<div class="col-md-3">
+  	<div class="form-group">
+  		<label class="white" for="cityDropdown"><h6>Où ?</h6></label>
+      <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+    </div>
 	</div>
+	<div class="col-md-3">
+		  <div class="form-group">
+		    <label class="white" for="cityDropdown"><h6>Quel sport ?</h6></label>
+		    <%= select_tag "sport", options_from_collection_for_select(@sport, "id", "name"), class: 'form-control' %>
+		  </div>
+	</div>
+
+</div>
+<div class="row justify-content-center mw-100">
+	<%= link_to "Trouver mon coach", coaches_path, class: "btn btn-outline-primary index" %>
+</div>
+
+<div id="macbook">
+	<%= image_tag('macbook-index.png') %>
+</div>
+
+<div style="height: 500px;"></div>
+
+<div id="animation-text" class="d-flex justify-content-center mt-4">
+	<h1>
+		<span class="big">Rechercher un coach <br> de</span>
+	  <a href="" class="typewrite big" data-period="1500" data-type='["yoga vinyasa", "boxe anglaise", "course à pied", "musculation", "danse", "pilates", "triathlon"]'>
+	    <span class="wrap" style="color: #4e73df !important;"></span>
+	  </a>
+	</h1>
+</div>
+
+<div id="text-index">
+	<h6 class="mb-3">Simplifiez-vous la vie avec CoachMe.</h6>
+	<div class="w-50">
+		<h6>Dans toute la France, CoachMe vous accompagne dans la réussite de vos <br> objectifs sportifs. </h6>
+	</div>
+</div>
+<div class="my-5">
+	<div class="d-flex justify-content-center mb-4">
+		<hr style="width: 30%;">
+	</div>
+	<h2 class="text-center mb-3">Vous soutenir dans vos objectifs</h2>
+	<div class="d-flex justify-content-center">
+		<div class="col-md-5 text-center">
+			<p class="mb-5">Vous essayez de perdre du poids, de vous tonifier, d'abaisser votre IMC ou d'investir dans votre état de santé général ? Nous vous proposons les meilleurs coachs pour atteindre vos objectifs.</p>
+		</div>
+	</div>
+	<div class="d-flex flex-row justify-content-around mx-5 px-5">
+		<div id="border-orange" class="col-md-3 mx-3">
+			<div class="text-center">
+				<i class="far fa-calendar-check fa-3x mb-3"></i>
+			</div>
+			<h5 class="text-center"><span class="orange">Suivi</span> de vos séances en temps réel</h5>
+			<p>Ne rater plus une séance grâce à CoachMe, on s'occupe de tout ! Vous avez un contre-temps ? Annuler votre séance en un clic.</p>
+		</div>
+		<div id="border-orange" class="col-md-3 mx-3">
+			<div class="text-center">
+				<i class="fas fa-users fa-3x mb-3"></i>
+			</div>
+			<h5 class="text-center">Une <span class="orange">communauté</span> soudée</h5>
+			<p>Rester connecter avec notre messagerie instantanée, profiter des conseils personnalisés de nos coachs.</p>
+		</div>
+		<div id="border-orange" class="col-md-3 mx-3">
+			<div class="text-center">
+				<i class="fas fa-signal fa-3x mb-3"></i>
+			</div>
+			<h5 class="text-center"><span class="orange">Progresser</span>. Apprendre. Evoluer.</h5>
+			<p>Avec CoachMe, ayer un suivi constant sur vos objectifs et votre progression grâce à nos coachs certifiés.</p>
+		</div>
+	</div>
+</div>
+
+<div class="d-flex justify-content-center">
+	<hr style="width: 30%;">
+</div>
+
+<!-- carousel -->
+<h2 class="text-center mt-5 mb-4">Vos Avis</h2>
+<div class="d-flex justify-content-center mb-4">
+	<div id="carouselExampleControls" data-interval="5000" class="carousel slide" data-ride="carousel">
+	  <div class="carousel-inner">
+	    <div class="carousel-item active">
+	      <%= image_tag("avistest1.png", class:"d-block w-100", alt:"image avis") %>
+	    </div>
+	    <div class="carousel-item">
+	      <%= image_tag("avistest2.png", class:"d-block w-100", alt:"image avis") %>
+	    </div>
+	  </div>
+	  <!--Controls-->
+	      <div class="my-3 text-center">
+	      	<a class="btn-floating btn-md" href="#carouselExampleControls" data-slide="prev"><button class="btn btn-primary"><i class="fas fa-chevron-left"></i></button></a>
+	      	<a class="btn-floating btn-md" href="#carouselExampleControls" data-slide="next"><button class="btn btn-primary"><i class="fas fa-chevron-right"></i></button></a>
+	      </div>
+		  <!--/.Controls-->
+	</div>
+	<!-- Fin carousel -->
 </div>

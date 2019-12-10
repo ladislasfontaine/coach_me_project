@@ -245,7 +245,7 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 16px;
 }
@@ -2622,13 +2622,19 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #ff5630;
   border-color: #ff5630;
+  bottom: 0px;
 }
 
 .btn-primary:hover, .btn-primary:focus {
+  position: relative;
   background-color: #ff5630;
   color: #fff;
   border-color: #ff5630;
-  opacity: 0.8;
+  bottom: 3px;
+  opacity: .9;
+  box-shadow: 0 7px 5px #E9ECEF;
+  -webkit-transition: bottom 0.2s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.2s ease;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
@@ -2903,14 +2909,23 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-  color: #4582EC;
-  border-color: #4582EC;
+  color: #ff5630;
+  border-color: #ff5630;
+  background: #fff;
+}
+
+.btn-outline-primary.index {
+  color: #ff5630;
+  border-color: #ff5630;
+  background: #fff;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #4582EC;
-  border-color: #4582EC;
+  border-color: #fff;
+  background: #ff5630;
+  transition: .4s;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {
@@ -3480,7 +3495,7 @@ input[type="button"].btn-block {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #4582EC;
+  background-color: #E9ECEF;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {

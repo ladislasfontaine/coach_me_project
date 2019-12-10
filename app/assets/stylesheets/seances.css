@@ -1,0 +1,81 @@
+/**********************/
+/*    Show seances	  */
+/**********************/
+
+.seance_show_html{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	width: 100%;
+	border: none;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-weight: bold;
+	font-size: 20px;	
+}
+.h1_resa{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-weight: bold;
+	font-size: 30px;
+	color: #FF5630;
+}
+.background_seances{
+	position: absolute;
+	top:0;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	filter: brightness(0.2);
+	height: 100vh;
+	object-fit: cover;
+}
+.coach_card_seance{
+	width: 100%;
+	height: 300px;
+	margin: auto;
+	background-color: ghostwhite;
+	font-weight: bolder;
+	object-fit: cover;
+}
+.text_card_seances_show{
+	font-weight: 200;
+	background-color: ghostwhite;
+	color: black;
+	font-weight: bolder;
+	font-weight: 900;
+	text-align: center;
+}
+.seance_show{
+	padding: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+.user_card{
+	font-weight: 200;
+	background-color: ghostwhite;
+	color: black;
+	font-weight: bolder;
+	font-weight: 900;
+	text-align: center;
+}
+.Button_return_Dashboard{
+	position: absolute;
+	padding-top: 280px;
+}
+
+.seance-container {
+	border-radius: 10px;
+	font-family: 'Roboto', sans-serif;
+	min-height: 250px;
+}
