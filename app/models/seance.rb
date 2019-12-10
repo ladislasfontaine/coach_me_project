@@ -10,7 +10,10 @@ class Seance < ApplicationRecord
 
   def welcome_send
 
+    SeanceMailer.welcome_email(self).deliver_now
+
     SeanceMailer.seance_email(self).deliver_now
+
 
   end
 end

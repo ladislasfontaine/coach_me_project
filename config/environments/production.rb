@@ -62,7 +62,7 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "coach_me_#{Rails.env}"
-  # Maja add 
+  # Maja add
   config.action_mailer.default_url_options = { host: 'https://coachme.herokuapp.com/', port: 3000 }
 
   config.action_mailer.perform_caching = false
@@ -90,6 +90,7 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
