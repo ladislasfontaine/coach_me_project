@@ -20,3 +20,8 @@
 	line-height:6%;
 	color:#FF5630;
 }
+
+.team_images {
+  width: 12rem;
+  border-radius: 50%;
+}
