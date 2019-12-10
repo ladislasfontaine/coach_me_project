@@ -3,15 +3,11 @@ class CoachesController < ApplicationController
 
   def index
     @coaches = Coach.all
-
-
   end
 
   def coach_params
     #params.require(:coach).permit(:first_name)
-
   end
-
 
   def show
     @seances = @coach.seances
