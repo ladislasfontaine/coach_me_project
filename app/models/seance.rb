@@ -11,5 +11,6 @@ class Seance < ApplicationRecord
   def seance_validate
     Seance.last.each do |seance|
     SeanceMailer.seance_validate(user, seance).deliver_now
+    end
   end
 end
