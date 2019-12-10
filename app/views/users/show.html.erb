@@ -15,13 +15,12 @@
   </div>
 
   <div class="coach-col calendar-form">
-    <h2>Mes séances</h2>
     <div>
+      <h2>Mes séances</h2>
       <% if @user.seances == [] %>
         Pas encore de séances réservées
       <% else %>
-
-        <h5>Séances à venir</h5>
+        <h5 class="d-flex justify-content-center">Séances à venir</h5>
         <!-- seance.start_date > Time.now -->
         <% @user.seances.select{|seance| seance.start_date }.each do |seance| %>
           <div>Début : <%= seance.start_date %></div>
@@ -29,17 +28,20 @@
           <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
           <%= link_to 'Voir', seance_path(seance.id) %>
           <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
-        <% end %>
-        <h5>Séances passées</h5>
-        <!-- seance.start_date < Time.now -->
-        <% @user.seances.select{|seance| seance.start_date }.each do |seance| %>
-          <div>Début : <%= seance.start_date %></div>
-          <div>Durée : <%= seance.duration %>min</div>
-          <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
-          <%= link_to 'Voir', seance_path(seance.id) %>
-          <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
-        <% end %>
       <% end %>
+    </div>
+    <div>
+      <h5>Séances passées</h5>
+      <!-- seance.start_date < Time.now -->
+      <% @user.seances.select{|seance| seance.start_date }.each do |seance| %>
+        <div>Début : <%= seance.start_date %></div>
+        <div>Durée : <%= seance.duration %>min</div>
+        <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
+        <%= link_to 'Voir', seance_path(seance.id) %>
+        <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
+      <% end %>
+    <% end %>
+    </div><div>
     </div>
   </div>
 
