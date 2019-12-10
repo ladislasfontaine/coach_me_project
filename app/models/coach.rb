@@ -1,5 +1,4 @@
 class Coach < ApplicationRecord
-  after_create :default_city
   after_create :welcome_send
 
   # Include default devise modules. Others available are:
@@ -17,20 +16,8 @@ class Coach < ApplicationRecord
   has_one_attached :cover
   has_one_attached :diploma
 
-
-  def default_city
-    @city = City.first
-    self.update(city: @city)
-  end
-
-
   #MAILER
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
-
-
-
-
-
 end
