@@ -38,10 +38,12 @@
 /**********************/
 /*    	ABOUT		  */
 /**********************/
+
 .team_images {
   width: 12rem;
   border-radius: 50%;
 }
+
 
 .title_about{
 	display: flex;

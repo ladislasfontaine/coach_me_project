@@ -21,8 +21,8 @@
 	</div>
 
 </div>
-<div class="row justify-content-center mw-100">
-	<%= link_to "Trouver mon coach", coaches_path, class: "btn btn-outline-primary index" %>
+<div class="row justify-content-center mw-100 index">
+	<%= link_to "Trouver mon coach", coaches_path, class: "btn btn-outline-primary" %>
 </div>
 
 <div id="macbook">
@@ -39,10 +39,6 @@
 	  </a>
 	</h1>
 </div>
-<%= form_tag coaches_path, method: :get do %>
-		<%= text_field_tag :search, params[:search] %>
-		<%= submit_tag "Search" %>
-<% end %>
 
 <div id="text-index">
 	<h6 class="mb-3">Simplifiez-vous la vie avec CoachMe.</h6>
