@@ -167,7 +167,7 @@ span.cursor-index.typing {
 	top: 0%;
 	background-size: cover;
 	height: 100vh; 
-	width: 100%;
+	width: 100% !important;
 	z-index: -1;
 }
 
@@ -301,4 +301,3 @@ span.wrap {
 	height: 1px;
 	background-color: #fff;
 }
-

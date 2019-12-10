@@ -5,25 +5,26 @@
 <div id="macbook">
 	<%= image_tag('macbook-index.png') %>
 </div>
-<div class="row justify-content-center mt-5 mw-100">
 
-	<div class="col-md-3">
-  	<div class="form-group">
-  		<label class="white" for="cityDropdown"><h6>Où ?</h6></label>
-      <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
-    </div>
+<%= form_tag coaches_path, method: 'get' do %>
+	<div class="row justify-content-center mt-5 mw-100">
+		<div class="col-md-3">
+			<div class="form-group">
+				<label class="white" for="cityDropdown"><h6>Où ?</h6></label>
+				<%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+			</div>
+		</div>
+		<div class="col-md-3">
+				<div class="form-group">
+					<label class="white" for="cityDropdown"><h6>Quel sport ?</h6></label>
+					<%= select_tag "sport", options_from_collection_for_select(@sport, "id", "name"), class: 'form-control' %>
+				</div>
+		</div>
 	</div>
-	<div class="col-md-3">
-		  <div class="form-group">
-		    <label class="white" for="cityDropdown"><h6>Quel sport ?</h6></label>
-		    <%= select_tag "sport", options_from_collection_for_select(@sport, "id", "name"), class: 'form-control' %>
-		  </div>
+	<div class="row justify-content-center mw-100 index">
+		<%= submit_tag "Trouver mon coach", class: "btn btn-outline-primary" %>
 	</div>
-
-</div>
-<div class="row justify-content-center mw-100 index">
-	<%= link_to "Trouver mon coach", coaches_path, class: "btn btn-outline-primary" %>
-</div>
+<% end %>
 
 <div id="macbook">
 	<%= image_tag('macbook-index.png') %>
@@ -41,9 +42,9 @@
 </div>
 
 <div id="text-index">
-	<h6 class="mb-3">Simplifiez-vous la vie avec CoachMe.</h6>
+	<h3 class="mb-4">Le sport devient plus facile avec CoachMe.</h3>
 	<div class="w-50">
-		<h6>Dans toute la France, CoachMe vous accompagne dans la réussite de vos <br> objectifs sportifs. </h6>
+		<h6>CoachMe vous permet de réserver une séance de sport avec un coach particulier certifié.</h6>
 	</div>
 </div>
 <div class="my-5">
