@@ -13,6 +13,11 @@
       <li class="nav-item">
         <%= link_to 'Trouver un coach', coaches_path, class: "btn btn-outline-primary" %>
       </li>
+      <!-- If render the partial we need 
+      <li class="nav-item">
+        <%= link_to 'Vous êtes professionnel?', welcome_path, class: "btn btn-outline-primary" %>
+      </li>
+      -->
     </ul>
 
     <ul class="nav-item dropdown right-nav-perso">
@@ -41,7 +46,7 @@
         <% end %>
       </div>
     </a>
-    
+
 
     <div class="dropdown-menu dropdown-menu-perso" aria-labelledby="navbarDropdown">
       <ul>
@@ -60,7 +65,7 @@
         <% else %>
           <h6 class="d-flex justify-content-center orange">Adhérent</h6>
           <%= link_to "Connexion", new_user_session_path, class: "dropdown-item" %>
-          <%= link_to "Inscription", new_user_registration_path, class: "dropdown-item"  %> 
+          <%= link_to "Inscription", new_user_registration_path, class: "dropdown-item"  %>
           <div class="dropdown-divider"></div>
           <h6 class="d-flex justify-content-center orange">Coach</h6>
           <%= link_to "Connexion", new_coach_session_path, class: "dropdown-item"  %>
