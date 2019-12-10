@@ -2914,7 +2914,13 @@ fieldset:disabled a.btn {
   background: #fff;
 }
 
-.btn-outline-primary.index {
+.btn-outline-primary {
+  color: #ff5630;
+  border-color: #ff5630;
+  background: #fff;
+}
+
+.index .btn-outline-primary {
   color: #ff5630;
   border-color: #ff5630;
   background: #fff;
