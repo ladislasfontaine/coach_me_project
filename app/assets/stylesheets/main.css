@@ -320,3 +320,7 @@ span.wrap {
 	color: #fff !important;
 	letter-spacing: .1em;
 }
+
+.oauth-buttons.signup {
+	margin-left: -25px !important;
+}
