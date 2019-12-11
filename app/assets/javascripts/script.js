@@ -71,3 +71,8 @@ var textAnimation = function() {
 // $(document).ready(textAnimation);
 // $(document).on('page:load', textAnimation); // Classic Turbolinks
 $(document).on('turbolinks:load', textAnimation); // Turbolinks 5
+
+
+// DROPDOWN FIXED
+
+$('.dropdown-toggle').dropdown()
