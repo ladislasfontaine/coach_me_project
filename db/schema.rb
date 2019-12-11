@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_093500) do
     t.boolean "is_admin", default: false
     t.bigint "city_id"
     t.bigint "objective_id"
+    t.string "facebook_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
