@@ -1,4 +1,3 @@
-<% content_for :title, "CoachMe" %>
 <div id="background">
 	<%= image_tag('background-index-2.png') %>
 </div>
@@ -43,22 +42,22 @@
 </div>
 
 <div id="text-index">
-	<h3 class="mb-4">Le sport devient plus facile<br>avec CoachMe.</h3>
+	<h3 class="mb-4">Le sport devient plus facile avec CoachMe.</h3>
 	<div class="w-50">
 		<h6>CoachMe vous permet de réserver une séance de sport avec un coach particulier certifié.</h6>
 	</div>
 </div>
 <div class="my-5">
-	<div class="d-flex justify-content-center my-5">
+	<div class="d-flex justify-content-center mb-4">
 		<hr style="width: 30%;">
 	</div>
 	<h2 class="text-center mb-3">Vous soutenir dans vos objectifs</h2>
-	<div class="d-flex justify-content-center mb-5">
+	<div class="d-flex justify-content-center">
 		<div class="col-md-5 text-center">
 			<p class="mb-5">Vous essayez de perdre du poids, de vous tonifier, d'abaisser votre IMC ou d'investir dans votre état de santé général ? Nous vous proposons les meilleurs coachs pour atteindre vos objectifs.</p>
 		</div>
 	</div>
-	<div class="d-flex flex-row justify-content-around my-5 mx-5 px-5">
+	<div class="d-flex flex-row justify-content-around mx-5 px-5">
 		<div id="border-orange" class="col-md-3 mx-3">
 			<div class="text-center">
 				<i class="far fa-calendar-check fa-3x mb-3"></i>
@@ -86,6 +85,7 @@
 <div class="d-flex justify-content-center">
 	<hr style="width: 30%;">
 </div>
+
 
 <h2 class="text-center mt-5">Comment ça marche ?</h2>
 
@@ -165,16 +165,31 @@
 	<hr style="width: 30%;">
 </div>
 
+
 <!-- carousel -->
-<h2 class="text-center my-5">Vos Avis</h2>
+<h2 class="text-center mt-5 mb-4">Vos Avis</h2>
 <div class="d-flex justify-content-center mb-4">
 	<div id="carouselExampleControls" data-interval="5000" class="carousel slide" data-ride="carousel">
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <%= image_tag("avistest1.png", class:"d-block w-100", alt:"image avis") %>
+	      <div class="view_one">
+	      <%= image_tag("user1.png", class:"picture_comment", alt:"image avis") %>
+	
+	      	<p class="comment_user">
+	      	<span style="font-size: 25px;">PIERRE</span>
+	      	<br>
+	      	Se mettre au sport, ça demande de la volonté. Parfois aussi, de l'organisation. Et surtout ? le courage d'affronter des épreuves que nous n'aurions jamais pensé être capable d'affronter. Des épreuves qui vont du regard des aurtes à la salle de sport à sa première course à vélo de 160km. Grâce à mon coach trouvé sur CoachMe, j'ai pu atteindre tous mes objectifs !!</p>
 	    </div>
+	  </div>
+
 	    <div class="carousel-item">
-	      <%= image_tag("avistest2.png", class:"d-block w-100", alt:"image avis") %>
+ 			<div class="view_two">
+	      <%= image_tag("user1.png", class:"picture_comment", alt:"image avis") %>
+			<p class="comment_user">
+	      	<span style="font-size: 25px;">HENRI</span> 
+	      	<br>
+	      	J'ai entendu parlé de CoachMe et je ne suis pas déçu. J'ai trouvé un coach sportif a l'écoute de mes besoins. Il a su me rassurer, me motiver lorsque j'avais besoin. Seul, il est difficile de se mettre au sport, sentir les regards sur soi, le jugement. Avec un coach sportif </p>
+			</div>
 	    </div>
 	  </div>
 	  <!--Controls-->
