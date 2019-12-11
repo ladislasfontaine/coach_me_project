@@ -2689,12 +2689,18 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #adb5bd;
   border-color: #adb5bd;
+  bottom: 0px;
 }
 
 .btn-secondary:hover {
+  position: relative;
   color: #fff;
   background-color: #98a2ac;
   border-color: #919ca6;
+  bottom: 3px;
+  box-shadow: 0 7px 5px #E9ECEF;
+  -webkit-transition: bottom 0.2s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.2s ease;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {

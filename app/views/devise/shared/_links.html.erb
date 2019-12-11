@@ -27,7 +27,7 @@
 <div class="oauth-buttons">
 	<%- if devise_mapping.omniauthable? %>
 		<%- resource_class.omniauth_providers.each do |provider| %>
-			<%= link_to "Continuer avec #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class:"oauth-button #{OmniAuth::Utils.camelize(provider)}" %><br />
+			<%= link_to "Continuer avec #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class:"rounded oauth-button #{OmniAuth::Utils.camelize(provider)}" %><br />
 		<% end %>
 	<% end %>
 </div>

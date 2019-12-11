@@ -110,9 +110,7 @@ a:hover {
 	text-align: center;
 }
 
-.fa-user, .fa-city, .fa-search, .fa-hand-point-right {
-	color: white;
-}
+
 
 /**********************/
 /*	¨ANIMATION TEXT 	*/
@@ -175,12 +173,12 @@ span.cursor-index.typing {
 	position: absolute;
 	width: 30%;
 	left: 55%;
-	top: 10%;
+	top: 14%;
 }
 
 #text-index {
 	position: absolute;
-	top: 12%;
+	top: 17%;
 	left: 18%;
 	color: #fff;
 }
@@ -240,9 +238,10 @@ span.wrap {
 
 #animation-text {
 	position: absolute;
-	top: 23%;
+	top: 30%;
 	left: 47%;
 }
+
 
 #orange-brand {
 	margin: 80px 0;
@@ -254,50 +253,47 @@ span.wrap {
 }
 
 .orange-brand-step {
-
+	position: relative;
+	bottom: 0px;
+	-webkit-transition: bottom 0.5s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.5s ease;
 }
 
-.circle-border {
-	padding-top: 2px;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	border: 1px solid white;
+.orange-brand-step:hover {
+	position: relative;
+	bottom: 8px;
+	-webkit-transition: bottom 0.5s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.5s ease;
 }
 
-.step-text {
-	min-height: 58px;
+
+/********************/
+/* 	VIEW COMMENT 	*/
+/********************/
+.picture_comment{
+	width: 180px;
 }
 
-.step-number {
-	margin-top: 20px;
+.view_one{
 	display: flex;
-	justify-content: center;
+}
+.title_view{
+	display: contents;
 }
 
-#hr-white-1 {
-	position: absolute;
-	top: 71%;
-	left: 15%;
-	width: 300px;
-	height: 1px;
-	background-color: #fff;
+.view_two{
+	display: flex;
 }
 
-#hr-white-2 {
-	position: absolute;
-	top: 71%;
-	left: 41%;
-	width: 300px;
-	height: 1px;
-	background-color: #fff;
+.rounded {
+	border-radius: 1.5em !important;
+	font-family: 'Roboto' !important, sans-serif;
+	font-weight: bold;
+	font-size: 12px !important;
+	color: #fff !important;
+	letter-spacing: .1em;
 }
 
-#hr-white-3 {
-	position: absolute;
-	top: 71%;
-	left: 66.5%;
-	width: 300px;
-	height: 1px;
-	background-color: #fff;
+.oauth-buttons.signup {
+	margin-left: -25px !important;
 }
