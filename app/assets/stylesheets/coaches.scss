@@ -137,23 +137,22 @@
 
 /* CALENDAR */
 
-.calendar-form {
+.calendar-form-coach {
   width: 60%;
   min-width: 280px;
-  margin-left: 150px;
-  margin-top: 60px;
-  margin-bottom: 60px;
-
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 
 .calendar-section {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .calendar-section h2 {
