@@ -9,20 +9,21 @@
 
 <!-- coach card -->
   <div class="coach_card seance-container" style="width: 20rem;">
-    <div class="card">  
+    <div class="card">
       <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
     <div class="text_card_seances_show">
         <div class="card-body">
           <h5>Coach</h5>
-          <p>
-            <%= @seance.coach.first_name %>
-            <br>
-            <br>
-            <%= @seance.coach.last_name %>
-          </p>
+          <p><a href="<%= coach_path(@seance.coach) %>"> <%= @seance.coach.first_name %> <%= @seance.coach.last_name %></a></p>
           <p class="card-text">
             <%= @seance.coach.phone_number %>
-           </p>
+            <br>
+            <br>
+            <%= @seance.coach.zip_code %>
+            <br>
+            <br>
+            <%= @seance.coach.city.name %>
+          </p>
         </div>
     </div>
     </div>
@@ -38,17 +39,19 @@
   </div>
 
 <!-- user card -->
+
   <div class="user_card seance-container" style="width: 20rem;">
     <div class="card">
        <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
       <div class="card-body">
         <h5>Sportif</h5>
-        <p><%= @seance.user.first_name %> <%= @seance.user.last_name %></p>
+        <p><a href="<%= user_path(@seance.user) %>"> <%= @seance.user.first_name %> <%= @seance.user.last_name %></a></p>
+
         <p class="card-text">
         <%= @seance.user.address %>
         <br>
         <br>
-        <%= @seance.user.zip_code %> 
+        <%= @seance.user.zip_code %>
         <%= @seance.user.city.name %>
         <br>
         <br>
@@ -64,6 +67,6 @@
   <%= link_to "Retourner au Dashboard", edit_user_path(params[:id]),class:"btn btn-primary-2 mt-3" %>
 </div>
 
-  
+
 
 </div>
