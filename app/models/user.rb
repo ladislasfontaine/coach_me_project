@@ -11,8 +11,8 @@ class User < ApplicationRecord
 
   belongs_to :city, optional: true 
   belongs_to :objective, optional: true
-  has_many :data
-  has_many :seances
+  has_many :data, dependent: :destroy
+  has_many :seances, dependent: :destroy
   has_many :coaches, through: :seances
   has_one_attached :avatar
   has_one_attached :cover
