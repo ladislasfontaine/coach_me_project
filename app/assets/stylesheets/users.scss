@@ -14,3 +14,33 @@
 	top: 15%;
 	left: 7%;
 }
+
+
+.user-infos {
+  width: 25%;
+  min-width: 280px;
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  height: 603px;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 20px;
+  padding-top: 110px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-details {
+  font-size: 18px;
+  font-weight: bold;
+	text-align: center;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: bold;
+	text-align: center;
+}
