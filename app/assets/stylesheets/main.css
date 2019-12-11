@@ -171,6 +171,7 @@ span.cursor-index.typing {
 
 #background img {
 	object-fit: cover;
+	width: 100%;
 }
 
 #macbook img {
