@@ -2625,6 +2625,25 @@ fieldset:disabled a.btn {
   bottom: 0px;
 }
 
+.btn-primary-2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background-color: #ff5630;
+  border-color: #ff5630;
+  bottom: 0px;
+}
+
+.btn-primary-2:hover {
+  position: relative;
+  background-color: #ff5630;
+  color: #fff;
+  border-color: #ff5630;
+  bottom: 3px;
+  opacity: .9;
+  -webkit-transition: bottom 0.2s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.2s ease;
+}
+
 .btn-primary:hover {
   position: relative;
   background-color: #ff5630;
@@ -2638,14 +2657,11 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary:focus {
-  position: relative;
   background-color: #ff5630;
   color: #fff;
   border-color: #ff5630;
   opacity: .9;
   box-shadow: 0 7px 5px #E9ECEF;
-  -webkit-transition: bottom 0.2s ease; /* For Safari 3.1 to 6.0 */
-  transition: bottom 0.2s ease;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
