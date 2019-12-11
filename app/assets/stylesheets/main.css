@@ -280,3 +280,21 @@ span.wrap {
 .oauth-buttons.signup {
 	margin-left: -25px !important;
 }
+
+/********************/
+/* 	VIEW COMMENT 	*/
+/********************/
+.picture_comment{
+	width: 180px;
+}
+
+.view_one{
+	display: flex;
+}
+.title_view{
+	display: contents;
+}
+
+.view_two{
+	display: flex;
+}
