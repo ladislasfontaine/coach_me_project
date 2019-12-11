@@ -110,9 +110,7 @@ a:hover {
 	text-align: center;
 }
 
-.fa-user, .fa-city, .fa-search, .fa-hand-point-right {
-	color: white;
-}
+
 
 /**********************/
 /*	¨ANIMATION TEXT 	*/
@@ -175,12 +173,12 @@ span.cursor-index.typing {
 	position: absolute;
 	width: 30%;
 	left: 55%;
-	top: 10%;
+	top: 14%;
 }
 
 #text-index {
 	position: absolute;
-	top: 12%;
+	top: 17%;
 	left: 18%;
 	color: #fff;
 }
@@ -240,64 +238,25 @@ span.wrap {
 
 #animation-text {
 	position: absolute;
-	top: 23%;
+	top: 30%;
 	left: 47%;
 }
 
-#orange-brand {
-	margin: 80px 0;
-	padding: 50px 100px;
-	background-color: #ff5630; 
-	height: 300px;
-	width: 100%;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, .1); 
+
+
+/********************/
+/* 	VIEW COMMENT 	*/
+/********************/
+.picture_comment{
+	width: 180px;
 }
 
-.orange-brand-step {
-
-}
-
-.circle-border {
-	padding-top: 2px;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	border: 1px solid white;
-}
-
-.step-text {
-	min-height: 58px;
-}
-
-.step-number {
-	margin-top: 20px;
+.view_one{
 	display: flex;
-	justify-content: center;
 }
-
-#hr-white-1 {
-	position: absolute;
-	top: 71%;
-	left: 15%;
-	width: 300px;
-	height: 1px;
-	background-color: #fff;
+.title_view{
+	display: contents;
 }
-
-#hr-white-2 {
-	position: absolute;
-	top: 71%;
-	left: 41%;
-	width: 300px;
-	height: 1px;
-	background-color: #fff;
-}
-
-#hr-white-3 {
-	position: absolute;
-	top: 71%;
-	left: 66.5%;
-	width: 300px;
-	height: 1px;
-	background-color: #fff;
+.view_two{
+	display: flex;
 }
