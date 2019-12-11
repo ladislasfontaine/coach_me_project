@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   height: 32px;
+  width: 500px;
 }
 
 .oauth-button {
@@ -19,4 +20,8 @@
 
 .Facebook {
   background-color: #1877f2;
+}
+
+.GoogleOauth2 {
+  background-color: #df4d57;
 }

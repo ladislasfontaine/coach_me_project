@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  devise :omniauthable, omniauth_providers: [:facebook]
+  devise :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   belongs_to :city, optional: true 
   belongs_to :objective, optional: true
@@ -38,6 +38,15 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[6, 20]
       user.first_name = auth.info.name.split[0] 
       user.last_name = auth.info.name.split[1]
+    end
+  end
+
+  def self.from_google(auth)
+    where(google_id: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[6, 20]
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
     end
   end
 end

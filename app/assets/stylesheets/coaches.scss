@@ -62,7 +62,7 @@
   margin: 5px;
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  height: 603px;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   padding: 0 20px;
   padding-top: 110px;
@@ -138,15 +138,22 @@
 /* CALENDAR */
 
 .calendar-form {
-  width: 25%;
+  width: 60%;
   min-width: 280px;
+  margin-left: 150px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
 }
 
+
 .calendar-section {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .calendar-section h2 {
