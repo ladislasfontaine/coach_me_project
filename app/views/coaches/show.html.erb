@@ -2,6 +2,8 @@
 <div class="coach-jumbotron">
   <% if @coach.cover.attached? %>
     <%= image_tag @coach.cover, alt: 'Photo de couverture', class: 'cover-image' %>
+    <% else %>
+    <%= image_tag 'background-form-3.jpg', alt: 'Photo de couverture', class: 'cover-image' %>
   <% end %>
   <h2>Coach <%= @coach.first_name %></h2>
 
@@ -44,26 +46,7 @@
         <%= text_field_tag 'place', "à domicile", class: 'form-control' %>
       </div>
       <%= hidden_field_tag :coach_id , @coach.id %>
-        <div class="text-center">
-          <article>
-            <% if flash[:error].present? %>
-              <div id="error_explanation">
-                <p><%= flash[:error] %></p>
-              </div>
-            <% end %>
-            <label class="amount">
-              <span><%= @coach.price %>€</span>
-            </label>
-          </article>
-
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="Création d'une commande"
-                  data-currency="eur"
-                  data-amount="<%= @coach.price * 100 %>"
-                  data-locale="auto">
-          </script>
-     </div>
+      <%= submit_tag "Continuez", class: "btn btn-primary" %>
     <% end %>
   </div>
 

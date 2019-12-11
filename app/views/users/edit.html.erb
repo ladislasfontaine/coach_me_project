@@ -121,7 +121,7 @@
                 <% if @user.avatar.attached? %>
                   <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
                 <% else %>
-                  <img src="//api.adorable.io/avatars/120/trickst3r.png" class="avatar-image" alt="avatar" />
+                 <%= image_tag 'default.jpg', alt: 'Photo de profil', class: 'avatar-image' %>
                 <% end %>
               </div>
 
