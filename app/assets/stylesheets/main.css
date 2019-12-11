@@ -243,6 +243,29 @@ span.wrap {
 }
 
 
+#orange-brand {
+	margin: 80px 0;
+	padding: 50px 100px;
+	background-color: #ff5630; 
+	height: 300px;
+	width: 100%;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, .1); 
+}
+
+.orange-brand-step {
+	position: relative;
+	bottom: 0px;
+	-webkit-transition: bottom 0.5s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.5s ease;
+}
+
+.orange-brand-step:hover {
+	position: relative;
+	bottom: 8px;
+	-webkit-transition: bottom 0.5s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.5s ease;
+}
+
 
 /********************/
 /* 	VIEW COMMENT 	*/
@@ -257,6 +280,16 @@ span.wrap {
 .title_view{
 	display: contents;
 }
+
 .view_two{
 	display: flex;
+
+.rounded {
+	border-radius: 1.5em !important;
+	font-family: 'Roboto' !important, sans-serif;
+	font-weight: bold;
+	font-size: 12px !important;
+	color: #fff !important;
+	letter-spacing: .1em;
+
 }
