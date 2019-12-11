@@ -254,7 +254,17 @@ span.wrap {
 }
 
 .orange-brand-step {
+	position: relative;
+	bottom: 0px;
+	-webkit-transition: bottom 0.5s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.5s ease;
+}
 
+.orange-brand-step:hover {
+	position: relative;
+	bottom: 8px;
+	-webkit-transition: bottom 0.5s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.5s ease;
 }
 
 .circle-border {
@@ -300,4 +310,14 @@ span.wrap {
 	width: 300px;
 	height: 1px;
 	background-color: #fff;
+}
+
+.rounded {
+	border-radius: 1.5em !important;
+	font-family: 'Roboto' !important, sans-serif;
+	font-weight: bold;
+	font-size: 12px !important;
+	padding: ;
+	color: #fff !important;
+	letter-spacing: .1em;
 }
