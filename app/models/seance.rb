@@ -5,10 +5,4 @@ class Seance < ApplicationRecord
   def start_time
     self.start_date
   end
-
-  def welcome_send
-
-    UserMailer.welcome_email(self).deliver_now
-
-  end
 end

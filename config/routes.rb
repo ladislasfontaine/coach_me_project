@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   resources :seances
   resources :objectives
   root to: "users#welcome"
-  
+
     get "/contacts", to: 'statics#contacts'
     get "/cgv", to: 'statics#cgv'
     get "/cgu", to: 'statics#cgu'
     get "/about", to: 'statics#about'
+    get "/welcome", to: 'statics#welcome' 
 end
