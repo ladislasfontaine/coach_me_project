@@ -271,23 +271,6 @@ span.wrap {
 }
 
 
-/********************/
-/* 	VIEW COMMENT 	*/
-/********************/
-.picture_comment{
-	width: 180px;
-}
-
-.view_one{
-	display: flex;
-}
-.title_view{
-	display: contents;
-}
-
-.view_two{
-	display: flex;
-}
 
 .rounded {
 	border-radius: 1.5em !important;
