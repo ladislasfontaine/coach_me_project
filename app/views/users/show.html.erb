@@ -4,7 +4,7 @@
     <% if @user.avatar.attached? %>
       <%= image_tag @user.avatar, alt: 'Photo de profil', class: 'avatar-image' %>
       <% else %>
-      <%= image_tag 'default.jpg', alt: 'Photo de profil', class: 'avatar-image' %>
+      <%= image_tag 'default.jpg', alt: 'Photo par default', class: 'avatar-image' %>
     <% end %>
   </div>
 </div>

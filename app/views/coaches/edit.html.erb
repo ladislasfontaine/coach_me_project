@@ -120,7 +120,7 @@
               <% if @coach.avatar.attached? %>
                 <%= image_tag @coach.avatar, class: "mx-auto img-fluid rounded-circle coach-dashboard-pic", alt: "avatar" %>
               <% else %>
-                <img src="//api.adorable.io/avatars/120/trickst3r.png" class="mx-auto img-fluid rounded-circle" alt="avatar" />
+                <%= image_tag 'default.jpg', alt: 'Photo de profil', class: 'avatar-image' %>
               <% end %>
               <h6 class="my-4">Photo de profil</h6>
               <%= file_field_tag :avatar %>

@@ -2,6 +2,8 @@
 <div class="coach-jumbotron">
   <% if @coach.cover.attached? %>
     <%= image_tag @coach.cover, alt: 'Photo de couverture', class: 'cover-image' %>
+    <% else %>
+    <%= image_tag 'crossfit.jpg', alt: 'Photo de couverture', class: 'cover-image' %>
   <% end %>
   <h2>Coach <%= @coach.first_name %></h2>
 
