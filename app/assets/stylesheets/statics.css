@@ -51,13 +51,18 @@
 	margin-top: 50px;
 }
 
-.photo-profil{
+.pic-profil{
   border-radius: 50%;
   border: 2px solid #FFF;
   object-fit: cover;
-	top: 5px;
-	left: 50%;
 	position: absolute;
-
-
+	top: 5px;
+	left: 95px;
 }
+
+.card-content {
+	 font-size: 12px;
+	 padding-top: 90px;
+	 text-align: center;
+
+	}
