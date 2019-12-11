@@ -71,3 +71,20 @@ var textAnimation = function() {
 // $(document).ready(textAnimation);
 // $(document).on('page:load', textAnimation); // Classic Turbolinks
 $(document).on('turbolinks:load', textAnimation); // Turbolinks 5
+
+
+// DROPDOWN 
+
+function dropdownMenu() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.drop-a')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}

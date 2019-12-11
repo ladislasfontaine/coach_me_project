@@ -2625,7 +2625,26 @@ fieldset:disabled a.btn {
   bottom: 0px;
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary-2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background-color: #ff5630;
+  border-color: #ff5630;
+  bottom: 0px;
+}
+
+.btn-primary-2:hover {
+  position: relative;
+  background-color: #ff5630;
+  color: #fff;
+  border-color: #ff5630;
+  bottom: 3px;
+  opacity: .9;
+  -webkit-transition: bottom 0.2s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.2s ease;
+}
+
+.btn-primary:hover {
   position: relative;
   background-color: #ff5630;
   color: #fff;
@@ -2635,6 +2654,14 @@ fieldset:disabled a.btn {
   box-shadow: 0 7px 5px #E9ECEF;
   -webkit-transition: bottom 0.2s ease; /* For Safari 3.1 to 6.0 */
   transition: bottom 0.2s ease;
+}
+
+.btn-primary:focus {
+  background-color: #ff5630;
+  color: #fff;
+  border-color: #ff5630;
+  opacity: .9;
+  box-shadow: 0 7px 5px #E9ECEF;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
@@ -2934,11 +2961,6 @@ fieldset:disabled a.btn {
   transition: .4s;
 }
 
-.btn-outline-primary:focus, .btn-outline-primary.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(69, 130, 236, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(69, 130, 236, 0.5);
-}
-
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
   color: #4582EC;
   background-color: transparent;
@@ -2947,8 +2969,8 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #4582EC;
-  border-color: #4582EC;
+  border-color: #fff;
+  background: #ff5630;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
