@@ -21,7 +21,7 @@
     </ul>
 
     <ul class="nav-item dropdown right-nav-perso">
-    <a class="" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a onclick="dropdownMenu()" class="drop-a" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <div class="right-div-nav">
         <% if user_signed_in? %>
 
@@ -48,7 +48,7 @@
     </a>
 
 
-    <div class="dropdown-menu dropdown-menu-perso" aria-labelledby="navbarDropdown">
+    <div id="myDropdown" class="dropdown-menu dropdown-menu-perso" aria-labelledby="navbarDropdown">
       <ul>
         <% if user_signed_in? %>
           <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>

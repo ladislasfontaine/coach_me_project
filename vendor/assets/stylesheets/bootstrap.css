@@ -2625,12 +2625,23 @@ fieldset:disabled a.btn {
   bottom: 0px;
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover {
   position: relative;
   background-color: #ff5630;
   color: #fff;
   border-color: #ff5630;
   bottom: 3px;
+  opacity: .9;
+  box-shadow: 0 7px 5px #E9ECEF;
+  -webkit-transition: bottom 0.2s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.2s ease;
+}
+
+.btn-primary:focus {
+  position: relative;
+  background-color: #ff5630;
+  color: #fff;
+  border-color: #ff5630;
   opacity: .9;
   box-shadow: 0 7px 5px #E9ECEF;
   -webkit-transition: bottom 0.2s ease; /* For Safari 3.1 to 6.0 */
