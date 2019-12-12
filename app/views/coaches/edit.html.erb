@@ -5,7 +5,7 @@
       <a class="list-group-item list-group-item-action dashboard-list-group-item active" data-toggle="list" href="#list-dashboard" role="tab" aria-controls="home"><i class="fas fa-user-circle mr-3"></i>Général</a>
       <a class="list-group-item list-group-item-action dashboard-list-group-item" data-toggle="list" href="#list-profile" role="tab" aria-controls="home"><i class="fas fa-user-circle mr-3"></i>Mon profil</a>
       <a class="list-group-item list-group-item-action dashboard-list-group-item" data-toggle="list" href="#list-edit" role="tab" aria-controls="profile"><i class="fas fa-cog mr-3"></i>Éditer</a>
-      <a class="list-group-item list-group-item-action dashboard-list-group-item" data-toggle="list" href="#list-objectives" role="tab" aria-controls="messages"><i class="fas fa-signal fa-sm mr-3"></i>Mes objectifs</a>
+      <a class="list-group-item list-group-item-action dashboard-list-group-item" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><i class="fas fa-signal fa-sm mr-3"></i>Mes revenus</a>
       <a class="list-group-item list-group-item-action dashboard-list-group-item" data-toggle="list" href="#list-seances" role="tab" aria-controls="messages" ><i class="far fa-calendar mr-3"></i>Mes séances</a>
     </div>
   </div>
@@ -120,7 +120,7 @@
               <% if @coach.avatar.attached? %>
                 <%= image_tag @coach.avatar, class: "mx-auto img-fluid rounded-circle coach-dashboard-pic", alt: "avatar" %>
               <% else %>
-                <img src="//api.adorable.io/avatars/120/trickst3r.png" class="mx-auto img-fluid rounded-circle" alt="avatar" />
+                <%= image_tag 'default.jpg', alt: 'Photo de profil', class: 'avatar-image' %>
               <% end %>
               <h6 class="my-4">Photo de profil</h6>
               <%= file_field_tag :avatar %>
@@ -220,5 +220,78 @@
     </div>
     </div>
     <!-- Seances -->
+
+
+      <!-- My profil -->
+        <div class="tab-pane fade mt-5" id="list-profile" role="tabpanel" aria-labelledby="list-profile">
+          <div class="container">
+            <div class="row">
+              <!-- photo -->
+              <div class="col-md-3">
+                <% if @coach.avatar.attached? %>
+                  <%= image_tag @coach.avatar, class: "avatar-image", alt: "avatar" %>
+                <% else %>
+                 <%= image_tag 'default.jpg', alt: 'Photo de profil', class: 'avatar-image' %>
+                <% end %>
+              </div>
+
+              <div class="col-md-6">
+                 <div class="card" style="width: 25rem;">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Bonjour <%= @coach.last_name %> <%= @coach.first_name %></li>
+                      <% if @coach.city.name === "" %>
+                        <li class="list-group-item"> Complete votre Profil dans Éditer. </li>
+                      <% else %>
+                        <li class="list-group-item">J'habite à <%= @coach.city.name %>.</li>
+                        
+                        <% end %>
+                      </ul>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- My profil -->
+
+
+      <!-- Money -->
+        <div class="tab-pane fade mt-5" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+          <div class="row">
+                <!-- Earnings (Monthly) Card Example -->
+                  <div class="col-xl-6 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs text-primary text-uppercase mb-1">Revenus (Mois)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">40 000€</div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Earnings (Monthly) Card Example -->
+                  <div class="col-xl-6 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs text-primary text-uppercase mb-1">Revenus (Année)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">215 000€</div>
+                          </div>
+                          <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        <!-- Money -->
   </div>
 </div>

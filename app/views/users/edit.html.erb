@@ -17,7 +17,7 @@
         <!-- Profil -->
         <div class="tab-pane fade mt-5" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
           <h4 class="my-2">Éditer mon profil</h4>
-          <hr> 
+          <hr>
           <%= form_tag user_path(@user), method: "put", multipart: true, class: "form-group" do %>
           <!-- Name -->
             <div class="form-row">
@@ -32,7 +32,7 @@
                 </div>
               </div>
               <div class="form-group col-md-6 text-center mt-1">
-                <!-- Profil picture --> 
+                <!-- Profil picture -->
                 <% if @user.avatar.attached? %>
                   <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
                 <% else %>
@@ -40,7 +40,7 @@
                 <% end %>
                 <h6 class="my-4">Photo de profil</h6>
                 <%= file_field_tag :avatar %>
-                <!-- Profil picture --> 
+                <!-- Profil picture -->
               </div>
             </div>
 
@@ -78,7 +78,7 @@
                   <% end %>
               </div>
               <!-- Goal Edit -->
-              <div class="form-group col-md-12">  
+              <div class="form-group col-md-12">
                 <%= label_tag 'Objectif'%>
                 <%= select_tag "objective", options_from_collection_for_select(@objectives, "id", "description", @user.objective.id), class: 'form-control' %>
               </div>
@@ -90,7 +90,7 @@
             <%= submit_tag "Modifier", class: "btn btn-primary mt-1 mb-5" %>
           <% end %>
         </div>
-        
+
         <!-- Profil -->
 
         <!-- Goal -->
@@ -122,19 +122,18 @@
                 <% if @user.avatar.attached? %>
                   <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
                 <% else %>
-                  <img src="//api.adorable.io/avatars/120/trickst3r.png" class="avatar-image" alt="avatar" />
+                  <%= image_tag 'default.jpg', alt: 'Photo de profil', class: 'avatar-image' %>
                 <% end %>
               </div>
-
               <div class="col-md-6">
                  <div class="card" style="width: 25rem;">
                       <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><%= @user.last_name %> <%= @user.first_name %></li>
-                      <% if @user.description && @user.city.name === "" %>
-                        <li class="list-group-item"> Complete votre Profil dans Éditer. </li>
+                      <% if @user.city.nil? || (@user.last_name.nil? && @user.first_name.nil?) || (@user.last_name == "" && @user.first_name == "")  %>
+                        <li class="list-group-item"> Veuillez compléter votre profil dans la section éditer. </li>
                       <% else %>
-                        <li class="list-group-item">J'habite à <%= @user.city.name %>.</li>
-                        <li class="list-group-item"><%= @user.description%>!</li>
+                        <li class="list-group-item">Nom: <%= @user.last_name %> <%= @user.first_name %></li>
+                        <li class="list-group-item">Location: <%= @user.city.name %>.</li>
+                        <li class="list-group-item">Description:<%= @user.description%></li>
                         <% end %>
                       </ul>
                   </div>

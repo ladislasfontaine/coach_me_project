@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @seances = Seance.all
+    @seances = @user.seances
+
   end
 
   def edit
