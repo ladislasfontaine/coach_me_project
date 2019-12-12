@@ -1,5 +1,6 @@
 class CoachesController < ApplicationController
   before_action :set_coach, only: %i[show edit update]
+  before_action :is_owner?, only: %i[edit update]
 
   def index
     if (params[:city].nil? && params[:sport].nil?) || (params[:city] == "1" && params[:sport] == "1")
@@ -95,4 +96,12 @@ class CoachesController < ApplicationController
     @coach = Coach.find(params[:id])
   end
 
+  def is_owner?
+    if coach_signed_in? && current_coach.id == params[:id].to_i
+      true
+    else
+      flash[:notice] = "Vous n'avez pas accès à cette page."
+      redirect_to root_path
+    end
+  end
 end
