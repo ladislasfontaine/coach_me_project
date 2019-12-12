@@ -7,7 +7,7 @@ class CreateCoaches < ActiveRecord::Migration[5.2]
     	t.string :phone_number
     	t.string :address
     	t.string :zip_code
-    	t.integer :price
+    	t.integer :price, default: 30
     	t.string :account_number
     	t.string :account_name
     	t.boolean :reviewed, default: false
