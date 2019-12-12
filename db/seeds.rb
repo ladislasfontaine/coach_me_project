@@ -62,12 +62,11 @@ end
   end
 end
 
-coaches[0].avatar.attach(io: File.open("app/assets/images/coachw/coachw1.jpg"), filename: 'coachw1.jpg', content_type: 'application/jpg')
-coaches[0].avatar.analyze
-coaches[1].avatar.attach(io: File.open('app/assets/images/coachw/coachw2.jpg'), filename: 'coachw2.jpg')
-coaches[2].avatar.attach(io: File.open('app/assets/images/coachw/coachw3.jpg'), filename: 'coachw2.jpg')
-coaches[3].avatar.attach(io: File.open('app/assets/images/coachw/coachw4.jpg'), filename: 'coachw4.jpg')
-coaches[4].avatar.attach(io: File.open('app/assets/images/coachw/coachw5.jpg'), filename: 'coachw5.jpg')
+# coaches[0].avatar.attach(io: File.open("app/assets/images/coachw/coachw1.jpg"), filename: 'coachw1.jpg', content_type: 'application/jpg')
+# coaches[1].avatar.attach(io: File.open('app/assets/images/coachw/coachw2.jpg'), filename: 'coachw2.jpg')
+# coaches[2].avatar.attach(io: File.open('app/assets/images/coachw/coachw3.jpg'), filename: 'coachw2.jpg')
+# coaches[3].avatar.attach(io: File.open('app/assets/images/coachw/coachw4.jpg'), filename: 'coachw4.jpg')
+# coaches[4].avatar.attach(io: File.open('app/assets/images/coachw/coachw5.jpg'), filename: 'coachw5.jpg')
 
 puts "Women Coaches Ok"
 
@@ -92,11 +91,11 @@ puts "Women Coaches Ok"
   end
 end
 
-coaches[5].avatar.attach(io: File.open('app/assets/images/coachm/coachm1.jpg'), filename: 'coachm1.jpg')
-coaches[6].avatar.attach(io: File.open('app/assets/images/coachm/coachm2.jpg'), filename: 'coachm2.jpg')
-coaches[7].avatar.attach(io: File.open('app/assets/images/coachm/coachm3.jpg'), filename: 'coachm3.jpg')
-coaches[8].avatar.attach(io: File.open('app/assets/images/coachm/coachm4.jpg'), filename: 'coachm4.jpg')
-coaches[9].avatar.attach(io: File.open('app/assets/images/coachm/coachm5.jpg'), filename: 'coachm5.jpg')
+# coaches[5].avatar.attach(io: File.open('app/assets/images/coachm/coachm1.jpg'), filename: 'coachm1.jpg')
+# coaches[6].avatar.attach(io: File.open('app/assets/images/coachm/coachm2.jpg'), filename: 'coachm2.jpg')
+# coaches[7].avatar.attach(io: File.open('app/assets/images/coachm/coachm3.jpg'), filename: 'coachm3.jpg')
+# coaches[8].avatar.attach(io: File.open('app/assets/images/coachm/coachm4.jpg'), filename: 'coachm4.jpg')
+# coaches[9].avatar.attach(io: File.open('app/assets/images/coachm/coachm5.jpg'), filename: 'coachm5.jpg')
 
 puts "Male Coaches Ok "
 
