@@ -10,19 +10,23 @@
 <!-- coach card -->
   <div class="coach_card seance-container" style="width: 20rem;">
     <div class="card">
-      <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
+      <% if @coach.avatar.attached? %>
+        <%= image_tag @coach.avatar, class:'coach_card_seance', alt:"coach_test" %>
+      <% else %>
+        <%= image_tag 'default.jpg', class:'coach_card_seance', alt:"coach_test" %>
+      <% end %>
     <div class="text_card_seances_show">
         <div class="card-body">
           <h5>Coach</h5>
-          <p><a href="<%= coach_path(@seance.coach) %>"> <%= @seance.coach.first_name %> <%= @seance.coach.last_name %></a></p>
+          <p><a href="<%= coach_path(@coach) %>"> <%= @coach.first_name %> <%= @coach.last_name %></a></p>
           <p class="card-text">
-            <%= @seance.coach.phone_number %>
+            <%= @coach.phone_number %>
             <br>
             <br>
-            <%= @seance.coach.zip_code %>
+            <%= @coach.zip_code %>
             <br>
             <br>
-            <%= @seance.coach.city.name %>
+            <%= @coach.city.name %>
           </p>
         </div>
     </div>
@@ -42,20 +46,23 @@
 
   <div class="user_card seance-container" style="width: 20rem;">
     <div class="card">
-       <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
-      <div class="card-body">
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, alt: "coach_test", class: 'coach_card_seance' %>
+        <% else %>
+        <%= image_tag 'default.jpg', alt: "coach_test", class: 'coach_card_seance' %>
+      <% end %>
+    <div class="card-body">
         <h5>Sportif</h5>
         <p><a href="<%= user_path(@seance.user) %>"> <%= @seance.user.first_name %> <%= @seance.user.last_name %></a></p>
-
         <p class="card-text">
-        <%= @seance.user.address %>
+        <%= @user.address %>
         <br>
         <br>
-        <%= @seance.user.zip_code %>
-        <%= @seance.user.city.name %>
+        <%= @user.zip_code %>
+        <%= @user.city.name %>
         <br>
         <br>
-        <%= @seance.user.phone_number %>
+        <%= @user.phone_number %>
       </p>
       </div>
     </div>
