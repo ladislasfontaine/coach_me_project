@@ -1,5 +1,6 @@
-class UserMailer < ApplicationMailer
+# frozen_string_literal: true
 
+class UserMailer < ApplicationMailer
   default from: 'no-reply@coach-me.fr'
 
   def welcome_email(user)

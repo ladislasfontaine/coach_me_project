@@ -1,49 +1,43 @@
+# frozen_string_literal: true
+
 class CoachesController < ApplicationController
   before_action :set_coach, only: %i[show edit update]
   before_action :is_owner?, only: %i[edit update]
 
   def index
-    if (params[:city].nil? && params[:sport].nil?) || (params[:city] == "1" && params[:sport] == "1")
-      @coaches = Coach.all
-    elsif params[:city] == "1"
-      @coaches = Coach.all.select{ |coach|
-        if coach.specialties.nil?
-          false
-        else
-          coach.specialties.map{ |specialty|
-            if specialty.id == params[:sport].to_i
-              true
-            end 
-          }.include?(true)
-        end
-      }
-    elsif params[:sport] == "1"
-      @coaches = Coach.all.select{ |coach|
-        if !coach.city.nil?
-          coach.city.id == params[:city].to_i 
-        end 
-      }
-    else
-      @coaches = Coach.all.select{ |coach|
-        if !coach.city.nil?
-          coach.city.id == params[:city].to_i 
-        end
-      }.select{ |coach|
-        if coach.specialties.nil?
-          false
-        else
-          coach.specialties.map{ |specialty|
-            if specialty.id == params[:sport].to_i
-              true
-            end 
-          }.include?(true)
-        end
-      }
-    end
+    @coaches = if (params[:city].nil? && params[:sport].nil?) || (params[:city] == '1' && params[:sport] == '1')
+                 Coach.all
+               elsif params[:city] == '1'
+                 Coach.all.select do |coach|
+                   if coach.specialties.nil?
+                     false
+                   else
+                     coach.specialties.map  do |specialty|
+                       true if specialty.id == params[:sport].to_i
+                     end.include?(true)
+                   end
+                 end
+               elsif params[:sport] == '1'
+                 Coach.all.select do |coach|
+                   coach.city.id == params[:city].to_i unless coach.city.nil?
+                 end
+               else
+                 Coach.all.select do |coach|
+                   coach.city.id == params[:city].to_i unless coach.city.nil?
+                 end.select do |coach|
+                   if coach.specialties.nil?
+                     false
+                   else
+                     coach.specialties.map  do |specialty|
+                       true if specialty.id == params[:sport].to_i
+                     end.include?(true)
+                   end
+                 end
+               end
   end
 
   def coach_params
-    #params.require(:coach).permit(:first_name)
+    # params.require(:coach).permit(:first_name)
   end
 
   def show
@@ -57,15 +51,15 @@ class CoachesController < ApplicationController
   def update
     @city = City.find(params[:city])
     # check for images and attach them
-    if !params[:avatar].nil?
+    unless params[:avatar].nil?
       @coach.avatar.purge
       @coach.avatar.attach(params[:avatar])
     end
-    if !params[:cover].nil?
+    unless params[:cover].nil?
       @coach.cover.purge
       @coach.cover.attach(params[:cover])
     end
-    if !params[:diploma].nil?
+    unless params[:diploma].nil?
       @coach.diploma.purge
       @coach.diploma.attach(params[:diploma])
     end
@@ -82,7 +76,7 @@ class CoachesController < ApplicationController
       account_name: params[:account_name],
       account_number: params[:account_number]
     )
-      flash[:notice] = "Ton profil coach a bien été modifié."
+      flash[:notice] = 'Ton profil coach a bien été modifié.'
       redirect_to coach_path(params[:id])
     else
       flash[:alert] = "Ton profil coach n'a pas pu être modifié."

@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 module UsersHelper
-	def default_avatar(user)
-		@avatar = user.avatar
-		if @avatar.empty?
-			@avatar_user = image_tag("defailt.jpg", alt: 'profile')
-		else
-			@avatar_user = image_tag(@avatar.url, alt: "profile")
-		end
-		return @avatar_user
-	end
+  def default_avatar(user)
+    @avatar = user.avatar
+    @avatar_user = if @avatar.empty?
+                     image_tag('defailt.jpg', alt: 'profile')
+                   else
+                     image_tag(@avatar.url, alt: 'profile')
+                   end
+    @avatar_user
+  end
 end
