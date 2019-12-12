@@ -82,11 +82,6 @@ a:hover {
 	color: #868E96;
 }
 
-.fa-search:hover {
-	color: #ff5630;
-	transition: 0.3s ease;
-}
-
 .fa-shopping-cart {
 	color: #868E96;
 }
@@ -225,7 +220,7 @@ span.cursor-index.typing {
 	width: 55%;
 }
 
-select#city, select#sport {
+select.shadow, select.shadow {
 	box-shadow: 0 10px 10px rgba(0, 0, 0, .1); 
 }
 

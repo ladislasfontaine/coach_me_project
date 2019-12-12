@@ -12,13 +12,13 @@
 		<div class="col-md-3">
 			<div class="form-group">
 				<label class="white" for="cityDropdown"><h6>Où ?</h6></label>
-				<%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+				<%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control shadow' %>
 			</div>
 		</div>
 		<div class="col-md-3">
 				<div class="form-group">
 					<label class="white" for="cityDropdown"><h6>Quel sport ?</h6></label>
-					<%= select_tag "sport", options_from_collection_for_select(@sport, "id", "name"), class: 'form-control' %>
+					<%= select_tag "sport", options_from_collection_for_select(@sport, "id", "name"), class: 'form-control shadow' %>
 				</div>
 		</div>
 	</div>
