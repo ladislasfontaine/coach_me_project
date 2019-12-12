@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   after_create :default_city
   after_create :default_objective
   # after_create :welcome_send
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  devise :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+  devise :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
-  belongs_to :city, optional: true 
+  belongs_to :city, optional: true
   belongs_to :objective, optional: true
   has_many :data, dependent: :destroy
   has_many :seances, dependent: :destroy
@@ -19,15 +21,15 @@ class User < ApplicationRecord
 
   def default_city
     @city = City.first
-    self.update(city: @city)
+    update(city: @city)
   end
 
   def default_objective
     @objective = Objective.first
-    self.update(objective: @objective)
+    update(objective: @objective)
   end
 
-  #MAILER
+  # MAILER
   def welcome_send
     UserMailer.welcome_email(self).deliver_now.inspect
   end
@@ -36,7 +38,7 @@ class User < ApplicationRecord
     where(facebook_id: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[6, 20]
-      user.first_name = auth.info.name.split[0] 
+      user.first_name = auth.info.name.split[0]
       user.last_name = auth.info.name.split[1]
     end
   end

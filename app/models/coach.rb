@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Coach < ApplicationRecord
   # after_create :welcome_send
 
@@ -6,10 +8,10 @@ class Coach < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-	belongs_to :city, optional: true
-	has_many :coach_specialties, dependent: :destroy
-	has_many :specialties, through: :coach_specialties
-	has_many :seances, dependent: :destroy
+  belongs_to :city, optional: true
+  has_many :coach_specialties, dependent: :destroy
+  has_many :specialties, through: :coach_specialties
+  has_many :seances, dependent: :destroy
   has_many :users, through: :seances
 
   has_one_attached :avatar

@@ -1,5 +1,6 @@
-class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+# frozen_string_literal: true
 
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     @user = User.from_facebook(request.env['omniauth.auth'])
 
@@ -13,9 +14,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def google_oauth2
-    puts "=============="
+    puts '=============='
     puts request.env['omniauth.auth'].inspect
-    puts "=============="
+    puts '=============='
 
     @user = User.from_google(request.env['omniauth.auth'])
 
