@@ -10,7 +10,11 @@
 <!-- coach card -->
   <div class="coach_card seance-container" style="width: 20rem;">
     <div class="card">
-      <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
+      <% if @coach.avatar.attached? %>
+        <%= image_tag @coach.avatar, class:'coach_card_seance', alt:"coach_test" %>
+      <% else %>
+        <%= image_tag 'default.jpg', class:'coach_card_seance', alt:"coach_test" %>
+      <% end %>
     <div class="text_card_seances_show">
         <div class="card-body">
           <h5>Coach</h5>
