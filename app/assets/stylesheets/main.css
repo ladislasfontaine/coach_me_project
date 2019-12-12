@@ -275,7 +275,7 @@ span.wrap {
 
 #hr-white-1 {
 	position: absolute;
-	top: 73.3%;
+	top: 72.6%;
 	left: 14%;
 	width: 315px;
 	height: 1px;
@@ -284,7 +284,7 @@ span.wrap {
 
 #hr-white-2 {
 	position: absolute;
-	top: 73.3%;
+	top: 72.6%;
 	left: 41%;
 	width: 300px;
 	height: 1px;
@@ -293,7 +293,7 @@ span.wrap {
 
 #hr-white-3 {
 	position: absolute;
-	top: 73.3%;
+	top: 72.6%;
 	left: 66.5%;
 	width: 300px;
 	height: 1px;
@@ -337,19 +337,62 @@ span.wrap {
 }
 
 /********************/
-/* 	VIEW COMMENT 	*/
+/* 	 VIEW COMMENT  	*/
 /********************/
-.picture_comment{
+
+.view-comment {
+	display: flex;
+	border: 1px solid #E9ECEF;
+	border-radius: 10px;
+}
+
+.picture {
 	width: 180px;
+	height: 180px;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	object-fit: cover;
 }
 
-.view_one{
-	display: flex;
-}
-.title_view{
-	display: contents;
+/********************/
+/* 	  ANIMATION   	*/
+/********************/
+
+@keyframes move_left {
+  from {
+      left: -30%;
+      opacity: 0;
+  }
+  to {
+      left: 18%;
+      opacity: 1;
+  }
 }
 
-.view_two{
-	display: flex;
+#text-index {
+  animation: 1s move_left;
+}
+
+@keyframes move_right {
+  from {
+      left: 100%;
+  }
+  to {
+     	left: 55%;;
+  }
+}
+
+#macbook img {
+  animation: 1s move_right;
+}
+
+@keyframes move_one {
+	from {
+		left: -30%;
+		opacity: 0;
+	}
+	to {
+		left: 0%;
+		opacity: 1;
+	}
 }
