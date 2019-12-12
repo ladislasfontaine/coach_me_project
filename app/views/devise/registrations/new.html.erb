@@ -1,3 +1,4 @@
+<% content_for :title, "CoachMe | S'inscrire" %>
 <div class="overflow-y-hidden">
   <div class="background_form">
      <%= image_tag("background-form.jpg", class:'background_form_img', alt:"fond d'image") %>
@@ -43,9 +44,11 @@
           </div>
         </div>
         <hr>
-        <div class="actions">
-          <p>Déjà inscrit ?</p>
-          <%= render "devise/shared/links" %>
+        <p>Déjà inscrit ?</p>
+        <div class="d-flex justify-content-center">
+          <div class="actions">
+            <%= render "devise/shared/links" %>
+          </div>
         </div>
       <% end %>
     </div>

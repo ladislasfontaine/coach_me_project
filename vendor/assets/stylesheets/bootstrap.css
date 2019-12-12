@@ -2040,6 +2040,8 @@ pre code {
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2687,12 +2689,18 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #adb5bd;
   border-color: #adb5bd;
+  bottom: 0px;
 }
 
 .btn-secondary:hover {
+  position: relative;
   color: #fff;
   background-color: #98a2ac;
   border-color: #919ca6;
+  bottom: 3px;
+  box-shadow: 0 7px 5px #E9ECEF;
+  -webkit-transition: bottom 0.2s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.2s ease;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {

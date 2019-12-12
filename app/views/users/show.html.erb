@@ -1,3 +1,4 @@
+<% content_for :title, "CoachMe | Mon profil" %>
 <div class="coach-jumbotron">
   <%= image_tag 'background-form-3.jpg', alt: 'Photo de couverture', class: 'cover-image' %>
   <div class="profile-pic">
@@ -10,48 +11,25 @@
 </div>
 
 <div class="public-section">
-  <div class="coach-col coach-infos">
-    <div class="coach-name"><%= @user.first_name %> <%= @user.last_name %></div>
-    <div class="coach-city"><i class="fas fa-home mr-3"></i><%= @user.city.name %></div>
-    <div class="objective"><i class="fas fa-signal"></i> Objectif : <%= @user.objective.description %></div>
-  </div>
-
-  <div class="coach-col calendar-form">
-    <div>
-      <h2>Mes séances</h2>
-      <% if @user.seances == [] %>
-        Pas encore de séances réservées
-      <% else %>
-        <h5 class="d-flex justify-content-center">Séances à venir</h5>
-        <!-- seance.start_date > Time.now -->
-        <% @user.seances.select{|seance| seance.start_date }.each do |seance| %>
-          <div>Début : <%= seance.start_date %></div>
-          <div>Durée : <%= seance.duration %>min</div>
-          <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
-          <%= link_to 'Voir', seance_path(seance.id) %>
-          <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
-      <% end %>
-    </div>
-    <div>
-      <h5>Séances passées</h5>
-      <!-- seance.start_date < Time.now -->
-      <% @user.seances.select{|seance| seance.start_date }.each do |seance| %>
-        <div>Début : <%= seance.start_date %></div>
-        <div>Durée : <%= seance.duration %>min</div>
-        <div>Avec : <%= seance.user.first_name %> <%= seance.user.last_name %></div>
-        <%= link_to 'Voir', seance_path(seance.id) %>
-        <%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"} %>
-      <% end %>
+  <div class="coach-col user-infos">
+    <div class="user-name"><%= @user.first_name %> <%= @user.last_name %></div>
+    <div class="user-details"><i class="fas fa-signal"></i> Objectif : <%= @user.objective.description %></div>
+    <div class="user-details"><i class="fas fa-home mr-3"></i><%= @user.city.name %></div>
+    <div class="user-details"><i class="fas fa-home mr-3"></i><%= @user.zip_code %></div>
+    <% if !@user.birth_date.nil? %>
+      <div class="user-details"><i class="fas fa-home mr-3"></i><%= @user.birth_date.strftime("%Y-%m-%d") %></div>
     <% end %>
-    </div><div>
+    <div class="justify-content-center">
+      <%= link_to 'Retour', coaches_path, class: "btn btn-outline-primary" %>
+      <%= link_to 'Modifier', edit_user_path(params[:id]), class: "btn btn-outline-primary" %>
     </div>
   </div>
 
-  <div class="coach-col calendar-section">
+<!-- CALENDAR -->
+  <div class="coach-col calendar-sec">
     <h2>Calendrier</h2>
     <%= week_calendar events: @seances do |date, seances| %>
       <%= date.day %>
-
       <% seances.each do |seance| %>
         <%= link_to seance_path(seance.id) do %>
           <div class="coach-specialty">
@@ -64,10 +42,35 @@
   </div>
 </div>
 
-<p>==================</p>
+<!-- SEANCES -->
+<div class="my_seances">
+  <h2>Mes séances</h2>
+  <% if @user.seances == [] %>
+    Pas encore de séances réservées
+  <% else %>
+    <h5 class="title-seances">Séances à venir</h5>
+    <% @user.seances.select{|seance| seance.start_date > Time.now }.each do |seance| %>
+      <div class="horizontal-card-seances-grey">
+        <div class="seance-start card-el"><%= seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
+        <div class="seance-duration card-el"><%= seance.duration %> minutes</div>
+        <div class="seance-user card-el">Avec <%= seance.coach.first_name %> <%= seance.coach.last_name.upcase %></div>
+        <div><%= link_to 'Voir', seance_path(seance.id), class: "btn btn-secondary card-el" %></div>
+        <div><%= link_to 'Supprimer', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"}, class: "btn btn-secondary card-el" %></div>
+      </div>
+    <% end %>
+    <h5 class="title-seances">Séances passées</h5>
+    <% @user.seances.select{|seance| seance.start_date < Time.now }.each do |seance| %>
+      <div class="horizontal-card-seances">
+        <div class="seance-start card-el"><%= seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
+        <div class="seance-duration card-el"><%= seance.duration %> minutes</div>
+        <div class="seance-user card-el">Avec <%= seance.coach.first_name %> <%= seance.coach.last_name %></div>
+        <div><%= link_to 'Voir', seance_path(seance.id), class: "btn btn-secondary card-el" %></div>
+        <div><%= link_to 'Archiver', seance_path(seance.id), method: 'delete', data: {confirm: "C'est ton dernier mot ?"}, class: "btn btn-secondary card-el" %></div>
+      </div>
+    <% end %>
+    <% end %>
+</div>
 
-<%= link_to 'Modifier mes informations', edit_user_path(params[:id]) %>
-<%= link_to 'Retour', coaches_path %>
 
 <!-- EDIT VIEW BELOW
 
@@ -110,4 +113,3 @@
     </div>
 
 -->
-

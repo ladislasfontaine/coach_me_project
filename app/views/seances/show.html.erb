@@ -1,4 +1,4 @@
-
+<% content_for :title, "CoachMe | Réservation" %>
 <%= image_tag("background-seances.jpg", class:'background_seances', alt:"fond d'image")%>
 
 <div class="h1_resa">
@@ -9,20 +9,25 @@
 
 <!-- coach card -->
   <div class="coach_card seance-container" style="width: 20rem;">
-    <div class="card">  
-      <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
+    <div class="card">
+      <% if @coach.avatar.attached? %>
+        <%= image_tag @coach.avatar, class:'coach_card_seance', alt:"coach_test" %>
+      <% else %>
+        <%= image_tag 'default.jpg', class:'coach_card_seance', alt:"coach_test" %>
+      <% end %>
     <div class="text_card_seances_show">
         <div class="card-body">
           <h5>Coach</h5>
-          <p>
-            <%= @seance.coach.first_name %>
-            <br>
-            <br>
-            <%= @seance.coach.last_name %>
-          </p>
+          <p><a href="<%= coach_path(@coach) %>"> <%= @coach.first_name %> <%= @coach.last_name %></a></p>
           <p class="card-text">
-            <%= @seance.coach.phone_number %>
-           </p>
+            <%= @coach.phone_number %>
+            <br>
+            <br>
+            <%= @coach.zip_code %>
+            <br>
+            <br>
+            <%= @coach.city.name %>
+          </p>
         </div>
     </div>
     </div>
@@ -32,27 +37,32 @@
   <div class="seance_show seance-container d-flex flex-column justify-content-around align-items-center mb-5">
     <h5>Détails</h5>
     <div>Quand ? <%= @seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
-    <div>Combient de temps ? <%= @seance.duration %> minutes</div>
+    <div>Combien de temps ? <%= @seance.duration %> minutes</div>
     <div>Où ? Rdv <%= @seance.place %></div>
     <div>Prix ? <%= @price %>€</div>
   </div>
 
 <!-- user card -->
+
   <div class="user_card seance-container" style="width: 20rem;">
     <div class="card">
-       <%= image_tag("coach_test", class:'coach_card_seance', alt:"coach_test")%>
-      <div class="card-body">
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, alt: "coach_test", class: 'coach_card_seance' %>
+        <% else %>
+        <%= image_tag 'default.jpg', alt: "coach_test", class: 'coach_card_seance' %>
+      <% end %>
+    <div class="card-body">
         <h5>Sportif</h5>
-        <p><%= @seance.user.first_name %> <%= @seance.user.last_name %></p>
+        <p><a href="<%= user_path(@seance.user) %>"> <%= @seance.user.first_name %> <%= @seance.user.last_name %></a></p>
         <p class="card-text">
-        <%= @seance.user.address %>
+        <%= @user.address %>
         <br>
         <br>
-        <%= @seance.user.zip_code %> 
-        <%= @seance.user.city.name %>
+        <%= @user.zip_code %>
+        <%= @user.city.name %>
         <br>
         <br>
-        <%= @seance.user.phone_number %>
+        <%= @user.phone_number %>
       </p>
       </div>
     </div>
@@ -61,9 +71,15 @@
 
 
 <div class="Button_return_Dashboard">
-  <%= link_to "Retourner au Dashboard", edit_user_path(params[:id]),class:"btn btn-primary-2 mt-3" %>
+  <% if user_signed_in? %>
+    <%= link_to "Retour au dashboard", edit_user_path(current_user.id), class:"btn btn-primary-2 mt-3" %>
+  <% elsif coach_signed_in? %>
+    <%= link_to "Retour au dashboard", edit_coach_path(current_coach.id), class:"btn btn-primary-2 mt-3" %>
+  <% else %>
+    <%= link_to "Retour", :back, class:"btn btn-primary-2 mt-3" %>
+  <% end %>
 </div>
 
-  
+
 
 </div>

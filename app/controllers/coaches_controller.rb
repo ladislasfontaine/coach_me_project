@@ -6,21 +6,37 @@ class CoachesController < ApplicationController
       @coaches = Coach.all
     elsif params[:city] == "1"
       @coaches = Coach.all.select{ |coach|
-        coach.specialties.map{ |specialty|
-          if specialty.id == params[:sport].to_i
-            true
-          end 
-        }.include?(true)
+        if coach.specialties.nil?
+          false
+        else
+          coach.specialties.map{ |specialty|
+            if specialty.id == params[:sport].to_i
+              true
+            end 
+          }.include?(true)
+        end
       }
     elsif params[:sport] == "1"
-      @coaches = Coach.all.select{ |coach| coach.city.id == params[:city].to_i }
+      @coaches = Coach.all.select{ |coach|
+        if !coach.city.nil?
+          coach.city.id == params[:city].to_i 
+        end 
+      }
     else
-      @coaches = Coach.all.select{ |coach| coach.city.id == params[:city].to_i }.select{ |coach|
-        coach.specialties.map{ |specialty|
-          if specialty.id == params[:sport].to_i
-            true
-          end 
-        }.include?(true)
+      @coaches = Coach.all.select{ |coach|
+        if !coach.city.nil?
+          coach.city.id == params[:city].to_i 
+        end
+      }.select{ |coach|
+        if coach.specialties.nil?
+          false
+        else
+          coach.specialties.map{ |specialty|
+            if specialty.id == params[:sport].to_i
+              true
+            end 
+          }.include?(true)
+        end
       }
     end
   end

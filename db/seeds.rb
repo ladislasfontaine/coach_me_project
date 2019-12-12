@@ -56,7 +56,7 @@ end
     account_name: Faker::Name.name
   )
   coaches << coach_1
-  coach_1.avatar.attach(io: File.open('app/assets/images/coachw/coachw1.jpg'), filename: 'coachw1.jpg')
+  coach_1.avatar.attach(io: File.open("app/assets/images/coachw/coachw1.jpg"), filename: 'coachw1.jpg', content_type: 'application/jpg')
 
   2.times do |index|
     CoachSpecialty.create(coach: coach_1, specialty: specialties.sample)

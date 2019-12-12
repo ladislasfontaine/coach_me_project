@@ -14,6 +14,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
 
       # Omniauthable
       t.string :facebook_id
+      t.string :google_id
 
       t.timestamps
     end

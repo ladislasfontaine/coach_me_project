@@ -110,9 +110,7 @@ a:hover {
 	text-align: center;
 }
 
-.fa-user, .fa-city, .fa-search, .fa-hand-point-right {
-	color: white;
-}
+
 
 /**********************/
 /*	¨ANIMATION TEXT 	*/
@@ -165,22 +163,27 @@ span.cursor-index.typing {
 #background {
 	position: absolute;
 	top: 0%;
-	background-size: cover;
 	height: 100vh; 
-	width: 100% !important;
+	width: 100%;
 	z-index: -1;
+	overflow: hidden;
+}
+
+#background img {
+	object-fit: cover;
+	width: 100%;
 }
 
 #macbook img {
 	position: absolute;
 	width: 30%;
 	left: 55%;
-	top: 10%;
+	top: 11%;
 }
 
 #text-index {
 	position: absolute;
-	top: 12%;
+	top: 13%;
 	left: 18%;
 	color: #fff;
 }
@@ -240,21 +243,16 @@ span.wrap {
 
 #animation-text {
 	position: absolute;
-	top: 23%;
+	top: 24%;
 	left: 47%;
 }
 
-#orange-brand {
-	margin: 80px 0;
-	padding: 50px 100px;
-	background-color: #ff5630; 
-	height: 300px;
-	width: 100%;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, .1); 
-}
+/********************/
+/*  	WELCOME HOW 	*/
+/********************/
 
-.orange-brand-step {
-
+.fa-user, .fa-city, .fa-search, .fa-hand-point-right {
+	color: white;
 }
 
 .circle-border {
@@ -277,16 +275,16 @@ span.wrap {
 
 #hr-white-1 {
 	position: absolute;
-	top: 71%;
-	left: 15%;
-	width: 300px;
+	top: 73.3%;
+	left: 14%;
+	width: 315px;
 	height: 1px;
 	background-color: #fff;
 }
 
 #hr-white-2 {
 	position: absolute;
-	top: 71%;
+	top: 73.3%;
 	left: 41%;
 	width: 300px;
 	height: 1px;
@@ -295,9 +293,63 @@ span.wrap {
 
 #hr-white-3 {
 	position: absolute;
-	top: 71%;
+	top: 73.3%;
 	left: 66.5%;
 	width: 300px;
 	height: 1px;
 	background-color: #fff;
+}
+
+#orange-brand {
+	margin: 80px 0;
+	padding: 50px 100px;
+	background-color: #ff5630; 
+	height: 300px;
+	width: 100%;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, .1); 
+}
+
+.orange-brand-step {
+	position: relative;
+	bottom: 0px;
+	-webkit-transition: bottom 0.5s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.5s ease;
+}
+
+.orange-brand-step:hover {
+	position: relative;
+	bottom: 8px;
+	-webkit-transition: bottom 0.5s ease; /* For Safari 3.1 to 6.0 */
+  transition: bottom 0.5s ease;
+}
+
+.rounded {
+	border-radius: 1.5em !important;
+	font-family: 'Roboto' !important, sans-serif;
+	font-weight: bold;
+	font-size: 12px !important;
+	color: #fff !important;
+	letter-spacing: .1em;
+}
+
+.oauth-buttons.signup {
+	margin-left: -25px !important;
+}
+
+/********************/
+/* 	VIEW COMMENT 	*/
+/********************/
+.picture_comment{
+	width: 180px;
+}
+
+.view_one{
+	display: flex;
+}
+.title_view{
+	display: contents;
+}
+
+.view_two{
+	display: flex;
 }

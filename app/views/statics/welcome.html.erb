@@ -1,5 +1,4 @@
-
-
+<% content_for :title, "CoachMe | Coach" %>
 <h2 class="text-center mb-3 mt-5">Développez votre activité en travaillant plus sereinement</h2>
 <div class="d-flex justify-content-center">
   <div class="col-md-5 text-center">
@@ -61,7 +60,7 @@
 
   <div class="card mb-5" style="width: 18rem;">
     <div class="card-body">
-      <img height="100" width="100" class="pic-profil" src="/assets/user2.jpg">
+      <img height="100" width="100" class="pic-profil" src="<%= asset_path('user2.png') %>">
       <div class="card-content">
       <h5 class="card-title">Mark W</h5>
       <h6 class="card-subtitle mb-2 text-muted">Personal training</h6>
@@ -72,7 +71,7 @@
 
   <div class="card mb-5" style="width: 18rem;">
     <div class="card-body">
-      <img height="100" width="100" class="pic-profil" src="/assets/user1.jpg">
+      <img height="100" width="100" class="pic-profil" src="<%= asset_path('user1.png') %>">
       <div class="card-content">
         <h5 class="card-title">Vin D</h5>
         <h6 class="card-subtitle mb-2 text-muted">Personal training</h6>

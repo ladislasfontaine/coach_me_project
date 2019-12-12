@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   height: 32px;
+  width: 500px;
 }
 
 .oauth-button {
@@ -15,8 +16,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 0px;
 }
 
 .Facebook {
   background-color: #1877f2;
+}
+
+.GoogleOauth2 {
+  background-color: #df4d57;
+}
+
+.oauth-button:hover {
+  position: relative;
+  color: #fff;
+  bottom: 1px;
+  opacity: .9;
+  box-shadow: 0 7px 5px #E9ECEF;
+  -webkit-transition: bottom 0.2s ease;
+  transition: bottom 0.2s ease;
 }
