@@ -1,3 +1,4 @@
+<% content_for :title, "CoachMe" %>
 <div id="background">
 	<%= image_tag('background-index-2.png') %>
 </div>
@@ -57,22 +58,22 @@
 			<p class="mb-5">Vous essayez de perdre du poids, de vous tonifier, d'abaisser votre IMC ou d'investir dans votre état de santé général ? Nous vous proposons les meilleurs coachs pour atteindre vos objectifs.</p>
 		</div>
 	</div>
-	<div class="d-flex flex-row justify-content-around mx-5 px-5">
-		<div id="border-orange" class="col-md-3 mx-3">
+	<div class="row justify-content-around mx-5 px-5">
+		<div id="border-orange" class="col-sm-3 mx-3 my-2">
 			<div class="text-center">
 				<i class="far fa-calendar-check fa-3x mb-3"></i>
 			</div>
 			<h5 class="text-center"><span class="orange">Suivi</span> de vos séances en temps réel</h5>
 			<p>Ne rater plus une séance grâce à CoachMe, on s'occupe de tout ! Vous avez un contre-temps ? Annuler votre séance en un clic.</p>
 		</div>
-		<div id="border-orange" class="col-md-3 mx-3">
+		<div id="border-orange" class="col-sm-3 mx-3 my-2">
 			<div class="text-center">
 				<i class="fas fa-users fa-3x mb-3"></i>
 			</div>
 			<h5 class="text-center">Une <span class="orange">communauté</span> soudée</h5>
 			<p>Rester connecter avec notre messagerie instantanée, profiter des conseils personnalisés de nos coachs.</p>
 		</div>
-		<div id="border-orange" class="col-md-3 mx-3">
+		<div id="border-orange" class="col-sm-3 mx-3 my-2">
 			<div class="text-center">
 				<i class="fas fa-signal fa-3x mb-3"></i>
 			</div>
@@ -95,7 +96,7 @@
 			<i class="fas fa-user fa-3x mb-3"></i>
 			<div class="white">
 				<div class="step-text mh-100">
-					<h6>Inscrivez-vous</h6>
+					<h6 id="showMe">Inscrivez-vous</h6>
 				</div>
 				<div class="step-number">
 					<h4 class="circle-border">1</h4>
@@ -164,32 +165,36 @@
 	<hr style="width: 30%;">
 </div>
 
-
 <!-- carousel -->
-<h2 class="text-center mt-5 mb-4">Vos Avis</h2>
+<h2 class="text-center mt-5 mb-5">Vos Avis</h2>
 <div class="d-flex justify-content-center mb-4">
 	<div id="carouselExampleControls" data-interval="5000" class="carousel slide" data-ride="carousel">
 	  <div class="carousel-inner">
+
 	    <div class="carousel-item active">
-	      <div class="view_one">
-	      <%= image_tag("user1.png", class:"picture_comment", alt:"image avis") %>
-	
-	      	<p class="comment_user">
-	      	<span style="font-size: 25px;">PIERRE</span>
-	      	<br>
-	      	Se mettre au sport, ça demande de la volonté. Parfois aussi, de l'organisation. Et surtout ? le courage d'affronter des épreuves que nous n'aurions jamais pensé être capable d'affronter. Des épreuves qui vont du regard des aurtes à la salle de sport à sa première course à vélo de 160km. Grâce à mon coach trouvé sur CoachMe, j'ai pu atteindre tous mes objectifs !!</p>
-	    </div>
-	  </div>
+	      <div class="view-comment">
+	      	<div>
+		      	<%= image_tag("avis-1.jpg", class:"picture", alt:"image avis") %>
+		    	</div>
+		    	<div class="card-block p-3">
+		        <h4 class="card-title">Pierre L.</h4>
+		        <p class="card-text">Se mettre au sport, ça demande de la volonté. Parfois aussi, de l'organisation. Et surtout ? le courage d'affronter des épreuves que nous n'aurions jamais pensé être capable d'affronter. Des épreuves qui vont du regard des aurtes à la salle de sport. Grâce à mon coach trouvé sur CoachMe, j'ai pu atteindre tous mes objectifs !</p>
+		    	</div>
+	    	</div>
+	 	 	</div>
 
 	    <div class="carousel-item">
- 			<div class="view_two">
-	      <%= image_tag("user1.png", class:"picture_comment", alt:"image avis") %>
-			<p class="comment_user">
-	      	<span style="font-size: 25px;">HENRI</span> 
-	      	<br>
-	      	J'ai entendu parlé de CoachMe et je ne suis pas déçu. J'ai trouvé un coach sportif a l'écoute de mes besoins. Il a su me rassurer, me motiver lorsque j'avais besoin. Seul, il est difficile de se mettre au sport, sentir les regards sur soi, le jugement. Avec un coach sportif </p>
-			</div>
+	    	<div class="view-comment">
+	      	<div>
+		      	<%= image_tag("avis-2.jpg", class:"picture", alt:"image avis") %>
+		    	</div>
+		    	<div class="card-block p-3">
+		        <h4 class="card-title">Maxence D.</h4>
+		        <p class="card-text">J'ai entendu parlé de CoachMe et je ne suis pas déçu. J'ai trouvé un coach sportif a l'écoute de mes besoins. Il a su me rassurer, me motiver lorsque j'avais besoin. Seul, il est difficile de se mettre au sport, sentir les regards sur soi, le jugement.</p>
+		    	</div>
+	    	</div>
 	    </div>
+
 	  </div>
 	  <!--Controls-->
 	      <div class="my-3 text-center">
