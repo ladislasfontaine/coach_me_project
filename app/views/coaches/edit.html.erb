@@ -239,11 +239,10 @@
                  <div class="card" style="width: 25rem;">
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item">Bonjour <%= @coach.last_name %> <%= @coach.first_name %></li>
-                      <% if @coach.city.name === "" %>
-                        <li class="list-group-item"> Complete votre Profil dans Éditer. </li>
-                      <% else %>
-                        <li class="list-group-item">J'habite à <%= @coach.city.name %>.</li>
-                        
+                        <% if @coach.city.nil? %>
+                          <li class="list-group-item"> Complétez votre profil dans Éditer. </li>
+                        <% else %>
+                          <li class="list-group-item">J'habite à <%= @coach.city.name %>.</li>  
                         <% end %>
                       </ul>
                   </div>
