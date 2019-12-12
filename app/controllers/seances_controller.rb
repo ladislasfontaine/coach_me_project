@@ -2,16 +2,6 @@ class SeancesController < ApplicationController
   before_action :set_seance, only: %i[show destroy]
 
 
-  def new
-    @seance = Seance.last
-    @coach = @seance.coach
-    @user = @seance.user
-    @price = ((@seance.duration / 60).to_f * @coach.price)
-
-
-
-    
-  end
 
   def create
      @coach = Coach.find(params[:coach_id])
@@ -19,14 +9,6 @@ class SeancesController < ApplicationController
     if is_overlapping?(params[:start_date], params[:duration])
       flash[:notice] = "Une séance est déjà réservée sur ce créneau."
       return redirect_to coach_path(params[:coach_id])
-    elsif @seance.save
-      return redirect_to new_seance_path 
-    else
-      flash[:notice] = "Un problème est survenu."
-      return redirect_to coach_path(params[:coach_id])
-    end
-    redirect_to new_seance_path 
-
      # Amount in cents
       
     @amount = (@coach.price * 100).to_i
@@ -42,10 +24,15 @@ class SeancesController < ApplicationController
         description: 'Rails Stripe customer',
         currency: 'eur',
       })
+    elsif @seance.save
       flash[:notice] = "La séance est créée. Merci d'avoir réservé avec CoachMe."
-      if @seances.save
-     return redirect_to seance_path(params[:id])
-   end
+      redirect_to seance_path(Seance.last.id)  
+    else
+      flash[:notice] = "Un problème est survenu."
+      return redirect_to coach_path(params[:coach_id])
+   
+  end
+ 
     rescue Stripe::CardError => e
       flash[:alert] = e.message
       redirect_to coach_path(params[:coach_id])

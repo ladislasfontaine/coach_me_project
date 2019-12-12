@@ -30,8 +30,8 @@
       <%= link_to 'Retour', coaches_path, class:"btn btn-secondary" %>
   </div>
 
-  <div class="coach-col calendar-form">
-    <h2>Réserver</h2>
+  <div class="coach-col calendar-form-coach">
+    <h2 class="mb-5">Réserver</h2>
     <%= form_tag seances_path, method: "post" do %>
       <div class="form-group form-check coach-form-group">
         <%= label_tag 'Date et Heure' %>
@@ -46,8 +46,18 @@
         <%= text_field_tag 'place', "à domicile", class: 'form-control' %>
       </div>
       <%= hidden_field_tag :coach_id , @coach.id %>
-      <%= submit_tag "Continuez", class: "btn btn-primary" %>
+        <div class="text-center">
+               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Création d'une commande"
+                  data-currency="eur"
+                  data-amount="<%= @coach.price * 100 %>"
+                  data-locale="auto">
+          </script>
+
+   </div>
     <% end %>
+
   </div>
 
 
@@ -67,3 +77,5 @@
     <% end %>
   </div>
 </div>
+
+
