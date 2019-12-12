@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "coach_me_#{Rails.env}"
   # Maja add
-  config.action_mailer.default_url_options = { host: 'https://coachme.herokuapp.com/', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://coachme.herokuapp.com/' }
 
   config.action_mailer.perform_caching = false
 
