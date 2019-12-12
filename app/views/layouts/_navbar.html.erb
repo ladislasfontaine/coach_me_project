@@ -51,16 +51,18 @@
     <div id="myDropdown" class="dropdown-menu dropdown-menu-perso" aria-labelledby="navbarDropdown">
       <ul>
         <% if user_signed_in? %>
-          <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
-          <%= link_to "Mon profil", user_path(current_user.id), class: "dropdown-item" %>
-          <%= link_to "Mes informations", edit_user_path(current_user.id), class: "dropdown-item" %>
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+         
+          <%= link_to "Mon Profil", user_path(current_user.id), class: "dropdown-item" %>
+          <%= link_to "Mon Dashboard", edit_user_path(current_user.id), class: "dropdown-item" %> 
+          <%= link_to "Mon Compte", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
         <% elsif coach_signed_in? %>
-          <%= link_to "Mon compte", edit_coach_registration_path, class: "dropdown-item" %>
-          <%= link_to "Mon profil", coach_path(current_coach.id), class: "dropdown-item" %>
-          <%= link_to "Mes informations", edit_coach_path(current_coach.id), class: "dropdown-item" %>
-          <%= link_to "Se déconnecter", destroy_coach_session_path, method: :delete, class: "dropdown-item" %>
+          
+          <%= link_to "Mon Profil", coach_path(current_coach.id), class: "dropdown-item" %>
+          <%= link_to "Mes Dashboard", edit_coach_path(current_coach.id), class: "dropdown-item" %>
+          <%= link_to "Mon Compte", edit_coach_registration_path, class: "dropdown-item" %>
+          <%= link_to "Se Déconnecter", destroy_coach_session_path, method: :delete, class: "dropdown-item" %>
 
         <% else %>
           <h6 class="d-flex justify-content-center orange">Adhérent</h6>
