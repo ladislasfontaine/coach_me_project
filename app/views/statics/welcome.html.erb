@@ -1,13 +1,16 @@
-
-
+<% content_for :title, "CoachMe | Coach" %>
 <h2 class="text-center mb-3 mt-5">Développez votre activité en travaillant plus sereinement</h2>
 <div class="d-flex justify-content-center">
   <div class="col-md-5 text-center">
-    <p class="mb-5">CoachMe est le logiciel incontournable pour gérer vos séances et vos adhérents, quelles que soient vos spécificités.</p>
+    <p class="mb-4">CoachMe est le logiciel incontournable pour gérer vos séances et vos adhérents, quelles que soient vos spécificités.</p>
   </div>
 </div>
 
-<div class="d-flex justify-content-center">
+<div class="nav-item d-flex justify-content-center mt-4">
+  <%= link_to 'Rejoignez-nous', new_coach_registration_path, class: "btn btn-outline-primary" %>
+</div>
+
+<div class="d-flex justify-content-center mt-4">
 	<hr style="width: 30%;">
 </div>
 
@@ -19,6 +22,7 @@
     <h5 class="text-center"><span class="orange"> Augmentez </span> vos revenus</h5>
     <p>Améliorez votre notoriété et réduisez vos rendez-vous non honorés</p>
   </div>
+
   <div id="border-orange" class="col-md-3 mx-1">
     <div class="text-center">
       <i class="fas fa-users fa-3x mb-3"></i>
@@ -26,6 +30,7 @@
     <h5 class="text-center"><span class="orange">Améliorez</span> l’expérience de vos adhérents</h5>
     <p>Offrez leur la prise de rendez-vous en ligne et de nombreux services uniques</p>
   </div>
+
   <div id="border-orange" class="col-md-3 mx-1">
     <div class="text-center">
       <i class="fas fa-money-check fa-3x mb-3"></i>
@@ -41,14 +46,13 @@
 
 <h2 class="text-center mb-3 mt-3">Notre communauté nous fait confiance</h2>
 
-
 <div class="d-flex flex-row justify-content-around mx-5 mt-5 px-5">
   <div class="card mb-5" style="width: 18rem;">
     <div class="card-body">
       <img height="100" width="100" class="pic-profil" src="/assets/coach_test-baf1e496fde9478e3866eafd6980702f21223b3953d4f096d3ec16aea529a780.jpg">
       <div class="card-content">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <h5 class="card-title">Lad F</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Personal training</h6>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
     </div>
@@ -56,10 +60,10 @@
 
   <div class="card mb-5" style="width: 18rem;">
     <div class="card-body">
-      <img height="100" width="100" class="pic-profil" src="/assets/coach_test-baf1e496fde9478e3866eafd6980702f21223b3953d4f096d3ec16aea529a780.jpg">
+      <img height="100" width="100" class="pic-profil" src="<%= asset_path('user2.png') %>">
       <div class="card-content">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <h5 class="card-title">Mark W</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Personal training</h6>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
     </div>
@@ -67,10 +71,10 @@
 
   <div class="card mb-5" style="width: 18rem;">
     <div class="card-body">
-      <img height="100" width="100" class="pic-profil" src="/assets/coach_test-baf1e496fde9478e3866eafd6980702f21223b3953d4f096d3ec16aea529a780.jpg">
+      <img height="100" width="100" class="pic-profil" src="<%= asset_path('user1.png') %>">
       <div class="card-content">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <h5 class="card-title">Vin D</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Personal training</h6>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
     </div>

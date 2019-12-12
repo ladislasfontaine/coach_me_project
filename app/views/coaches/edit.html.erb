@@ -138,7 +138,11 @@
           </div>
           <div class="form-group col-md-6">
             <%= label_tag 'Ville' %>
-            <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name", @coach.city.id), class: 'form-control' %>
+            <% if @coach.city.nil? %>
+              <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), class: 'form-control' %>
+            <% else %>
+              <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name", @coach.city.id), class: 'form-control' %>
+            <% end %>
           </div>
         </div>
         <div class="form-row">
@@ -169,11 +173,11 @@
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <%= label_tag 'Photo de couverture' %>
+            <%= label_tag 'Photo de couverture' %><br>
             <%= file_field_tag :cover %>
           </div>
           <div class="form-group col-md-6">
-            <%= label_tag 'Diplôme de coach sportif' %>
+            <%= label_tag 'Diplôme de coach sportif' %><br>
             <%= file_field_tag :diploma %>
           </div>
         </div>

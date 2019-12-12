@@ -1,9 +1,8 @@
-
 <div class="coach-jumbotron">
   <% if @coach.cover.attached? %>
     <%= image_tag @coach.cover, alt: 'Photo de couverture', class: 'cover-image' %>
     <% else %>
-    <%= image_tag 'background-form-3.jpg', alt: 'Photo de couverture', class: 'cover-image' %>
+    <%= image_tag 'crossfit.jpg', alt: 'Photo de couverture', class: 'cover-image' %>
   <% end %>
   <h2>Coach <%= @coach.first_name %></h2>
 
@@ -23,7 +22,12 @@
         <span class="coach-specialty">#<%= specialty.name %></span>
       <% end %>
     </div>
-    <div class="coach-city"><%= @coach.city.name %><br><%= @coach.phone_number %></div>
+    <div class="coach-city">
+      <% if !@coach.city.nil? %>
+        <%= @coach.city.name %>
+      <% end %>
+      <br><%= @coach.phone_number %>
+    </div>
     <div class="coach-price"><%= @coach.price %>€ / heure</div>
     <div class="coach-description">Quotidiennement au contact de personnes exigeantes, je serai à même de vous concevoir un entraînement sur mesure et de qualité !</div>
       <%= link_to 'Modifier mes informations', edit_coach_path(params[:id]), class:"btn btn-secondary" %>
@@ -62,7 +66,7 @@
 
 
   <div class="coach-col calendar-section">
-    <h2>Calendrier</h2>
+    <h2 class="mb-4">Calendrier</h2>
     <%= week_calendar events: @seances do |date, seances| %>
       <%= date.day %>
 

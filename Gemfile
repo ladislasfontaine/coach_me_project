@@ -65,9 +65,13 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'table_print'
 gem 'faker'
-gem 'devise'
 gem 'jquery-rails'
 gem 'letter_opener', :group => :development
 gem 'dotenv-rails'
 gem "simple_calendar", "~> 2.0"
 gem 'stripe'
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'

@@ -17,7 +17,11 @@
     <div class="card-informations">
       <h5 class="card-title"><a href="<%= coach_path(coach.id) %>"> <%= coach.first_name %> <%= coach.last_name %> </a></h5>
       <div class="price-index-coach"> <%= coach.price %>€ / heure </div>
-      <div> <%= coach.city.name %> </div>
+      <div>
+        <% if !coach.city.nil? %>
+          <%= coach.city.name %>
+        <% end %>
+      </div>
       <div class="coach-specialties">
         <% coach.specialties.each do |specialty| %>
           <span class="coach-specialty">#<%= specialty.name %></span>

@@ -1,3 +1,4 @@
+<% content_for :title, "CoachMe | Dashboard" %>
   <div class="full-dashboard">
     <div class="dashboard-left">
       <div class=" list-group dashboard-list-group" role="tablist">
@@ -121,7 +122,7 @@
                 <% if @user.avatar.attached? %>
                   <%= image_tag @user.avatar, class: "avatar-image", alt: "avatar" %>
                 <% else %>
-                 <%= image_tag 'default.jpg', alt: 'Photo de profil', class: 'avatar-image' %>
+                  <%= image_tag 'default.jpg', alt: 'Photo de profil', class: 'avatar-image' %>
                 <% end %>
               </div>
 

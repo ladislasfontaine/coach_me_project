@@ -12,6 +12,10 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.belongs_to :city, index: true
       t.belongs_to :objective, index: true
 
+      # Omniauthable
+      t.string :facebook_id
+      t.string :google_id
+
       t.timestamps
     end
   end
