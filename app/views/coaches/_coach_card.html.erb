@@ -11,7 +11,7 @@
       <% if coach.avatar.attached? %>
         <%= image_tag coach.avatar, alt: 'Photo de profil', class: "profil-picture", height: "100", width: "100" %>
       <% else %>
-        <%= image_tag "coach_test.jpg", height: "100", width: "100", class: "profil-picture"%>
+        <%= image_tag "index#{rand(1..10)}.jpg", height: "100", width: "100", class: "profil-picture"%>
       <% end %>
     </div>
     <div class="card-informations">

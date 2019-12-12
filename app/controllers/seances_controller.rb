@@ -1,7 +1,6 @@
 class SeancesController < ApplicationController
   before_action :set_seance, only: %i[show destroy]
-
-
+  before_action :is_participant?, only: %i[show destroy]
 
   def create
      @coach = Coach.find(params[:coach_id])
@@ -16,7 +15,7 @@ class SeancesController < ApplicationController
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
       source: params[:stripeToken],
-      })
+    })
 
     charge = Stripe::Charge.create({
         customer: customer.id,
@@ -76,5 +75,14 @@ class SeancesController < ApplicationController
       end
     end
     return false
+  end
+
+  def is_participant?
+    if (coach_signed_in? && Seance.find(params[:id]).coach == current_coach) || (user_signed_in? && Seance.find(params[:id]).user == current_user)
+      true
+    else
+      flash[:notice] = "Vous n'avez pas accès à cette page."
+      redirect_to root_path
+    end
   end
 end

@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
   before_action :set_cities, only: %i[welcome edit update]
   before_action :set_objectives, only: %i[show edit update]
+  before_action :is_owner?, only: %i[edit update]
+  before_action :is_connected?, only: %i[show]
 
   def welcome
     @sport = Specialty.all
@@ -9,7 +11,6 @@ class UsersController < ApplicationController
 
   def show
     @seances = @user.seances
-
   end
 
   def edit
@@ -56,5 +57,23 @@ class UsersController < ApplicationController
 
   def set_objectives
     @objectives = Objective.all
+  end
+
+  def is_owner?
+    if user_signed_in? && current_user.id == params[:id].to_i
+      true
+    else
+      flash[:notice] = "Vous n'avez pas accès à cette page."
+      redirect_to root_path
+    end
+  end
+
+  def is_connected?
+    if user_signed_in? || coach_signed_in?
+      true
+    else
+      flash[:notice] = "Vous n'avez pas accès à cette page."
+      redirect_to root_path
+    end
   end
 end

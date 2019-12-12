@@ -60,7 +60,7 @@
         <% elsif coach_signed_in? %>
           
           <%= link_to "Mon Profil", coach_path(current_coach.id), class: "dropdown-item" %>
-          <%= link_to "Mes Dashboard", edit_coach_path(current_coach.id), class: "dropdown-item" %>
+          <%= link_to "Mon Dashboard", edit_coach_path(current_coach.id), class: "dropdown-item" %>
           <%= link_to "Mon Compte", edit_coach_registration_path, class: "dropdown-item" %>
           <%= link_to "Se Déconnecter", destroy_coach_session_path, method: :delete, class: "dropdown-item" %>
 
