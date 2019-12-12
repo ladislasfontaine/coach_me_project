@@ -178,12 +178,12 @@ span.cursor-index.typing {
 	position: absolute;
 	width: 30%;
 	left: 55%;
-	top: 11%;
+	top: 10%;
 }
 
 #text-index {
 	position: absolute;
-	top: 13%;
+	top: 12%;
 	left: 18%;
 	color: #fff;
 }
@@ -277,7 +277,7 @@ span.wrap {
 	position: absolute;
 	top: 72.6%;
 	left: 14%;
-	width: 315px;
+	width: 19em;
 	height: 1px;
 	background-color: #fff;
 }
@@ -286,7 +286,7 @@ span.wrap {
 	position: absolute;
 	top: 72.6%;
 	left: 41%;
-	width: 300px;
+	width: 17.7em;
 	height: 1px;
 	background-color: #fff;
 }
@@ -295,7 +295,7 @@ span.wrap {
 	position: absolute;
 	top: 72.6%;
 	left: 66.5%;
-	width: 300px;
+	width: 17.7em;
 	height: 1px;
 	background-color: #fff;
 }
