@@ -21,10 +21,5 @@
     <%= f.submit "Change my password" %>
   </div>
 <% end %>
-<h3>Changer d'avatar ?</h3>
-<%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "mettre à jour" %>
-<% end %>
 
 <%= render "devise/shared/links" %>
