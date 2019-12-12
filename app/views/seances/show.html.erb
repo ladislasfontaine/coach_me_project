@@ -33,7 +33,7 @@
   <div class="seance_show seance-container d-flex flex-column justify-content-around align-items-center mb-5">
     <h5>Détails</h5>
     <div>Quand ? <%= @seance.start_date.strftime('Le %d %b %Y à %Hh%M') %></div>
-    <div>Combient de temps ? <%= @seance.duration %> minutes</div>
+    <div>Combien de temps ? <%= @seance.duration %> minutes</div>
     <div>Où ? Rdv <%= @seance.place %></div>
     <div>Prix ? <%= @price %>€</div>
   </div>
@@ -64,7 +64,13 @@
 
 
 <div class="Button_return_Dashboard">
-  <%= link_to "Retourner au Dashboard", edit_user_path(params[:id]),class:"btn btn-primary-2 mt-3" %>
+  <% if user_signed_in? %>
+    <%= link_to "Retour au dashboard", edit_user_path(current_user.id), class:"btn btn-primary-2 mt-3" %>
+  <% elsif coach_signed_in? %>
+    <%= link_to "Retour au dashboard", edit_coach_path(current_coach.id), class:"btn btn-primary-2 mt-3" %>
+  <% else %>
+    <%= link_to "Retour", :back, class:"btn btn-primary-2 mt-3" %>
+  <% end %>
 </div>
 
 
