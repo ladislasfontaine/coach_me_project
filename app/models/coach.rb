@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Coach < ApplicationRecord
-  # after_create :welcome_send
+  after_create :welcome_send
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
